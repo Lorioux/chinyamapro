@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Indice de projectos
+{% endblock %}
+
+{% with errors = get_flashed_messages(category_filter=["error"]) %}
+{% if errors %}
+<div class="alert-message block-message error">
+  <a class="close" href="#">×</a>
+  <ul>
+    {%- for msg in errors %}
+    <li>{{ msg }}</li>
+    {% endfor -%}
+  </ul>
+</div>
+{% endif %}
+{% endwith %}
+
+{% block index %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <!-- <style>
+        #all #novo #images {
+            height: 36px;
+            width: 64px;
+            padding: 10px;
+            background:lightgray;
+            border: 1px solid lightgray;
+            border-top-right-radius: 4px;
+            border-top-left-radius: 4px;
+        }
+    </style> -->
+{% endblock %}
+
+{% block modules %}
+    <script src="{{ url_for('static', filename='js/projecto.js') }}" type="text/javascript" async >
+    </script>
+{% endblock %}
+
+{% block header %}
+    <button id="all">Todos</button>
+    <button id="images">Images</button>
+    <button id="novo">Novo</button>
+{%  endblock %}
+
+{% block main %}
+    <br> <br>
+    {% if lista == True %}
+
+        {% include "list.html" %}
+
+    {% endif %}
+    {% if novo == True %}
+        {% include "create.html" %}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,92 @@
+
+{% extends "base.html" %}
+
+{% block main %}
+<form id="projecto" method="POST" enctype="multipart/form-data" style="max-width:600px;">
+    <fieldset>
+        <input type="text" name="name" placeholder="Nome do projecto" style="margin-bottom: 12px; width: 95%;" required >
+        <br>
+        <input type="number" name="value" placeholder="Valor" style="margin-bottom: 12px; margin-right: 4px;width: 83%;" required> 
+        <select name="currency" required>
+            <option>MZN</option>
+            <option>USD</option>
+            <option>EUR</option>
+        </select> 
+        <br>
+        <!-- <textarea name="desc" placeholder="Descricao" style="min-width: 380px !important; min-height: 128px !important; margin-bottom: 12px;width: 95%; text-justify: auto;" required></textarea> -->
+        <textarea name="memo" id="memo" cols="64" rows="10" autocomplete="on"  spellcheck="true" wrap="soft" autocorrect="on" placeholder="Descrição" required></textarea><br><br>
+        <input type="date" name="start" placeholder="Data de inicio" style="margin-bottom: 12px; margin-right: 4px;"><input type="date" name="end" placeholder="Data de fim"style="margin-bottom: 12px;" required >
+        <br>
+    </formset>
+    <fieldset>
+        <span>Images do projecto </span><br><br>
+        <input type="file" class="file" name="images" placeholder="Upload image file" style="margin-bottom: 12px;" required multiple><br>
+        <i id="add_file"  style="border: 1px solid grey; border-radius: 2px; width: 24px;">+</i> 
+        <!-- | <i id="remove_file" style="border: 1px solid grey; border-radius: 2px; width: 24px;">-</i> -->
+    </fieldset>
+    <br/>
+    <input type="submit" name="submit" value="GUARDAR" formaction="/createProjecto">
+    <br/>
+    <script type="text/javascript" defer>
+
+        function add_file_field(me, menus){
+            let file = document.getElementsByClassName('file')[0].cloneNode(false);
+            let brk = document.createElement('br')
+            me.insertAdjacentElement("beforebegin", file);
+            file.insertAdjacentElement("afterend", menus);
+            menus.insertAdjacentElement("afterend", brk);
+        };
+
+        function handle_projecto(){
+
+            let form = document.getElementById('projecto');
+
+            let add_image = document.getElementById("add_file");
+
+            let rem_image = document.createElement('e');
+                rem_image.innerText = "delete";
+                rem_image.setAttribute('class', "delete");
+            
+            let handle_click = (e) => {
+                e.onclick = (e) => {
+                    let me = e.target;
+                        clone = me.cloneNode();
+                        me.previousSibling.remove();
+                        me.nextSibling.remove();
+                        me.remove();
+                }
+            }
+                // rem_image.hidden = true;
+                // form.append(rem_image);
+
+            // console.log(form);
+            add_image.onclick = (e) => {
+                let me = e.target;
+                let del = document.getElementsByClassName('delete')[0];
+                // console.log(del);
+                if (del === undefined){
+                    handle_click(rem_image);
+                    add_file_field(me, rem_image);
+                }
+                else {
+                    outro = del.cloneNode(true);
+                    // console.log(outro);
+                    handle_click(outro);
+                    add_file_field(me, outro);
+                }
+            }
+
+            form.onsubmit = (e) => {
+                let me = e.target;
+                let files = me.images.files;
+                // alert(files);
+            }
+        };
+
+        (function(){
+            handle_projecto();
+        })();
+    
+    </script>
+</form>
+{% endblock %}
