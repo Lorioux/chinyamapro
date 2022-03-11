@@ -9,7 +9,7 @@ class Config(object):
 
 class TestingConfig(Config):
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///tmp/projecto.db?check_same_thread=False'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///data/projecto.db?check_same_thread=False'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    UPLOAD_FOLDER = "tmp"
-    
+    UPLOAD_FOLDER = "storage"
+    TEMPLATE_FOLDER = "templates"

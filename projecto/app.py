@@ -8,7 +8,7 @@ except ImportError:
 
 def make_app(testing: bool = False):
     global app
-    app = Flask(__name__)
+    app = Flask(__name__, static_folder="/templates", static_url_path="/templates")
     # app.config['DEBUG'] = True
 
     if testing:
