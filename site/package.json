@@ -22,7 +22,7 @@
   },
   "scripts": {
     "start": "react-scripts start --no-browser",
-    "build": "react-scripts build && ln -sdf ./build/static/* ../projecto/static  && ln -s ./build/index.html projecto/templates/ ",
+    "build": "react-scripts build && ln -sT ./build/index.html ../projecto/templates/ ",
     "test": "react-scripts test",
     "lint": "eslint src/**/*.js",
     "eject": "react-scripts eject"
