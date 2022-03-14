@@ -57,7 +57,7 @@ def main(app: Flask):
     @app.route('/')
     def index():
         _projectos = fetch_projectos()
-        return render_template("index.html", projectos=_projectos, lista=True)
+        return render_template("base/index.html", projectos=_projectos, lista=True)
 
 
     @app.route("/registry/refresh", methods=['GET'])
