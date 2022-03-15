@@ -63,14 +63,15 @@ const File = (e, i)=>{
 
 export default function Projecto(props){
 
-    const {currencies} = props;
+    const {currencies, visibility} = props;
+
 
     const [startdate, setStartDate] = React.useState("01/01/1982");
     const [enddate, setEndDate] = React.useState("01/31/1982");
-    const [name, setName] = React.useState();
-    const [value, setValue] = React.useState();
-    const [city, setCity] = React.useState()
-    const [details, setDetails] = React.useState()
+    const [name, setName] = React.useState("");
+    const [value, setValue] = React.useState(10.5);
+    const [city, setCity] = React.useState("Tete")
+    const [details, setDetails] = React.useState("")
 
     const [files, setFiles] = React.useState([File(undefined, filesCounter)]);
 
@@ -118,15 +119,15 @@ export default function Projecto(props){
     const bindCredentials = (e) => {
         let form = e.target;
             form.credentials = "asdfsgdhfjgkhlj";
-        
     }
 
     return (
         <Box
+            visibility={visibility || false}
         >
             <Card>
                 <CardHeader
-                    title="Projecto Information"
+                    // title="Projecto Information"
                     subheader={<Typography>Add or update projecto information here.</Typography>}
                     />
                 <form id="projecto" method="POST" encType="multipart/form-data" action="/createProjecto" onSubmit={bindCredentials}> 
@@ -145,7 +146,6 @@ export default function Projecto(props){
                                 //   }}
                             />
                             <Autocomplete
-                                
                                 id="currency"
                                 label="Currency"
                                 variant="outlined"

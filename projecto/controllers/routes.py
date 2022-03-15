@@ -8,7 +8,9 @@ from . import get_session, generate_uuid
 
 from . import Flask, get_app
 
+from . import ast
 
+from . import request, send_file, render_template
 
 app: Flask = get_app()
 
@@ -85,9 +87,6 @@ def delete_projecto(id):
         return redirect(url_for('index'))
     pass
 
-from . import ast
-
-from . import request, send_file, render_template
 
 @app.route('/allProjectos', methods=['GET'])
 def fetch_projectos():
@@ -113,7 +112,7 @@ def fetch_projectos():
     if request.path == "/":
         return projectos
     
-    return render_template("list.html", projectos=projectos)
+    return jsonify(projectos)
 
 
 @app.route('/templates/images/<id>/<name>', methods=["GET"])
