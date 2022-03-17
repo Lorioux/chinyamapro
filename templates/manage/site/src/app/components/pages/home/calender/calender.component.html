@@ -1,0 +1,33 @@
+<div id="calendar">
+    <div class="calendar-container" *ngIf="events">
+        <div class="row">
+            <div class="col-12">
+                <div class="calender-action header">
+                    <h1>{{ viewDate | calendarSchedulerDate:(view +
+                        'ViewTitle'):locale:weekStartsOn:excludeDays:viewDays:startsWithToday }}</h1>
+                    <button type="button" class="right" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate"
+                        [daysInWeek]="viewDays" [excludeDays]="excludeDays" [disabled]="prevBtnDisabled"
+                        (viewDateChange)="dateOrViewChanged()">
+                    </button>
+                    <button type="button" class="left" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate"
+                        [daysInWeek]="viewDays" [excludeDays]="excludeDays" [disabled]="nextBtnDisabled"
+                        (viewDateChange)="dateOrViewChanged()">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div [ngSwitch]="view">
+            <calendar-scheduler-view *ngSwitchCase="CalendarView.Week" [viewDays]="viewDays" [viewDate]="viewDate"
+                [events]="events" [locale]="locale" [responsive]="false" [weekStartsOn]="weekStartsOn"
+                [excludeDays]="excludeDays" [startsWithToday]="startsWithToday" [hourSegments]="hourSegments"
+                [dayStartHour]="dayStartHour" [dayEndHour]="dayEndHour" [dayModifier]="dayModifier"
+                [hourModifier]="hourModifier" [segmentModifier]="segmentModifier" [eventModifier]="eventModifier"
+                [showEventActions]="true" [showSegmentHour]="true" [zoomEventOnHover]="true"
+                (viewDaysChanged)="viewDaysChanged($event)" (dayHeaderClicked)="dayHeaderClicked($event.day)"
+                (hourClicked)="hourClicked($event.hour)" (segmentClicked)="segmentClicked('Clicked', $event.segment)"
+                (eventClicked)="eventClicked('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)"
+                [refresh]="refresh">
+            </calendar-scheduler-view>
+        </div>
+    </div>
+</div>

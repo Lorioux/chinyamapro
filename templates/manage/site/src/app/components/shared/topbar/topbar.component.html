@@ -1,0 +1,128 @@
+<!-- Navigation Bar -->
+<nav class="navbar ms-navbar">
+    <div class="ms-aside-toggler ms-toggler pl-0" (click)="navToggle()">
+        <span class="ms-toggler-bar bg-white"></span>
+        <span class="ms-toggler-bar bg-white"></span>
+        <span class="ms-toggler-bar bg-white"></span>
+    </div>
+    <div class="logo-sn logo-sm ms-d-block-sm">
+        <a class="pl-0 ml-0 text-center navbar-brand mr-0" routerLink="/"><img src="assets/img/toola.png"
+                alt="logo"> </a>
+    </div>
+    <ul class="ms-nav-list ms-inline mb-0" id="ms-nav-options">
+        <li class="ms-nav-item  ms-d-none">
+            <a href="javascript:void(0)" class="text-white" (click)="open(appointmentModal)"><i
+                    class="flaticon-spreadsheet mr-2"></i> Make an appointment</a>
+        </li>
+        <li class="ms-nav-item ms-d-none">
+            <a href="javascript:void(0)" class="text-white" (click)="open(prescriptionModal)"><i
+                    class="flaticon-pencil mr-2"></i> Write a prescription</a>
+        </li>
+        <li class="ms-nav-item ms-d-none">
+            <a href="javascript:void(0)" class="text-white" (click)="open(reportModal)"><i
+                    class="flaticon-list mr-2"></i> Generate Report</a>
+        </li>
+        <li ngbDropdown class="ms-nav-item dropdown">
+            <a href="javascript:void(0)" ngbDropdownToggle class="text-disabled ms-has-notification"><i
+                    class="flaticon-bell"></i></a>
+            <ul class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                <li class="dropdown-menu-header">
+                    <h6 class="dropdown-header ms-inline m-0"><span class="text-disabled">Notifications</span></h6>
+                    <span class="badge badge-pill badge-info">4 New</span>
+                </li>
+                <li class="dropdown-divider"></li>
+                <li class="ms-scrollable ms-dropdown-list">
+                    <a class="media p-2" routerLink="/">
+                        <div class="media-body">
+                            <span>12 ways to improve your crypto dashboard</span>
+                            <p class="fs-10 my-1 text-disabled"><i class="material-icons">access_time</i> 30 seconds ago
+                            </p>
+                        </div>
+                    </a>
+                    <a class="media p-2" routerLink="/">
+                        <div class="media-body">
+                            <span>You have newly registered users</span>
+                            <p class="fs-10 my-1 text-disabled"><i class="material-icons">access_time</i> 45 minutes ago
+                            </p>
+                        </div>
+                    </a>
+                    <a class="media p-2" routerLink="/">
+                        <div class="media-body">
+                            <span>Your account was logged in from an unauthorized IP</span>
+                            <p class="fs-10 my-1 text-disabled"><i class="material-icons">access_time</i> 2 hours ago
+                            </p>
+                        </div>
+                    </a>
+                    <a class="media p-2" routerLink="/">
+                        <div class="media-body">
+                            <span>An application form has been submitted</span>
+                            <p class="fs-10 my-1 text-disabled"><i class="material-icons">access_time</i> 1 day ago</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="dropdown-divider"></li>
+                <li class="dropdown-menu-footer text-center">
+                    <a routerLink="/">View all Notifications</a>
+                </li>
+            </ul>
+        </li>
+        <li ngbDropdown class="ms-nav-item ms-nav-user dropdown">
+            <a href="javascript:void(0)" ngbDropdownToggle class="toggle-icon-none"> <img
+                    class="ms-user-img ms-img-round float-right" src="assets/img/dashboard/Engineer-3.jpg" alt="people">
+            </a>
+            <ul class="dropdown-menu dropdown-menu-right user-dropdown" ngbDropdownMenu>
+                <li class="dropdown-menu-header">
+                    <h6 class="dropdown-header ms-inline m-0"><span class="text-disabled">Welcome, Dr Samuel Deo</span>
+                    </h6>
+                </li>
+                <li class="dropdown-divider"></li>
+                <li class="ms-dropdown-list">
+                    <a class="media fs-14 p-2" routerLink="/prebuilt-pages/user-profile"> <span><i
+                                class="flaticon-user mr-2"></i> Profile</span> </a>
+                    <a class="media fs-14 p-2" routerLink="/apps/email"> <span><i class="flaticon-mail mr-2"></i>
+                            Inbox</span> <span class="badge badge-pill badge-info">3</span> </a>
+                    <a class="media fs-14 p-2" routerLink="/prebuilt-pages/user-profile"> <span><i
+                                class="flaticon-gear mr-2"></i> Account Settings</span> </a>
+                </li>
+                <li class="dropdown-divider"></li>
+                <li class="dropdown-menu-footer">
+                    <a class="media fs-14 p-2" routerLink="/prebuilt-pages/lock-screen"> <span><i
+                                class="flaticon-security mr-2"></i> Lock</span> </a>
+                </li>
+                <li class="dropdown-menu-footer">
+                    <a class="media fs-14 p-2" routerLink="/prebuilt-pages/default-login"> <span><i
+                                class="flaticon-shut-down mr-2"></i> Logout</span> </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <div class="ms-toggler ms-d-block-sm pr-0 ms-nav-toggler" (click)="optionsToggle()">
+        <span class="ms-toggler-bar bg-white"></span>
+        <span class="ms-toggler-bar bg-white"></span>
+        <span class="ms-toggler-bar bg-white"></span>
+    </div>
+</nav>
+<!-- Appointment modal -->
+<ng-template #appointmentModal let-modal>
+    <div class="modal-header  ms-modal-header-radius-0">
+        <h4 class="modal-title text-white">Make An Appointment</h4>
+        <button type="button" class="close text-white" (click)="modal.dismiss('Cross click')">x</button>
+    </div>
+    <app-makeappointment></app-makeappointment>
+</ng-template>
+<!-- Prescription modal -->
+<ng-template #prescriptionModal let-modal>
+    <div class="modal-header  ms-modal-header-radius-0">
+        <h4 class="modal-title text-white">Make a prescription</h4>
+        <button type="button" class="close  text-white" (click)="modal.dismiss('Cross click')">x</button>
+    </div>
+    <app-makeprescription></app-makeprescription>
+</ng-template>
+<!-- Report modal -->
+<ng-template #reportModal let-modal>
+    <div class="modal-header  ms-modal-header-radius-0">
+        <h4 class="modal-title text-white">Generate report</h4>
+        <button type="button" class="close  text-white" (click)="modal.dismiss('Cross click')">x</button>
+    </div>
+    <app-generatereport></app-generatereport>
+</ng-template>
