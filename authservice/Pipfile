@@ -4,6 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+flask = "*"
+flask-jwt = "*"
+flask-sqlalchemy = "*"
 
 [dev-packages]
 
