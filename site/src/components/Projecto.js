@@ -66,9 +66,9 @@ export default function Projecto(props){
     const {currencies, visibility} = props;
 
 
-    const [startdate, setStartDate] = React.useState("01/01/1982");
-    const [enddate, setEndDate] = React.useState("01/31/1982");
-    const [name, setName] = React.useState("");
+    const [startdate, setStartDate] = React.useState("1982-01-01");
+    const [enddate, setEndDate] = React.useState("1982-01-31");
+    const [name, setName] = React.useState("Estrada Nacional N4");
     const [value, setValue] = React.useState(10.5);
     const [city, setCity] = React.useState("Tete")
     const [details, setDetails] = React.useState("")

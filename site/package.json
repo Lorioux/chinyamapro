@@ -18,12 +18,15 @@
     "react-dom": "^17.0.2",
     "react-number-format": "^4.9.1",
     "react-scripts": "5.0.0",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "proxy": "http://localhost:5000/"
   },
   "scripts": {
-    "start": "react-scripts start --no-browser &&  yarn link",
-    "build": "react-scripts build && yarn link ",
-    "link": "cp --reflink=always -f ./build/index.html ../projecto/templates && cp --reflink=always -f -r ./build/static ../projecto/static",
+    "start": "react-scripts start --no-browser &&  yarn linkpro",
+    "build": "react-scripts build && yarn linkpro ",
+    "linkpro": "yarn linkrem && yarn linkcopy",
+    "linkrem": "rm -fr ../projecto/templates/index.html ../projecto/static",
+    "linkcopy": "cp -uf ./build/index.html ../projecto/templates && cp -f -r ./build/static ../projecto && cp -uf ./build/favicon.ico ./build/asset-manifest.json ./build/manifest.json ./build/robots.txt ../projecto/static ",
     "test": "react-scripts test",
     "lint": "eslint src/**/*.js src/**/*.jsx",
     "eject": "react-scripts eject"
@@ -53,6 +56,5 @@
   },
   "devDependencies": {
     "eslint-plugin-react": "^7.29.3"
-  },
-  "proxy": "http://localhost:5000/"
+  }
 }

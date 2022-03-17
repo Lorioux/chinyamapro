@@ -1,10 +1,13 @@
 import uuid
 import ast
 
-from sqlalchemy import Column, String, Integer
+from sqlalchemy import Column, String
 from sqlalchemy.orm import Query
 
 from flask_sqlalchemy import declarative_base
+
+# from .utils import remove_links
+# from . import remove_links
 
 Base = declarative_base()
 
@@ -15,9 +18,11 @@ class Projecto(Base):
     id = Column("Id", String(256), primary_key=True, default=str(uuid.uuid4))
     name  = Column("Name", String(55), nullable=False, default="Projecto")
     value = Column("Value", String(55), nullable=False, default="12.000.000.00")
-    currency = Column("Moeda", String(3), nullable=False, default="MZN")
-    start = Column("Inicio", String(15), nullable=False, default="01/12/2021")
-    end   = Column("Fim", String(15), nullable=False, default="01/12/2021")
+    currency = Column("Currency", String(3), nullable=False, default="MZN")
+    country = Column("Country", String(55), nullable=False, default="Mozambique")
+    state = Column("Province", String(55), nullable=False, default="Tete")
+    start = Column("Start", String(15), nullable=False, default="01/12/2021")
+    end   = Column("End", String(15), nullable=False, default="31/12/2021")
     addeb_by = Column("Usuario", String(55))
 
     _memo = ""
@@ -31,6 +36,8 @@ class Projecto(Base):
         currency = None, 
         start = None, 
         end = None, 
+        country= None,
+        state=None,
         added_by = None
     ):
         self.id = id
@@ -41,14 +48,18 @@ class Projecto(Base):
         self.end = end
         self.start =  start
 
+        self.country = country
+        self.state = state
+
         self.__session = ""
         self._memo = ""
         self._images = []
+        # self.__dict__ = {}
     
     def __repr__(self):
-        return '''{ "id" : %s, "name" : %s, "value": "%s", "currency": "%s", 
-                 "start": "%s", "end": "%s", "memo": "%s", "images":"%s" 
-                }''' % (self.id, self.name, self.value, self.currency, self.start, self.end, self.memo, self.images)
+        return { "id" : self.id, "name" : self.name, "value": self.value, "currency": self.currency, 
+                 "start": self.start, "country": self.country, "city": self.state, "end": self.end, "memo": self.memo, "images": self.images 
+                }
 
     @property
     def session(self):
@@ -84,9 +95,10 @@ class Projecto(Base):
             self.session.add(self)
             self.session.commit()
             return True, self
-        except BaseException as e:
+        except Exception as e:
             self.session.rollback()
             print(e)
+            return False, self
 
     @classmethod
     def read(cls, id):
@@ -197,21 +209,21 @@ class ImageLink(Base):
 
     @classmethod
     def delete(cls, id, session):
-        from .utils import remove_links
+        
         entity = cls.query.filter(cls.id == id).one()
         try:
-            for lnk in ast.literal_eval(entity.links):
-                remove_links(id, lnk)
+            links = ast.literal_eval(entity.links)
             session.delete(entity)
             session.commit()
-        except:
+            return True, links
+        except Exception as e:
             session.rollback()
-
+            return False, None
     
 
     @classmethod
     def remove_link(cls, id, link):
-        from .utils import remove_links
+
         images = cls.query.filter(cls.id == id).first()
         links = images.links
         if links:

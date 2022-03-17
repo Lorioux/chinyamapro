@@ -63,8 +63,6 @@ def main(app: Flask):
     @app.route("/registry/refresh", methods=['GET'])
     def refresh_registry():
         try:
-            # _handle_db_ops(app)
-            # print(engine)
             create_all(engine)
         except RuntimeError as e:
             print(e.args)

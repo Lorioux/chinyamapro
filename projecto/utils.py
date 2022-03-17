@@ -1,4 +1,5 @@
 import os
+import json
 import click
 
 from werkzeug.utils import secure_filename
@@ -20,22 +21,22 @@ def init_db():
 #------------HELPERS---------------
 ALLOWED_EXTENSIONS = {'txt', 'png', 'jpeg', 'jpg', 'pdf'}
 
-FORM_KEYS = {'name', 'value', 'end', 'currency', 'start', 'memo'}
+FORM_KEYS = {'name', 'value', 'end', 'currency', 'start', 'memo', 'country', 'state'}
 
 def validate_form(form: dict):
-    def _valid(key):
-        if key not in form or form[key] == '':
-            return False
-        return True
+    # def _valid(key):
+    #     if key not in form or form[key] == '':
+    #         return False
+    #     return True
 
     
-    # print(form.keys())
-    if set(form.keys()).difference(FORM_KEYS).__len__() > 0:
-        for key in FORM_KEYS:
-            if not _valid(key):
-                return False
+    
+    
+    if set(form.keys()).difference(FORM_KEYS).__len__() == 0:
+        # print(form.keys())
         return True
     else:
+        # print(FORM_KEYS)
         return False
 
 
@@ -53,8 +54,8 @@ def upload_images(app, project_id, files):
         if check_allowed_file(file.filename):
             
             filename = secure_filename(file.filename)
-            IMAGE_DIR = app.config['UPLOAD_FOLDER']+f"/{project_id}"
-            IMAGE_DIR_LNK = app.config['TEMPLATE_FOLDER']+f"/images/{project_id}"
+            IMAGE_DIR = app.config['UPLOAD_FOLDER']+f"/media/{project_id}"
+            IMAGE_DIR_LNK = app.config['TEMPLATE_FOLDER']+f"/media/{project_id}"
             
             if not os.path.exists(IMAGE_DIR):
                 
@@ -69,7 +70,7 @@ def upload_images(app, project_id, files):
 
             os.symlink(f"{storage_path}", f"{IMAGE_DIR_LNK}/{filename}")
 
-            images.append(f"images/{project_id}/{filename}")
+            images.append(f"media/{project_id}/{filename}")
 
     if images.__len__() > 0:
         links = str(images)
@@ -83,16 +84,30 @@ def check_image_exists(link):
     return False
 
 
-def remove_links(id, link):
-    path = f"storage/{link.split('/', 1)[1]}"
-    
+def remove_links(id="", link=""):
+    path = f"storage/{link}"
+    path_lnk = f"templates/{link}"
+    parent = os.path.dirname(path)
+
     import shutil as base
     
     if check_image_exists(path):
-        print(path)
-        base.rmtree(path)
-        path_lnk = f"templates/{link}"
-        base.rmtree(path_lnk)
-        return "DELETED", id, link
-        # os.removedirs(path)
         
+        os.remove(path_lnk)
+        os.remove(path)
+        
+        if os.listdir(parent) == []:
+            base.rmtree(parent)
+            base.rmtree(os.path.dirname(path_lnk))
+
+        return "DELETED", id, link
+        
+
+class JSONEncoder(json.JSONEncoder):
+    def __init__(self, cls):
+        super(JSONEncoder, self).__init__()
+        self.cls = cls
+    def default(self, o):
+        if isinstance(o, self.cls):
+            return o.__repr__()
+        return json.JSONEncoder.default(self, o)

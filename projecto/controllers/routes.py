@@ -1,3 +1,4 @@
+from projecto.utils import JSONEncoder, remove_links
 from . import request, render_template, jsonify, redirect, url_for, flash
 
 from . import Projecto, ImageLink, Details
@@ -8,7 +9,7 @@ from . import get_session, generate_uuid
 
 from . import Flask, get_app
 
-from . import ast
+from . import ast, json
 
 from . import request, send_file, render_template
 
@@ -33,16 +34,19 @@ def create_projecto():
     PROJECT = Projecto(
         id= ID,
         name=FORM['name'], 
-            value=FORM['value'], 
-                end=FORM['end'], 
-                    start=FORM['start'], 
-                        currency=FORM['currency'])
+        value=FORM['value'], 
+        end=FORM['end'], 
+        start=FORM['start'], 
+        currency=FORM['currency'],
+        country=FORM["country"],
+        state=FORM["state"],
+    )
 
     PROJECT.session = get_session()
     created, result = PROJECT.create()
     
 
-    DESCRICAO = Details(id=PROJECT.id, memo=FORM['memo'] )
+    DESCRICAO = Details(id=ID, memo=FORM['memo'] )
     DESCRICAO.session = get_session()  
     
 
@@ -60,7 +64,7 @@ def create_projecto():
         # print(IMAGES)
 
     else:
-        return jsonify("Project failed to create. %s") %result
+        return jsonify("Project failed to create")
 
         
 
@@ -72,20 +76,21 @@ def create_projecto():
 
 @app.route("/deleteProjecto/<string:id>", methods=['GET'])
 def delete_projecto(id):
-    status, record = Projecto.delete(id, get_session())
+    status, _ = Projecto.delete(id, get_session())
     if status:
         print("Projecto deleted!")
         Details.delete(id, get_session())
-        ImageLink.delete(id, get_session())
+        status, links = ImageLink.delete(id, get_session())
+        if status:
+            for lnk in links[0:]:
+                remove_links(id, lnk)
         
         return redirect(url_for('index'))
         # return jsonify("Done!")
 
     else:
-        # print(result)
-        flash("result")
         return redirect(url_for('index'))
-    pass
+
 
 
 @app.route('/allProjectos', methods=['GET'])
@@ -106,20 +111,23 @@ def fetch_projectos():
                 pro.images = ast.literal_eval(image.links)
             except:
                 print(image.links)
-    
+
     # jsonify(str(projectos))
     # images = ast.literal_eval(projectos[-1].links)
     if request.path == "/":
         return projectos
+
+    projectos = JSONEncoder(Projecto).encode(projectos)
     
-    return jsonify(projectos)
+
+    return   jsonify(ast.literal_eval(projectos))
 
 
-@app.route('/templates/images/<id>/<name>', methods=["GET"])
+@app.route('/media/<id>/<name>', methods=["GET"])
 def fetch_images(id, name):
     path = request.path
-    # print(path)
-    return send_file(path.split('/', 1)[1], mimetype="image/png" )
+    
+    return send_file("templates/{}".format(path), mimetype="image/png" )
 
 
 @app.route('/templates/js/<path:path>', methods=["GET"])

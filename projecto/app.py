@@ -10,8 +10,6 @@ except ImportError:
 def make_app(testing: bool = False):
     global app
     app = Flask(__name__)
-    # app.config['DEBUG'] = True
-
     if testing:
         app.config.from_mapping({})
     else:
