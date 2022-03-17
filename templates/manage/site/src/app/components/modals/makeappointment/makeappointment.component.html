@@ -1,0 +1,88 @@
+<div class="modal-body p-0 text-left">
+    <div class="col-xl-12 col-md-12">
+        <div class="ms-panel ms-panel-bshadow-none">
+            <div class="ms-panel-header">
+                <h6>Client Information</h6>
+            </div>
+            <div class="ms-panel-body">
+                <form class="needs-validation" [formGroup]="appointmentForm" (validSubmit)="onSubmit()">
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom01">Client Name</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Enter Name" formControlName="clientName" id="validationCustom01">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom02">Date Of Birth</label>
+                            <div class="input-group">
+                                <input type="date" class="form-control" formControlName="dateOfBirth" id="validationCustom02">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom03">Issue</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Issue" formControlName="issue" id="validationCustom03">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-4 mb-2">
+                            <label for="validationCustom04">Address</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Add Address" formControlName="address" id="validationCustom04">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom05">Phone no.</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Enter Phone No." formControlName="phoneNo" id="validationCustom05">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom06">Department Name</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Enter Department Name" formControlName="departmentName" id="validationCustom06">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom07">Appointment With</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Enter Engineer Name" formControlName="appointmentWith" id="validationCustom07">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom08">Appointment Date</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Enter Appointment Date" formControlName="appointmentDate" id="validationCustom08">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>Sex</label>
+                            <ul class="ms-list d-flex">
+                                <li class="ms-list-item pl-0">
+                                    <label class="ms-checkbox-wrap">
+                                        <input type="radio" name="radioExample" value="">
+                                        <i class="ms-checkbox-check"></i>
+                                    </label>
+                                    <span> Male </span>
+                                </li>
+                                <li class="ms-list-item">
+                                    <label class="ms-checkbox-wrap">
+                                        <input type="radio" name="radioExample" value="" checked="">
+                                        <i class="ms-checkbox-check"></i>
+                                    </label>
+                                    <span> Female </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="btn btn-warning mt-4 d-inline w-20 mr-2" type="button" (click)="onReset()">Reset</button>
+                    <button class="btn btn-primary mt-4 d-inline w-20" type="submit">Add Appointment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

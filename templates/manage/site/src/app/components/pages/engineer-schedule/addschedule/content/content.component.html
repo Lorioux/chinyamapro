@@ -1,0 +1,133 @@
+<div class="ms-content-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb pl-0">
+                    <li class="breadcrumb-item"><a routerLink="/"><i class="material-icons">home</i> Home</a></li>
+                    <li class="breadcrumb-item"><a routerLink="/">Engineer Schedule</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Add Schedule</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="col-xl-12 col-md-12">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6" *ngFor="let item of engineerblock">
+                    <div class="ms-card">
+                        <div class="ms-card-body">
+                            <div class="media fs-14">
+                                <div class="mr-2 align-self-center">
+                                    <img [src]="item.img" class="ms-img-round" [alt]="item.name">
+                                </div>
+                                <div class="media-body">
+                                    <h6>{{item.name}}</h6>
+                                    <div ngbDropdown class="dropdown float-right">
+                                        <a href="javascript:void(0)" class="toggle-icon-none" ngbDropdownToggle>
+                                            <i class="material-icons">more_vert</i>
+                                        </a>
+                                        <ul ngbDropdownMenu class="dropdown-menu dropdown-menu-right">
+                                            <li class="ms-dropdown-list">
+                                                <a class="media p-2" routerLink="/">
+                                                    <div class="media-body">
+                                                        <span>View Details</span>
+                                                    </div>
+                                                </a>
+                                                <a class="media p-2" routerLink="/">
+                                                    <div class="media-body">
+                                                        <span>Assign</span>
+                                                    </div>
+                                                </a>
+                                                <a class="media p-2" routerLink="/">
+                                                    <div class="media-body">
+                                                        <span>Edit</span>
+                                                    </div>
+                                                </a>
+                                                <a class="media p-2" routerLink="/">
+                                                    <div class="media-body">
+                                                        <span>Delete</span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <p class="fs-12 my-1 text-disabled">{{item.designation}}</p>
+                                    <h6 class="mt-2"><span><i class="far fa-calendar"></i></span> {{item.scheduledate}}</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-12 col-md-12">
+            <div class="ms-panel">
+                <div class="ms-panel-header  ms-panel-custome">
+                    <h6>Add Schedule</h6>
+                    <a routerLink="/engineer-schedule/schedule-list" class="ms-text-primary">Schedule List</a>
+                </div>
+                <div class="ms-panel-body">
+                    <form class="needs-validation" [formGroup]="addForm" (validSubmit)="onSubmit()">
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="validationCustom001">Engineer Name</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="validationCustom001" placeholder="Enter Engineer Name" formControlName="name">
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <label for="validationCustom004">Available time</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="validationCustom004" placeholder="Available time" formControlName="time">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="validationCustom003">Add Department</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="validationCustom003" placeholder="Enter Department Name" formControlName="department">
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="validationCustom002">Available days</label>
+                                <div class="input-group">
+                                    <select class="form-control" id="validationCustom002" formControlName="days">
+                                        <option value="Sunday">Sunday</option>
+                                        <option value="Monday">Monday</option>
+                                        <option value="Tuesday">Tuesday</option>
+                                        <option value="Wednesday">Wednesday</option>
+                                        <option value="Thursday">Thursday</option>
+                                        <option value="Friday">Friday</option>
+                                        <option value="Saturday">Saturday</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label>Status</label>
+                                <ul class="ms-list d-flex">
+                                    <li class="ms-list-item pl-0">
+                                        <label class="ms-checkbox-wrap">
+                                            <input type="radio" name="statusExample" value="">
+                                            <i class="ms-checkbox-check"></i>
+                                        </label>
+                                        <span> Active </span>
+                                    </li>
+                                    <li class="ms-list-item">
+                                        <label class="ms-checkbox-wrap">
+                                            <input type="radio" name="statusExample" value="" checked="">
+                                            <i class="ms-checkbox-check"></i>
+                                        </label>
+                                        <span> Inactive </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button class="btn btn-warning mt-4 d-inline w-20 mr-2" type="button" (click)="onReset()">Reset</button>
+                        <button class="btn btn-primary mt-4 d-inline w-20" type="submit">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
