@@ -1,5 +1,5 @@
-site
-.venv
-__pycache__
+# factory/
 
-.pytestcache
+**/*/__pycache__
+**/.venv
+**/projecto
