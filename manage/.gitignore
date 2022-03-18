@@ -1,6 +1,6 @@
 __pycache__
 .venv
-../authservice/**
-../projecto/**
+../authservice
+../projecto
 
 *.code-workspace
