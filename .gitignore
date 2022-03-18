@@ -1,6 +1,5 @@
-# factory/
-
 **/*/__pycache__
 **/.venv
 **/authservice
 **/site
+**/projecto
