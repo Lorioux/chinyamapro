@@ -6,18 +6,21 @@ import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import {Banner} from "./components/Banner"
+import { ContactsInfo, SocialMediaInfo } from './components/ContactInfo';
 
 ReactDOM.render(
   <React.StrictMode>
     
     <Router>
       <Routes>
-        <Route path="/" element={<App />}>
-          
-        </Route>
+        <Route path="/" index element={<App />}></Route>
+        
         
         <Route path="/">
+          <Route path="EditX"  element={<App edit={true} />} />
           <Route path="Banners" element={<Banner />}/>
+          <Route path="Contacts" element={<ContactsInfo />}/>
+          <Route path="SocialMedias" element={<SocialMediaInfo />} />
         </Route>
       </Routes>
     </Router>

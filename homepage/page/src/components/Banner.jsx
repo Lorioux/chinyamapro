@@ -36,14 +36,14 @@ export default function PageBanner() {
     )
 
     function BannerCaptionThree() {
-        const [image, setImage] = React.useState("pages/img/slides/image3.jpg")
+        const [image, setImage] = React.useState("img/slides/image3.jpg")
         const [headers, setHeader] = React.useState({ primary: "", secondary: ""})
         const [summary, setSummary] = React.useState(<></>)
         const [more_link, setMoreLink] = React.useState("") 
 
         React.useEffect(() => {
 
-            setImage("pages/img/slides/image3.jpg")
+            setImage("img/slides/image3.jpg")
             setHeader({ primary: "We Are The Leader", secondary: "In Construction Company"})
             setSummary(<p className="text-center">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed <br /> do eiusmod tempor incididunt ut labore et dolore."</p>)
             setMoreLink("")
@@ -73,14 +73,14 @@ export default function PageBanner() {
     }
 
     function BannerCaptionOne(props) {
-        const [image, setImage] = React.useState("pages/img/slides/image1.jpg")
+        const [image, setImage] = React.useState("img/slides/image1.jpg")
         const [headers, setHeader] = React.useState({ primary: "", secondary: ""})
         const [summary, setSummary] = React.useState(<></>)
         const [more_link, setMoreLink] = React.useState("") 
 
         React.useEffect(() => {
 
-            setImage("pages/img/slides/image1.jpg")
+            setImage("img/slides/image1.jpg")
             setHeader({ primary: "We Are Available For", secondary: "Any Construction Work"})
             setSummary(<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit.Conse <br /> quatur  earum iusto tempora nesciunt enim harum architecto, <br /> quis culpa ducimus deleniti, labore. Libero magnam"</p>)
             setMoreLink("")
@@ -112,13 +112,13 @@ export default function PageBanner() {
     }
 
     function BannerCaptionTwo() {
-        const [image, setImage] = React.useState("pages/img/slides/image2.jpg")
+        const [image, setImage] = React.useState("img/slides/image2.jpg")
         const [headers, setHeader] = React.useState({ primary: "", secondary: ""})
         const [summary, setSummary] = React.useState(<></>)
         const [more_link, setMoreLink] = React.useState("") 
 
         React.useEffect(() => {
-            setImage("pages/img/slides/image2.jpg")
+            setImage("img/slides/image2.jpg")
             setHeader({ primary: "We Renovate", secondary: "Your home with heart"})
             setSummary(<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed <br /> do eiusmod tempor incididunt ut labore et dolore."</p>)
             setMoreLink("")
@@ -206,7 +206,6 @@ export function Banner(){
                 </form>
                 </CardContent>
             </Card>
-
         </Box>
     )
 }

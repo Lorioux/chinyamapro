@@ -2,75 +2,29 @@ import * as React from "react"
 
 
 import PageBanner from "../components/Banner"
+import SearchBox from "../components/Search"
+import PagesMenu from "../components/Menu"
+import BreadCrumbInfo from "../components/ContactInfo"
+import WelComePlane from "../components/WelCome"
 
 
 
 
 
-export default function OnePage(){
-
+export default function OnePage(props){
+    const {editable} = props
     return (
         <div>
             {/* #topbar */}
-            <section id="topbar" className="construct">
-                <div className="container">
-                <div className="row">
-                    <div className="social pull-right">
-                    <ul>
-                        <li><a href="#"><i className="fa fa-facebook-square" /></a></li>
-                        <li><a href="#"><i className="fa fa-twitter" /></a></li>
-                        <li><a href="#"><i className="fa fa-pinterest" /></a></li>
-                        <li><a href="#"><i className="fa fa-skype" /></a></li>
-                        <li><a href="#"><i className="fa fa-dribbble" /></a></li>
-                    </ul>
-                    </div> {/* /.social */}
-                    <div className="contact-info pull-left">
-                    <ul>
-                        <li><a href="tel:+1234567890"><i className="fa fa-map-marker" />  56, Building- Avenue-96, New York </a></li>
-                        <li><a href="mailto:info@plumberx.com"><i className="fa fa-envelope" /> info@constructpress.com</a></li>
-                        <li><a href="tel:1800654896"><i className="fa fa-phone" /> + (1800) - 654 - 896</a></li>
-                    </ul>
-                    </div> {/* /.contact-info */}
-                </div>
-                </div>
-            </section> {/* /#topbar */}
+            {BreadCrumbInfo()} {/* /#topbar */}
             
             {/* header */}
-            {IndexHeader()} {/* /header */}
+            {<IndexHeader editable={editable} />} 
+            {/* /header */}
+            
+            {<PageBanner editable={editable}/>}
 
-            {PageBanner()}
-
-            <section id="construction-welcome">
-                <div className="container">
-                <div className="row">
-                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 single-construction-welcome">
-                    <div className="img-holder hvr-rectangle-out">
-                        <img src="img/construction-welcome/1.jpg" alt />
-                    </div>
-                    <h2>Construction</h2>
-                    <p>Lorem ipsum dolor sit amet, cons ectetur elit. Ves tibulum nec odios Suspe ndisse cursus mal suada faci lisis. Lorem ipsum dolor.</p>
-                    </div>
-                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 single-construction-welcome">
-                    <div className="img-holder hvr-rectangle-out">
-                        <img src="img/construction-welcome/2.jpg" alt />
-                    </div>
-                    <h2>renovation</h2>
-                    <p>Lorem ipsum dolor sit amet, cons ectetur elit. Ves tibulum nec odios Suspe ndisse cursus mal suada faci lisis. Lorem ipsum dolor.</p>
-                    </div>
-                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-lg-offset-0 col-md-offset-0 col-sm-offset-3 col-xs-offset-0 single-construction-welcome">
-                    <h1>Wecome to ConstructPress</h1>
-                    <p>Lorem ipsum dolor sit amet, cons ectetur elit. Vestib ulum nec odios Suspe ndisse cursus mal suada fact lisis. Lorem ipsum dolor sit.</p>
-                    <ul>
-                        <li><i className="fa fa-arrow-circle-o-right" /> Interior design Package</li>
-                        <li><i className="fa fa-arrow-circle-o-right" /> Reparing of Residentail Roof</li>
-                        <li><i className="fa fa-arrow-circle-o-right" /> Hardwood Flooring</li>
-                        <li><i className="fa fa-arrow-circle-o-right" /> Renovaion of Commercial Office</li>
-                        <li><i className="fa fa-arrow-circle-o-right" /> Make Quality Products</li>
-                    </ul>
-                    </div>
-                </div>
-                </div>
-            </section>
+            {<WelComePlane editable={editable} />}
 
             {/* #service-we-provide */}
             <section id="service-we-provide" className="construct">
@@ -995,141 +949,21 @@ export default function OnePage(){
     )
 }
 
+
+
 function IndexHeader() {
     return (
         <header className="construct header-curvy">
-            {SearhBox()}
-            {CardInfo()} 
-            {PageManu()}
+            { <SearchBox />}
+            {CartInfo()} 
+            {<PagesMenu />}
         </header>
     )
 }
 
-function PageManu() {
-    return <div className="container">
-        <div className="clearfix">
-            <div className="pull-left logo">
-                <a href="index.html">
-                    <img src="img/resources/logo-2.png" alt="Plumberx" />
-                </a>
-            </div>
-            <nav className="pull-right mainmenu-container clearfix">
-                <ul className="top-icons-wrap pull-right">
-                    <li className="top-icons search"><a href="#"><i className="icon icon-Search" /></a></li>
-                    <li className="top-icons cart"><a href="#"><i className="icon icon-ShoppingCart" /></a></li>
-                </ul>
-                <button className="mainmenu-toggler">
-                    <i className="fa fa-bars" />
-                </button>
-                <ul className="mainmenu pull-right">
-                    {HomeMenuItem()}
-                    {PagesMenuItem()}
-                    {ServiceMenuItem()}
-                    {ProjectMenuItem()}
-                    {ShopMenuItem()}
-                    {BlogMenuItem()}
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
 
-    function HomeMenuItem() {
-        return <li className="dropdown current">
-            <a href="index.html">Home</a>
-            {/* <ul className="submenu">
-            <li><a href="index-2.html">One Page Version</a></li>
-        </ul> */}
-        </li>
-    }
 
-    function PagesMenuItem() {
-        return <li className="dropdown">
-            <a href="#">Pages</a>
-            <ul className="submenu">
-                <li className="dropdown">
-                    <a href="about.html">About Us</a>
-                    <ul className="submenu">
-                        <li><a href="team.html">Our Team</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                    </ul>
-                </li>
-                <li className="dropdown"><a href="testimonials-v1.html">Testimonial</a>
-                    <ul className="submenu right-align">
-                        <li><a href="testimonials-v1.html">Testimonial V1</a></li>
-                        <li><a href="testimonials-v2.html">Testimonial V2</a></li>
-                    </ul>
-                </li>
-                <li><a href="search-result.html">Search Results</a></li>
-                <li><a href="no-search-results.html">No serarch result</a></li>
-                <li><a href="404.html">404 Page</a></li>
-            </ul>
-        </li>
-    }
-
-    function ServiceMenuItem() {
-        return <li className="dropdown"><a href="services.html">Services</a>
-            <ul className="submenu">
-                <li><a href="services-2.html">Services Two</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-            </ul>
-        </li>
-    }
-
-    function ProjectMenuItem() {
-        return <li className="dropdown">
-            <a href="project-v1.html">Projects</a>
-            <ul className="submenu">
-                <li><a href="project-v1.html">Projects V1</a></li>
-                <li><a href="project-v2.html">Projects V2</a></li>
-                <li><a href="project-v3.html">Projects V3</a></li>
-                <li><a href="project-v4.html">Projects V4</a></li>
-                <li><a href="project-v5.html">Projects V5</a></li>
-            </ul>
-        </li>
-    }
-
-    function ShopMenuItem() {
-        return <li className="dropdown">
-            <a href="shop.html">Shop</a>
-            <ul className="submenu">
-                <li><a href="product-details.html">Product Details</a></li>
-                <li><a href="cart-page.html">Cart Page</a></li>
-                <li><a href="checkout-page.html">Checkout Page</a></li>
-            </ul>
-        </li>
-    }
-
-    function BlogMenuItem() {
-        return (
-            <li className="dropdown">
-                <a href="blog.html">Blog</a>
-                <ul className="submenu">
-                    <li><a href="blog-v2.html">Blog Style Two</a></li>
-                    <li><a href="blog.html">Blog Left Sidebar</a></li>
-                    <li><a href="blog-right.html">Blog Right Sidebar</a></li>
-                    <li><a href="blog-single.html">Blog Details</a></li>
-                </ul>
-            </li>
-        )
-    }
-}
-
-function SearhBox() {
-    return (
-        <div className="search-box">
-            <div className="container">
-                <div className="pull-right search  col-lg-3 col-md-4 col-sm-5 col-xs-12">
-                    <form action="#">
-                        <input type="text" placeholder="Search Here" /> <button type="submit"><i className="icon icon-Search" /></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    )
-}
-
-function CardInfo(props) {
+function CartInfo(props) {
 
     const [cart, setCart] = React.useState({
         items: 1,
@@ -1152,7 +986,7 @@ function CardInfo(props) {
     return <div className="cart-box">
         <div className="container">
             <div className="pull-right cart col-lg-6 col-xs-12">
-                <p><i className="icon icon-FullShoppingCart" /> You Have <span>{cart.items} {cart.items > 0? 'Items' : 'Item'}</span> in your Cart.Price is <span>{cart.price}</span></p>
+                <p><i className="icon icon-FullShoppingCart" /> You Have <span>{cart.items} {cart.items > 1? 'Items' : 'Item'}</span> in your Cart. Total: <span>{cart.price}</span></p>
             </div>
         </div>
     </div>

@@ -14,9 +14,9 @@ def upload_image(file, id) :
 
     with app.app_context():
         
-        file_path = os.path.join(app.config["UPLOAD_PATH"], "media", id)
-        os.makedirs(file_path, exist_ok=True, mode=0o777)
+        file_path = os.path.join(app.config["UPLOAD_PATH"], "media", id, filename)
+        # os.makedirs(file_path, exist_ok=True, mode=7777)
     
-        file.save(file_path)
+        # file.save(file_path)
     
     return file_path
