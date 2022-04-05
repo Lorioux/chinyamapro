@@ -9,7 +9,8 @@ from WelCome.utils import upload_image
 app = Flask(__name__)  
 # app.config["SERVER_NAME"] = "localhost:5002"
 # app.config["SERVER_PORT"] = 5002
-app.config["UPLOAD_PATH"] = "static"
+app.config["SECRET"] = "fghjkloiuhghnbgyuikliuygghjkmnbk"
+app.config["UPLOAD_PATH"] = "storage"
 
 offersfile = "./data/ServiceOffers.json"
 coreservice = "./data/CoreServices.json"

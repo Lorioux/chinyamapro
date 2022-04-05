@@ -153,38 +153,40 @@ export const SocialMediaInfo = () => {
 
     const mainformgro = (k, _groups = []) => {
         const group = (ke) => { 
-            return <FormGroup
-                        id="linkgroup"
-                        key={"formgro-"+ke}
-                        sx={{ 
-                            border: "1px dotted gray",
-                            marginBottom: 4, 
-                            display: "grid",
-                            gridTemplateColumns: "1fr 25%", 
-                            columnGap: 2,
-                            justifyContent: "start",
-                            padding: 4
-                            }}>
-                        
-                        <FormControl
-                            variant="outlined">
+            return (
+                <FormGroup
+                    id="linkgroup"
+                    key={"formgro-"+ke}
+                    sx={{ 
+                        border: "1px dotted gray",
+                        marginBottom: 4, 
+                        display: "grid",
+                        gridTemplateColumns: "1fr 25%", 
+                        columnGap: 2,
+                        justifyContent: "start",
+                        padding: 4
+                        }}>
+                    
+                    <FormControl
+                        variant="outlined">
 
-                            <InputLabel id="link">Social media link </InputLabel>
-                            <Input type="text"  placeholder="https://www.socialmedia.com" id="link" name="link" required/>
-                        </FormControl>
-                        <FormControl>
-                            <Select name="mediaico" type={"text"}
-                                id="mediaico"
-                                value={medianame}
-                                onChange={handleNameChange}
-                                required
-                                variant="outlined"
-                                >
-                                {options}
-                            </Select>
-                        </FormControl>
-                    </FormGroup>
-                }
+                        <InputLabel id="link">Social media link </InputLabel>
+                        <Input type="text"  placeholder="https://www.socialmedia.com" id="link" name="link" required/>
+                    </FormControl>
+                    <FormControl>
+                        <Select name="mediaico" type={"text"}
+                            id="mediaico"
+                            value={medianame}
+                            onChange={handleNameChange}
+                            required
+                            variant="outlined"
+                            >
+                            {options}
+                        </Select>
+                    </FormControl>
+                </FormGroup>
+            )
+        }
         
         if (k === undefined ) return formgros.copy()
 
@@ -219,7 +221,8 @@ export const SocialMediaInfo = () => {
                             <Button 
                                 onClick={handleAddGroup}>
                                 <Icon.AddSharp fontSize="small" />
-                                add another</Button>
+                                add another
+                            </Button>
                         </ButtonGroup>
                         
                     </form>

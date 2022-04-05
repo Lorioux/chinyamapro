@@ -6,6 +6,7 @@ import SearchBox from "../components/Search"
 import PagesMenu from "../components/Menu"
 import BreadCrumbInfo from "../components/ContactInfo"
 import WelComePlane from "../components/WelCome"
+import TeamPlane from "../components/Team"
 
 
 
@@ -27,188 +28,8 @@ export default function OnePage(props){
             {<WelComePlane editable={editable} />}
 
             {/* #service-we-provide */}
-            <section id="service-we-provide" className="construct">
-                <div className="container">
-                <div className="section-title">
-                    <h1>Services that we offers</h1>
-                </div>
-                <div className="row">
-                    <div className="col-lg-3 col-md-3 wow slideInLeft">
-                    <div className="service-tab-title">
-                        <ul className="clearfix">
-                        <li className="active" data-tab-name="construction">Building Construction</li>
-                        <li data-tab-name="renovation">Building Renovation</li>
-                        <li data-tab-name="interior">Interior Design package</li>
-                        <li data-tab-name="isolatoin">Isolation</li>
-                        <li data-tab-name="roof">Roof Repairing</li>
-                        <li data-tab-name="consluting">architecture conslulting</li>
-                        <li data-tab-name="maintanance">building maintanance</li>
-                        </ul>
-                    </div>
-                    </div>
-                    <div className="col-lg-9 col-md-9 wow slideInRight">
-                    <div className="row">
-                        <div className="service-tab-content clearfix">
-                        <div id="construction">
-                            <div className="col-lg-8 col-md-7 col-sm-8">
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium <br /> dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent <br /> ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo <br /> inventore veritatis et quasi architecto.</p>
-                            <div className="row">
-                                <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <img src="img/service-we-provide/1.jpg" alt />
-                                </div>
-                                <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <ul>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Natus erroroluptatem</li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Accusantium doloremue</li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Laudantium unde </li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Natus error sit volupta</li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Accusantium dolor</li>										
-                                </ul>
-                                </div>
-                            </div>
-                            </div>
-                            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
-                            <img src="img/service-we-provide/2.png" alt />
-                            </div>
-                        </div>
-                        <div id="renovation">
-                            <div className="col-lg-8 col-md-8 col-sm-8">
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
-                            <div className="row">
-                                <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <img src="img/service-we-provide/1.jpg" alt />
-                                </div>
-                                <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <ul>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Natus erroroluptatem</li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Accusantium doloremue</li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Laudantium unde </li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Natus error sit volupta</li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Accusantium dolor</li>										
-                                </ul>
-                                </div>
-                            </div>
-                            </div>
-                            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
-                            <img src="img/service-we-provide/2.png" alt />
-                            </div>
-                        </div>
-                        <div id="interior">
-                            <div className="col-lg-8 col-md-8 col-sm-8">
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
-                            <div className="row">
-                                <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <img src="img/service-we-provide/1.jpg" alt />
-                                </div>
-                                <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <ul>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Natus erroroluptatem</li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Accusantium doloremue</li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Laudantium unde </li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Natus error sit volupta</li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Accusantium dolor</li>										
-                                </ul>
-                                </div>
-                            </div>
-                            </div>
-                            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
-                            <img src="img/service-we-provide/2.png" alt />
-                            </div>
-                        </div>
-                        <div id="isolatoin">
-                            <div className="col-lg-8 col-md-8 col-sm-8">
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
-                            <div className="row">
-                                <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <img src="img/service-we-provide/1.jpg" alt />
-                                </div>
-                                <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <ul>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Natus erroroluptatem</li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Accusantium doloremue</li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Laudantium unde </li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Natus error sit volupta</li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Accusantium dolor</li>										
-                                </ul>
-                                </div>
-                            </div>
-                            </div>
-                            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
-                            <img src="img/service-we-provide/2.png" alt />
-                            </div>
-                        </div>
-                        <div id="roof">
-                            <div className="col-lg-8 col-md-8 col-sm-8">
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
-                            <div className="row">
-                                <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <img src="img/service-we-provide/1.jpg" alt />
-                                </div>
-                                <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <ul>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Natus erroroluptatem</li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Accusantium doloremue</li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Laudantium unde </li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Natus error sit volupta</li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Accusantium dolor</li>										
-                                </ul>
-                                </div>
-                            </div>
-                            </div>
-                            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
-                            <img src="img/service-we-provide/2.png" alt />
-                            </div>
-                        </div>
-                        <div id="consluting">
-                            <div className="col-lg-8 col-md-8 col-sm-8">
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
-                            <div className="row">
-                                <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <img src="img/service-we-provide/1.jpg" alt />
-                                </div>
-                                <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <ul>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Natus erroroluptatem</li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Accusantium doloremue</li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Laudantium unde </li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Natus error sit volupta</li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Accusantium dolor</li>										
-                                </ul>
-                                </div>
-                            </div>
-                            </div>
-                            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
-                            <img src="img/service-we-provide/2.png" alt />
-                            </div>
-                        </div>
-                        <div id="maintanance">
-                            <div className="col-lg-8 col-md-8 col-sm-8">
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
-                            <div className="row">
-                                <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <img src="img/service-we-provide/1.jpg" alt />
-                                </div>
-                                <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <ul>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Natus erroroluptatem</li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Accusantium doloremue</li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Laudantium unde </li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Natus error sit volupta</li>
-                                    <li><i className="fa fa-arrow-circle-o-right" />Accusantium dolor</li>										
-                                </ul>
-                                </div>
-                            </div>
-                            </div>
-                            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
-                            <img src="img/service-we-provide/2.png" alt />
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                </div>
-            </section> {/* /#service-we-provide */}
+            {Services()} 
+            {/* /#service-we-provide */}
 
             <section id="project-version-one" className="construct home">
                 <div className="container">
@@ -551,236 +372,7 @@ export default function OnePage(props){
                 </div>
             </section>
 
-            <section id="our-team-construct">
-                <div className="container">
-                <div className="section-title">
-                    <h1>Our dedicated team</h1>
-                </div>
-                <div className="owl-carousel owl-theme">
-                    <div className="item">
-                    <div className="single-construct-member">
-                        <div className="img-holder">
-                        <img src="img/our-team-construct/1.png" alt />
-                        </div>
-                        <div className="content hvr-bounce-to-bottom">
-                        <h2>Hendrick jack</h2>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con</p>
-                        <ul>
-                            <li><a href="#"><i className="fa fa-facebook" /></a></li>
-                            <li><a href="#"><i className="fa fa-twitter" /></a></li>
-                            <li><a href="#"><i className="fa fa-google-plus" /></a></li>
-                            <li><a href="#"><i className="fa fa-linkedin" /></a></li>
-                        </ul>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="item">
-                    <div className="single-construct-member">
-                        <div className="img-holder">
-                        <img src="img/our-team-construct/2.png" alt />
-                        </div>
-                        <div className="content hvr-bounce-to-bottom">
-                        <h2>Hendrick jack</h2>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con</p>
-                        <ul>
-                            <li><a href="#"><i className="fa fa-facebook" /></a></li>
-                            <li><a href="#"><i className="fa fa-twitter" /></a></li>
-                            <li><a href="#"><i className="fa fa-google-plus" /></a></li>
-                            <li><a href="#"><i className="fa fa-linkedin" /></a></li>
-                        </ul>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="item">
-                    <div className="single-construct-member">
-                        <div className="img-holder">
-                        <img src="img/our-team-construct/3.png" alt />
-                        </div>
-                        <div className="content hvr-bounce-to-bottom">
-                        <h2>Hendrick jack</h2>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con</p>
-                        <ul>
-                            <li><a href="#"><i className="fa fa-facebook" /></a></li>
-                            <li><a href="#"><i className="fa fa-twitter" /></a></li>
-                            <li><a href="#"><i className="fa fa-google-plus" /></a></li>
-                            <li><a href="#"><i className="fa fa-linkedin" /></a></li>
-                        </ul>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="item">
-                    <div className="single-construct-member">
-                        <div className="img-holder">
-                        <img src="img/our-team-construct/4.png" alt />
-                        </div>
-                        <div className="content hvr-bounce-to-bottom">
-                        <h2>Hendrick jack</h2>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con</p>
-                        <ul>
-                            <li><a href="#"><i className="fa fa-facebook" /></a></li>
-                            <li><a href="#"><i className="fa fa-twitter" /></a></li>
-                            <li><a href="#"><i className="fa fa-google-plus" /></a></li>
-                            <li><a href="#"><i className="fa fa-linkedin" /></a></li>
-                        </ul>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="item">
-                    <div className="single-construct-member">
-                        <div className="img-holder">
-                        <img src="img/our-team-construct/1.png" alt />
-                        </div>
-                        <div className="content hvr-bounce-to-bottom">
-                        <h2>Hendrick jack</h2>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con</p>
-                        <ul>
-                            <li><a href="#"><i className="fa fa-facebook" /></a></li>
-                            <li><a href="#"><i className="fa fa-twitter" /></a></li>
-                            <li><a href="#"><i className="fa fa-google-plus" /></a></li>
-                            <li><a href="#"><i className="fa fa-linkedin" /></a></li>
-                        </ul>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="item">
-                    <div className="single-construct-member">
-                        <div className="img-holder">
-                        <img src="img/our-team-construct/2.png" alt />
-                        </div>
-                        <div className="content hvr-bounce-to-bottom">
-                        <h2>Hendrick jack</h2>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con</p>
-                        <ul>
-                            <li><a href="#"><i className="fa fa-facebook" /></a></li>
-                            <li><a href="#"><i className="fa fa-twitter" /></a></li>
-                            <li><a href="#"><i className="fa fa-google-plus" /></a></li>
-                            <li><a href="#"><i className="fa fa-linkedin" /></a></li>
-                        </ul>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="item">
-                    <div className="single-construct-member">
-                        <div className="img-holder">
-                        <img src="img/our-team-construct/3.png" alt />
-                        </div>
-                        <div className="content hvr-bounce-to-bottom">
-                        <h2>Hendrick jack</h2>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con</p>
-                        <ul>
-                            <li><a href="#"><i className="fa fa-facebook" /></a></li>
-                            <li><a href="#"><i className="fa fa-twitter" /></a></li>
-                            <li><a href="#"><i className="fa fa-google-plus" /></a></li>
-                            <li><a href="#"><i className="fa fa-linkedin" /></a></li>
-                        </ul>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="item">
-                    <div className="single-construct-member">
-                        <div className="img-holder">
-                        <img src="img/our-team-construct/4.png" alt />
-                        </div>
-                        <div className="content hvr-bounce-to-bottom">
-                        <h2>Hendrick jack</h2>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con</p>
-                        <ul>
-                            <li><a href="#"><i className="fa fa-facebook" /></a></li>
-                            <li><a href="#"><i className="fa fa-twitter" /></a></li>
-                            <li><a href="#"><i className="fa fa-google-plus" /></a></li>
-                            <li><a href="#"><i className="fa fa-linkedin" /></a></li>
-                        </ul>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="item">
-                    <div className="single-construct-member">
-                        <div className="img-holder">
-                        <img src="img/our-team-construct/1.png" alt />
-                        </div>
-                        <div className="content hvr-bounce-to-bottom">
-                        <h2>Hendrick jack</h2>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con</p>
-                        <ul>
-                            <li><a href="#"><i className="fa fa-facebook" /></a></li>
-                            <li><a href="#"><i className="fa fa-twitter" /></a></li>
-                            <li><a href="#"><i className="fa fa-google-plus" /></a></li>
-                            <li><a href="#"><i className="fa fa-linkedin" /></a></li>
-                        </ul>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="item">
-                    <div className="single-construct-member">
-                        <div className="img-holder">
-                        <img src="img/our-team-construct/2.png" alt />
-                        </div>
-                        <div className="content hvr-bounce-to-bottom">
-                        <h2>Hendrick jack</h2>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con</p>
-                        <ul>
-                            <li><a href="#"><i className="fa fa-facebook" /></a></li>
-                            <li><a href="#"><i className="fa fa-twitter" /></a></li>
-                            <li><a href="#"><i className="fa fa-google-plus" /></a></li>
-                            <li><a href="#"><i className="fa fa-linkedin" /></a></li>
-                        </ul>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="item">
-                    <div className="single-construct-member">
-                        <div className="img-holder">
-                        <img src="img/our-team-construct/3.png" alt />
-                        </div>
-                        <div className="content hvr-bounce-to-bottom">
-                        <h2>Hendrick jack</h2>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con</p>
-                        <ul>
-                            <li><a href="#"><i className="fa fa-facebook" /></a></li>
-                            <li><a href="#"><i className="fa fa-twitter" /></a></li>
-                            <li><a href="#"><i className="fa fa-google-plus" /></a></li>
-                            <li><a href="#"><i className="fa fa-linkedin" /></a></li>
-                        </ul>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="item">
-                    <div className="single-construct-member">
-                        <div className="img-holder">
-                        <img src="img/our-team-construct/4.png" alt />
-                        </div>
-                        <div className="content hvr-bounce-to-bottom">
-                        <h2>Hendrick jack</h2>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con</p>
-                        <ul>
-                            <li><a href="#"><i className="fa fa-facebook" /></a></li>
-                            <li><a href="#"><i className="fa fa-twitter" /></a></li>
-                            <li><a href="#"><i className="fa fa-google-plus" /></a></li>
-                            <li><a href="#"><i className="fa fa-linkedin" /></a></li>
-                        </ul>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="item">
-                    <div className="single-construct-member">
-                        <div className="img-holder">
-                        <img src="img/our-team-construct/1.png" alt />
-                        </div>
-                        <div className="content hvr-bounce-to-bottom">
-                        <h2>Hendrick jack</h2>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con</p>
-                        <ul>
-                            <li><a href="#"><i className="fa fa-facebook" /></a></li>
-                            <li><a href="#"><i className="fa fa-twitter" /></a></li>
-                            <li><a href="#"><i className="fa fa-google-plus" /></a></li>
-                            <li><a href="#"><i className="fa fa-linkedin" /></a></li>
-                        </ul>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                </div>
-            </section>
+            {TeamPlane()}
 
             <section id="blog-construct">
                 <div className="container">
@@ -950,6 +542,193 @@ export default function OnePage(props){
 }
 
 
+
+
+
+function Services() {
+    return <section id="service-we-provide" className="construct">
+        <div className="container">
+            <div className="section-title">
+                <h1>Services that we offers</h1>
+            </div>
+            <div className="row">
+                <div className="col-lg-3 col-md-3 wow slideInLeft">
+                    <div className="service-tab-title">
+                        <ul className="clearfix">
+                            <li className="active" data-tab-name="construction">Building Construction</li>
+                            <li data-tab-name="renovation">Building Renovation</li>
+                            <li data-tab-name="interior">Interior Design package</li>
+                            <li data-tab-name="isolatoin">Isolation</li>
+                            <li data-tab-name="roof">Roof Repairing</li>
+                            <li data-tab-name="consluting">architecture conslulting</li>
+                            <li data-tab-name="maintanance">building maintanance</li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="col-lg-9 col-md-9 wow slideInRight">
+                    <div className="row">
+                        <div className="service-tab-content clearfix">
+                            <div id="construction">
+                                <div className="col-lg-8 col-md-7 col-sm-8">
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium <br /> dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent <br /> ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo <br /> inventore veritatis et quasi architecto.</p>
+                                    <div className="row">
+                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <img src="img/service-we-provide/1.jpg" alt />
+                                        </div>
+                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <ul>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Natus erroroluptatem</li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium doloremue</li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Laudantium unde </li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Natus error sit volupta</li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium dolor</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
+                                    <img src="img/service-we-provide/2.png" alt />
+                                </div>
+                            </div>
+                            <div id="renovation">
+                                <div className="col-lg-8 col-md-8 col-sm-8">
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
+                                    <div className="row">
+                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <img src="img/service-we-provide/1.jpg" alt />
+                                        </div>
+                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <ul>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Natus erroroluptatem</li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium doloremue</li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Laudantium unde </li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Natus error sit volupta</li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium dolor</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
+                                    <img src="img/service-we-provide/2.png" alt />
+                                </div>
+                            </div>
+                            <div id="interior">
+                                <div className="col-lg-8 col-md-8 col-sm-8">
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
+                                    <div className="row">
+                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <img src="img/service-we-provide/1.jpg" alt />
+                                        </div>
+                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <ul>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Natus erroroluptatem</li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium doloremue</li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Laudantium unde </li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Natus error sit volupta</li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium dolor</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
+                                    <img src="img/service-we-provide/2.png" alt />
+                                </div>
+                            </div>
+                            <div id="isolatoin">
+                                <div className="col-lg-8 col-md-8 col-sm-8">
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
+                                    <div className="row">
+                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <img src="img/service-we-provide/1.jpg" alt />
+                                        </div>
+                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <ul>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Natus erroroluptatem</li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium doloremue</li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Laudantium unde </li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Natus error sit volupta</li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium dolor</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
+                                    <img src="img/service-we-provide/2.png" alt />
+                                </div>
+                            </div>
+                            <div id="roof">
+                                <div className="col-lg-8 col-md-8 col-sm-8">
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
+                                    <div className="row">
+                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <img src="img/service-we-provide/1.jpg" alt />
+                                        </div>
+                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <ul>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Natus erroroluptatem</li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium doloremue</li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Laudantium unde </li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Natus error sit volupta</li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium dolor</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
+                                    <img src="img/service-we-provide/2.png" alt />
+                                </div>
+                            </div>
+                            <div id="consluting">
+                                <div className="col-lg-8 col-md-8 col-sm-8">
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
+                                    <div className="row">
+                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <img src="img/service-we-provide/1.jpg" alt />
+                                        </div>
+                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <ul>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Natus erroroluptatem</li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium doloremue</li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Laudantium unde </li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Natus error sit volupta</li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium dolor</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
+                                    <img src="img/service-we-provide/2.png" alt />
+                                </div>
+                            </div>
+                            <div id="maintanance">
+                                <div className="col-lg-8 col-md-8 col-sm-8">
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
+                                    <div className="row">
+                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <img src="img/service-we-provide/1.jpg" alt />
+                                        </div>
+                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <ul>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Natus erroroluptatem</li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium doloremue</li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Laudantium unde </li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Natus error sit volupta</li>
+                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium dolor</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
+                                    <img src="img/service-we-provide/2.png" alt />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
 
 function IndexHeader() {
     return (

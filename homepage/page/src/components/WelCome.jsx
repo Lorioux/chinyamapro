@@ -11,7 +11,7 @@ import {
     TextareaAutosize
 } from "@mui/material"
 import * as Icon from "@mui/icons-material"
-import { Box, style } from "@mui/system"
+import { Box} from "@mui/system"
 import * as React from "react"
 
 
@@ -178,7 +178,7 @@ const CapabilityEditable = (props) => {
                 <form style={{ rowGap: 4}} method="POST" action="/Core/Service/Create" encType="multipart/form-data">
                     <FormGroup sx={sx}>
                         <FormControl>
-                            <input name={"title"} placeholder="Name" type="text" required/>
+                            <input name={"title"} placeholder="Name" defaultValue={title} type="text" required/>
                         </FormControl>
                     </FormGroup>
                     <FormGroup sx={sx}>

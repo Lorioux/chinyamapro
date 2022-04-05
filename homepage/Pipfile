@@ -5,8 +5,12 @@ name = "pypi"
 
 [packages]
 flask = "*"
+functions-framework = "*"
+google-cloud-storage = "*"
+google-oauth = "*"
 
 [dev-packages]
+functions-framework = "*"
 
 [requires]
 python_version = "3.10"

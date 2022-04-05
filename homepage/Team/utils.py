@@ -54,3 +54,4 @@ class CustomJSONEncoder(JSONEncoder):
         if isinstance(o, list) :
             return o
         return json.JSONEncoder.default(self, o)
+
