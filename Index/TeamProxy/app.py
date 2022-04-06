@@ -1,5 +1,5 @@
 from flask import Flask, redirect, request 
-from Team.utils import file_async_reader
+from TeamProxy.utils import file_async_reader
 
 
 app = Flask(__name__)
@@ -7,10 +7,10 @@ app = Flask(__name__)
 
 member = [
     {
-        fullname: "Hendrik Jack",
-        photo: None,
-        summary: None,
-        socialmedia: {
+        "fullname": "Hendrik Jack",
+        "photo": None,
+        "summary": None,
+        "socialmedia": {
             "facebook": "#",
             "skype": "#",
         }

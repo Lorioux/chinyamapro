@@ -13,4 +13,4 @@ google-oauth = "*"
 functions-framework = "*"
 
 [requires]
-python_version = "3.10"
+python_version = "*"

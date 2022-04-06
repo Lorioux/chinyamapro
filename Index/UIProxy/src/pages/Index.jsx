@@ -542,10 +542,7 @@ export default function OnePage(props){
 }
 
 
-
-
-
-function Services() {
+export function Services() {
     return <section id="service-we-provide" className="construct">
         <div className="container">
             <div className="section-title">
