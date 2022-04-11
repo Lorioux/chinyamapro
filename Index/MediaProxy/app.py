@@ -1,4 +1,7 @@
+import asyncio
 from flask import Flask, redirect, send_file, url_for, request
+
+
 _proxy = __import__('proxy')
 
 
@@ -10,19 +13,22 @@ app = Flask(__name__)
 app.config["SECRET"] = "dfghjkiouytgfvbnmjyutgfvbnhjuyt"
 
 @app.route("/", methods=["GET"])
-def proxy(path=None):
+def index(path=None):
     template = '''
-    <form style="border: 1px dotted grey; padding: 10px;">
+    <form style="border: 1px dotted grey; padding: 10px;"
+        method="POST" action="/media-proxy/media/3456-3456-5678-5678" enctype="multipart/form-data">
         <input type="file" name="photo" multiple /></br></br>
         <button>save</button>
     </form></br></br>
 
-    <form style="border: 1px dotted grey; padding: 10px;">
+    <form style="border: 1px dotted grey; padding: 10px;" 
+        method="POST" action="/media-proxy/members/3456-3456-5678-5678" enctype="multipart/form-data">
         <input type="file" name="photo" multiple /></br></br>
         <button>save</button>
     </form ></br></br>
 
-    <form style="border: 1px dotted grey; padding: 10px;" method="POST" action="/projects/3456-3456-5678-5678" enctype="multipart/form-data">
+    <form style="border: 1px dotted grey; padding: 10px;" 
+        method="POST" action="/media-proxy/projects/3456-3456-5678-5678" enctype="multipart/form-data">
         <input type="file" name="photo" multiple /></br></br>
         <button>save</button>
     </form></br></br>
@@ -37,7 +43,7 @@ def generic_media_proxy(path = None):
         source = path
     else:
         source = './static'
-    _proxy.create_media(name, source, True, False)
+    _proxy.create_media(name, source, "directory" , True, False)
     return {"message": "Done!"}, 200
 
 
@@ -47,11 +53,17 @@ def members_media_proxy(path = None):
     _proxy.save_outro_media(request)
     return {"message": "Done!"}, 200
 
+
 @app.route("/projects/<path:path>", methods=['POST'])
 def projects_media_proxy(path = None):
     _proxy.save_outro_media(request)
     
-    return {"message": "Done!"}, 200
+    return {"message": "Projects saved!"}, 200
+
+async def worker(port):
+    process = await asyncio.create_subprocess_shell("gunicorn --workers=2 --bind :{} app:app".format(port), shell=True)   
+    
+    return app, process
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=8080)

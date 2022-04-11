@@ -4,11 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-flask = "*"
+flask = {extras = ["async"], version = "*"}
 functions-framework = "*"
 google-cloud-storage = "*"
 google-oauth = "*"
 google-api-python-client = "*"
+google-cloud-functions = "*"
+waitress = "*"
 
 [dev-packages]
 functions-framework = "*"
