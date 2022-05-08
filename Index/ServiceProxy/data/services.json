@@ -1,0 +1,56 @@
+{
+    "default" : {
+        "summary": "Service package we offer for ",
+        "packages": [
+            "Natus erroroluptatem",
+            "Accusantium doloremue",
+            "Laudantium unde",
+            "Natus error sit volupta",
+            "Accusantium dolor"
+        ]
+    },
+    "services": {
+        "construction": {
+            "title":"Building Construction",
+            "images" : null,
+            "summary": null,
+            "package" : null
+        },
+        "renovation": {
+            "title":"Building Renovation",
+            "images" : null,
+            "summary": null,
+            "package" : null
+        },
+        "interior": {
+            "title":"Interior Design package",
+            "images" : null,
+            "summary": null,
+            "package" : null
+        },
+        "isolation": {
+            "title": "Isolation",
+            "images" : null,
+            "summary": null,
+            "package" : null
+        },
+        "roof": {
+            "title":"Roof Repairing",
+            "images" : null,
+            "summary": null,
+            "package" : null
+        },
+        "consulting": {
+            "title":"architecture conslulting",
+            "images" : null,
+            "summary": null,
+            "package" : null
+        },
+        "maintenance": {
+            "title":"building maintanance",
+            "images" : null,
+            "summary": null,
+            "package" : null
+        }
+    }
+}

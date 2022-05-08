@@ -2,3 +2,4 @@ google-cloud-storage
 google-cloud-functions
 functions-framework
 flask[async]
+flask-cors

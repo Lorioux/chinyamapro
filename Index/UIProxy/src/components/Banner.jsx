@@ -51,7 +51,7 @@ export default function PageBanner() {
 
         return (
             <li data-transition="fade">
-                <img src={image} alt data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" />
+                <img src={image} alt="" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" />
                 <div className="tp-caption sfb tp-resizeme construct-banner-caption" data-x="center" data-hoffset={0} data-y="top" data-voffset={205} data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="o:0" data-transform_out="o:0" data-start={700}>
                     <h2><b>{headers.primary}</b></h2>
                 </div>
@@ -87,7 +87,7 @@ export default function PageBanner() {
         }, [])
         return (
             <li data-transition="fade">
-                <img src={image} alt data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" />
+                <img src={image} alt="" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" />
                 <div className="tp-caption sfb tp-resizeme construct-banner-caption" data-x="right" data-hoffset={0} data-y="top" data-voffset={205} data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="o:0" data-transform_out="o:0" data-start={500}>
                     <h2><b>{headers.primary}</b></h2>
                 </div>
@@ -126,7 +126,7 @@ export default function PageBanner() {
 
         return (
             <li data-transition="fade">
-                <img src={image} alt data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" />
+                <img src={image} alt="" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" />
                 <div className="tp-caption sfb tp-resizeme construct-banner-caption" data-x="left" data-hoffset={270} data-y="top" data-voffset={205} data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="o:0" data-transform_out="o:0" data-start={500}>
                     <h2>{headers.primary}</h2>
                 </div>

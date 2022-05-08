@@ -4,7 +4,7 @@ module.exports = function(app) {
     app.use(
         ['/img', '/css', '/js', '/fonts', '/inc'],
         createProxyMiddleware({
-          target: 'http://0.0.0.0:5001',
+          target: 'http://0.0.0.0:5000/',
           changeOrigin: true,
         })
       );
@@ -25,7 +25,16 @@ module.exports = function(app) {
       ],
       createProxyMiddleware({
         hostRewrite: 302,
-        target: 'http://0.0.0.0:5002',
+        target: 'http://0.0.0.0:5000',
+        changeOrigin: true,
+      })
+    );
+
+    app.use(
+      [ '/Service/Packages', ],
+      createProxyMiddleware({
+        hostRewrite: 302,
+        target: 'http://0.0.0.0:5000',
         changeOrigin: true,
       })
     );

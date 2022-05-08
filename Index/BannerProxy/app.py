@@ -1,10 +1,18 @@
 import ast
+from importlib import import_module
 import uuid
 import json
+import os 
+import sys
+import asyncio
 
-from flask import Flask, make_response, redirect, render_template, request, send_file 
+from flask import Flask, redirect, render_template, request, send_file 
 
-from .utils import upload_image
+__DIR__ = os.path.dirname(__file__)
+sys.path.insert(0, __DIR__)
+
+_utils = import_module("utils")
+# from .utils import _utils.upload_image
 
 
 
@@ -25,7 +33,6 @@ def create():
 
         file = request.files["file"]
     
-
         with open("data/BannerRegistry.json", "r+") as _file:
             banners = _file.read()
             if banners == "":
@@ -42,7 +49,7 @@ def create():
                 "header": form.get("header"),
                 "subheader": form.get("subheader"),
                 "summary": form.get("summary"),
-                "image": upload_image(file, banner_id),
+                "image": _utils.upload_image(file, banner_id),
             }
 
             banners.insert(0, data)
@@ -69,3 +76,14 @@ def retrive_image(path):
     # print(path)
 
     return send_file(file, mimetype="image/jpg")
+
+
+async def worker(port):
+    
+    print("%s" % __DIR__)
+    process = await asyncio.create_subprocess_shell("waitress-serve --listen=*:{} app:app".format(port), cwd=__DIR__ , shell=True)
+    return app, process
+
+
+if __name__ == "__main__":
+    app.run(debug=True, port=5003)

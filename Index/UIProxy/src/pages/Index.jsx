@@ -65,7 +65,7 @@ export default function OnePage(props){
                 <div className="row normal-gallery gallery-v4" id="image-gallery-mix">
                     <div className="single-project-item mix  tank outside">
                     <div className="img-wrap">
-                        <img src="img/project-v4/1.jpg" alt />
+                        <img src="img/project-v4/1.jpg" alt="" />
                         <div className="content-wrapper hvr-sweep-to-right">
                         <div className="content">
                             <div className="button-box">
@@ -81,7 +81,7 @@ export default function OnePage(props){
                     </div>
                     <div className="single-project-item mix plumbing outside">
                     <div className="img-wrap">
-                        <img src="img/project-v4/2.jpg" alt />
+                        <img src="img/project-v4/2.jpg" alt="" />
                         <div className="content-wrapper hvr-sweep-to-right">
                         <div className="content">
                             <div className="button-box">
@@ -97,7 +97,7 @@ export default function OnePage(props){
                     </div>
                     <div className="single-project-item mix drain plumbing bathroom">
                     <div className="img-wrap">
-                        <img src="img/project-v4/3.jpg" alt />
+                        <img src="img/project-v4/3.jpg" alt="" />
                         <div className="content-wrapper hvr-sweep-to-right">
                         <div className="content">
                             <div className="button-box">
@@ -113,7 +113,7 @@ export default function OnePage(props){
                     </div>
                     <div className="single-project-item mix kitchen outside drain bathroom">
                     <div className="img-wrap">
-                        <img src="img/project-v4/4.jpg" alt />
+                        <img src="img/project-v4/4.jpg" alt="" />
                         <div className="content-wrapper hvr-sweep-to-right">
                         <div className="content">
                             <div className="button-box">
@@ -129,7 +129,7 @@ export default function OnePage(props){
                     </div>
                     <div className="single-project-item mix kitchen  bathroom">
                     <div className="img-wrap">
-                        <img src="img/project-v4/5.jpg" alt />
+                        <img src="img/project-v4/5.jpg" alt="" />
                         <div className="content-wrapper hvr-sweep-to-right">
                         <div className="content">
                             <div className="button-box">
@@ -145,7 +145,7 @@ export default function OnePage(props){
                     </div>
                     <div className="single-project-item mix kitchen drain ">
                     <div className="img-wrap">
-                        <img src="img/project-v4/6.jpg" alt />
+                        <img src="img/project-v4/6.jpg" alt="" />
                         <div className="content-wrapper hvr-sweep-to-right">
                         <div className="content">
                             <div className="button-box">
@@ -161,7 +161,7 @@ export default function OnePage(props){
                     </div>
                     <div className="single-project-item mix kitchen drain bathroom">
                     <div className="img-wrap">
-                        <img src="img/project-v4/7.jpg" alt />
+                        <img src="img/project-v4/7.jpg" alt="" />
                         <div className="content-wrapper hvr-sweep-to-right">
                         <div className="content">
                             <div className="button-box">
@@ -177,7 +177,7 @@ export default function OnePage(props){
                     </div>
                     <div className="single-project-item mix kitchen drain bathroom">
                     <div className="img-wrap">
-                        <img src="img/project-v4/8.jpg" alt />
+                        <img src="img/project-v4/8.jpg" alt="" />
                         <div className="content-wrapper hvr-sweep-to-right">
                         <div className="content">
                             <div className="button-box">
@@ -193,7 +193,7 @@ export default function OnePage(props){
                     </div>
                     <div className="single-project-item mix kitchen drain bathroom">
                     <div className="img-wrap">
-                        <img src="img/project-v4/9.jpg" alt />
+                        <img src="img/project-v4/9.jpg" alt="" />
                         <div className="content-wrapper hvr-sweep-to-right">
                         <div className="content">
                             <div className="button-box">
@@ -209,7 +209,7 @@ export default function OnePage(props){
                     </div>
                     <div className="single-project-item mix kitchen drain bathroom">
                     <div className="img-wrap">
-                        <img src="img/project-v4/10.jpg" alt />
+                        <img src="img/project-v4/10.jpg" alt="" />
                         <div className="content-wrapper hvr-sweep-to-right">
                         <div className="content">
                             <div className="button-box">
@@ -233,7 +233,7 @@ export default function OnePage(props){
                 <div className="clearfix">
                     <div className="video-preview">
                     <a href="http://www.youtube.com/watch?v=hMHAcYsvxHE" className="video-fancybox">
-                        <img src="img/video-construction/1.jpg" alt />
+                        <img src="img/video-construction/1.jpg" alt="" />
                     </a>
                     </div>
                     <div className="video-text">
@@ -250,7 +250,7 @@ export default function OnePage(props){
                 <div className="row">
                     <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                     <div className="img-holder hvr-rectangle-out pull-right">
-                        <img src="img/welcome-to-construct/1.jpg" alt />
+                        <img src="img/welcome-to-construct/1.jpg" alt="" />
                     </div>
                     </div>
                     <div className="col-lg-7 col-md-7 col-sm-12 col-xs-12">
@@ -282,7 +282,7 @@ export default function OnePage(props){
                     <div className="item">
                         <div className="single-testimonial-construct clearfix">
                         <div className="img-holder hvr-rectangle-out">
-                            <img src="img/testimonials-construct/1.jpg" alt />
+                            <img src="img/testimonials-construct/1.jpg" alt="" />
                         </div>
                         <div className="content">
                             <h3>John Michale</h3>
@@ -293,7 +293,7 @@ export default function OnePage(props){
                     <div className="item">
                         <div className="single-testimonial-construct clearfix">
                         <div className="img-holder hvr-rectangle-out">
-                            <img src="img/testimonials-construct/2.jpg" alt />
+                            <img src="img/testimonials-construct/2.jpg" alt="" />
                         </div>
                         <div className="content">
                             <h3>John Michale</h3>
@@ -304,7 +304,7 @@ export default function OnePage(props){
                     <div className="item">
                         <div className="single-testimonial-construct clearfix">
                         <div className="img-holder hvr-rectangle-out">
-                            <img src="img/testimonials-construct/1.jpg" alt />
+                            <img src="img/testimonials-construct/1.jpg" alt="" />
                         </div>
                         <div className="content">
                             <h3>John Michale</h3>
@@ -315,7 +315,7 @@ export default function OnePage(props){
                     <div className="item">
                         <div className="single-testimonial-construct clearfix">
                         <div className="img-holder hvr-rectangle-out">
-                            <img src="img/testimonials-construct/2.jpg" alt />
+                            <img src="img/testimonials-construct/2.jpg" alt="" />
                         </div>
                         <div className="content">
                             <h3>John Michale</h3>
@@ -326,7 +326,7 @@ export default function OnePage(props){
                     <div className="item">
                         <div className="single-testimonial-construct clearfix">
                         <div className="img-holder hvr-rectangle-out">
-                            <img src="img/testimonials-construct/1.jpg" alt />
+                            <img src="img/testimonials-construct/1.jpg" alt="" />
                         </div>
                         <div className="content">
                             <h3>John Michale</h3>
@@ -337,7 +337,7 @@ export default function OnePage(props){
                     <div className="item">
                         <div className="single-testimonial-construct clearfix">
                         <div className="img-holder hvr-rectangle-out">
-                            <img src="img/testimonials-construct/2.jpg" alt />
+                            <img src="img/testimonials-construct/2.jpg" alt="" />
                         </div>
                         <div className="content">
                             <h3>John Michale</h3>
@@ -348,7 +348,7 @@ export default function OnePage(props){
                     <div className="item">
                         <div className="single-testimonial-construct clearfix">
                         <div className="img-holder hvr-rectangle-out">
-                            <img src="img/testimonials-construct/1.jpg" alt />
+                            <img src="img/testimonials-construct/1.jpg" alt="" />
                         </div>
                         <div className="content">
                             <h3>John Michale</h3>
@@ -359,7 +359,7 @@ export default function OnePage(props){
                     <div className="item">
                         <div className="single-testimonial-construct clearfix">
                         <div className="img-holder hvr-rectangle-out">
-                            <img src="img/testimonials-construct/2.jpg" alt />
+                            <img src="img/testimonials-construct/2.jpg" alt="" />
                         </div>
                         <div className="content">
                             <h3>John Michale</h3>
@@ -382,7 +382,7 @@ export default function OnePage(props){
                 <div className="row">
                     <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 single-blog-post">
                     <div className="img-holder hvr-rectangle-out">
-                        <img src="img/blog-construct/1.jpg" alt />
+                        <img src="img/blog-construct/1.jpg" alt="" />
                         <div className="date">
                         <b>05</b> <br /> Aug
                         </div>
@@ -396,7 +396,7 @@ export default function OnePage(props){
                     </div>
                     <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 single-blog-post">
                     <div className="img-holder hvr-rectangle-out">
-                        <img src="img/blog-construct/2.jpg" alt />
+                        <img src="img/blog-construct/2.jpg" alt="" />
                         <div className="date">
                         <b>05</b> <br /> Aug
                         </div>
@@ -410,7 +410,7 @@ export default function OnePage(props){
                     </div>
                     <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 single-blog-post">
                     <div className="img-holder hvr-rectangle-out">
-                        <img src="img/blog-construct/3.jpg" alt />
+                        <img src="img/blog-construct/3.jpg" alt="" />
                         <div className="date">
                         <b>05</b> <br /> Aug
                         </div>
@@ -436,28 +436,28 @@ export default function OnePage(props){
                     <div className="col-lg-12 col-md-12">
                     <div className="owl-carousel owl-theme">
                         <div className="item">
-                        <img src="img/clients/1.png" alt />
+                        <img src="img/clients/1.png" alt="" />
                         </div>
                         <div className="item">
-                        <img src="img/clients/2.png" alt />
+                        <img src="img/clients/2.png" alt="" />
                         </div>
                         <div className="item">
-                        <img src="img/clients/3.png" alt />
+                        <img src="img/clients/3.png" alt="" />
                         </div>
                         <div className="item">
-                        <img src="img/clients/4.png" alt />
+                        <img src="img/clients/4.png" alt="" />
                         </div>
                         <div className="item">
-                        <img src="img/clients/5.png" alt />
+                        <img src="img/clients/5.png" alt="" />
                         </div>
                         <div className="item">
-                        <img src="img/clients/3.png" alt />
+                        <img src="img/clients/3.png" alt="" />
                         </div>
                         <div className="item">
-                        <img src="img/clients/4.png" alt />
+                        <img src="img/clients/4.png" alt="" />
                         </div>
                         <div className="item">
-                        <img src="img/clients/5.png" alt />
+                        <img src="img/clients/5.png" alt="" />
                         </div>
                     </div>
                     </div>
@@ -483,7 +483,7 @@ export default function OnePage(props){
                 <div className="row">
                     {/* .widget */}
                     <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6 widget">
-                    <img className="positioned wow slideInUp " src="img/resources/footer-crane.png" alt />
+                    <img className="positioned wow slideInUp " src="img/resources/footer-crane.png" alt="" />
                     </div> {/* /.widget */}
                     {/* .widget */}
                     <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6 widget">
@@ -543,6 +543,95 @@ export default function OnePage(props){
 
 
 export function Services() {
+    const services = React.useRef()
+    const servicePackages = React.useRef([])
+    const defaultData = React.useRef()
+
+    const [listOfservices, setService] = React.useState({})
+
+    const packages = React.useCallback(()=> (<ul>
+        <li><i className="fa fa-arrow-circle-o-right" />Natus erroroluptatem</li>
+        <li><i className="fa fa-arrow-circle-o-right" />Accusantium doloremue</li>
+        <li><i className="fa fa-arrow-circle-o-right" />Laudantium unde </li>
+        <li><i className="fa fa-arrow-circle-o-right" />Natus error sit volupta</li>
+        <li><i className="fa fa-arrow-circle-o-right" />Accusantium dolor</li>
+    </ul>), [])
+
+    
+    const ServicePackage = React.useCallback((id, title, _summary, _items, _images ) => {
+        const images = _images || ["img/service-we-provide/1.jpg", "img/service-we-provide/2.png"]
+        const items = _items || packages()
+        const summary = _summary || defaultData.current.summary + " " + title
+        // console.log(_summary)
+        return (
+            <div id={id} key={id}>
+                <div className="col-lg-8 col-md-7 col-sm-8">
+                    <p>{summary}</p>
+                    <div className="row">
+                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <img src={images[0]} alt="" />
+                            {/* "img/service-we-provide/1.jpg" */}
+                        </div>
+                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            {items}
+                        </div>
+                    </div>
+                </div>
+                <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
+                    <img src={images[1]} alt="" /> 
+                    {/* "img/service-we-provide/2.png" */}
+                </div>
+            </div>
+        )
+    }, [packages])
+
+
+    React.useEffect(()=>{
+        const services = fetch("/Service/Packages", {
+            method: "GET"
+        })
+
+        services.then(res => res.json())
+        .then(data=> {
+            defaultData.current = data.default;
+            
+            setService(data.services)
+        })
+        .catch(err => console.log(err))
+        
+    }, [])
+
+
+    React.useEffect(()=>{
+        const _services = []
+        let index = 0
+        let listelem  = <></>
+        let svcPackages = []
+
+        for(const svc in listOfservices){
+                if (index === 0 ) {
+                   listelem = <li className="active" data-tab-name={svc} key={svc}>{listOfservices[svc].title}</li>
+                }
+                else {
+                    listelem = <li data-tab-name={svc} key={svc}>{listOfservices[svc].title}</li>
+                }
+                _services.push(listelem)
+                index += 1
+
+                const svc_title = listOfservices[svc].title
+                const svc_images = listOfservices[svc].images
+                const svc_summary = listOfservices[svc].summary
+                const svc_items = listOfservices[svc].packages
+                const svc_package = ServicePackage(svc, svc_title, svc_summary, svc_items, svc_images)
+                svcPackages.push(svc_package)
+
+            }
+        
+        services.current = _services
+        servicePackages.current = svcPackages
+        }, [listOfservices, ServicePackage])
+
+    
     return <section id="service-we-provide" className="construct">
         <div className="container">
             <div className="section-title">
@@ -552,173 +641,17 @@ export function Services() {
                 <div className="col-lg-3 col-md-3 wow slideInLeft">
                     <div className="service-tab-title">
                         <ul className="clearfix">
-                            <li className="active" data-tab-name="construction">Building Construction</li>
-                            <li data-tab-name="renovation">Building Renovation</li>
-                            <li data-tab-name="interior">Interior Design package</li>
-                            <li data-tab-name="isolatoin">Isolation</li>
-                            <li data-tab-name="roof">Roof Repairing</li>
-                            <li data-tab-name="consluting">architecture conslulting</li>
-                            <li data-tab-name="maintanance">building maintanance</li>
+                            { services.current }
                         </ul>
                     </div>
                 </div>
                 <div className="col-lg-9 col-md-9 wow slideInRight">
-                    <div className="row">
-                        <div className="service-tab-content clearfix">
-                            <div id="construction">
-                                <div className="col-lg-8 col-md-7 col-sm-8">
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium <br /> dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent <br /> ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo <br /> inventore veritatis et quasi architecto.</p>
-                                    <div className="row">
-                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <img src="img/service-we-provide/1.jpg" alt />
-                                        </div>
-                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <ul>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Natus erroroluptatem</li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium doloremue</li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Laudantium unde </li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Natus error sit volupta</li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium dolor</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
-                                    <img src="img/service-we-provide/2.png" alt />
-                                </div>
-                            </div>
-                            <div id="renovation">
-                                <div className="col-lg-8 col-md-8 col-sm-8">
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
-                                    <div className="row">
-                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <img src="img/service-we-provide/1.jpg" alt />
-                                        </div>
-                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <ul>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Natus erroroluptatem</li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium doloremue</li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Laudantium unde </li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Natus error sit volupta</li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium dolor</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
-                                    <img src="img/service-we-provide/2.png" alt />
-                                </div>
-                            </div>
-                            <div id="interior">
-                                <div className="col-lg-8 col-md-8 col-sm-8">
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
-                                    <div className="row">
-                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <img src="img/service-we-provide/1.jpg" alt />
-                                        </div>
-                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <ul>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Natus erroroluptatem</li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium doloremue</li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Laudantium unde </li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Natus error sit volupta</li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium dolor</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
-                                    <img src="img/service-we-provide/2.png" alt />
-                                </div>
-                            </div>
-                            <div id="isolatoin">
-                                <div className="col-lg-8 col-md-8 col-sm-8">
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
-                                    <div className="row">
-                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <img src="img/service-we-provide/1.jpg" alt />
-                                        </div>
-                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <ul>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Natus erroroluptatem</li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium doloremue</li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Laudantium unde </li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Natus error sit volupta</li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium dolor</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
-                                    <img src="img/service-we-provide/2.png" alt />
-                                </div>
-                            </div>
-                            <div id="roof">
-                                <div className="col-lg-8 col-md-8 col-sm-8">
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
-                                    <div className="row">
-                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <img src="img/service-we-provide/1.jpg" alt />
-                                        </div>
-                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <ul>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Natus erroroluptatem</li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium doloremue</li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Laudantium unde </li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Natus error sit volupta</li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium dolor</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
-                                    <img src="img/service-we-provide/2.png" alt />
-                                </div>
-                            </div>
-                            <div id="consluting">
-                                <div className="col-lg-8 col-md-8 col-sm-8">
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
-                                    <div className="row">
-                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <img src="img/service-we-provide/1.jpg" alt />
-                                        </div>
-                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <ul>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Natus erroroluptatem</li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium doloremue</li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Laudantium unde </li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Natus error sit volupta</li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium dolor</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
-                                    <img src="img/service-we-provide/2.png" alt />
-                                </div>
-                            </div>
-                            <div id="maintanance">
-                                <div className="col-lg-8 col-md-8 col-sm-8">
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
-                                    <div className="row">
-                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <img src="img/service-we-provide/1.jpg" alt />
-                                        </div>
-                                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <ul>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Natus erroroluptatem</li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium doloremue</li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Laudantium unde </li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Natus error sit volupta</li>
-                                                <li><i className="fa fa-arrow-circle-o-right" />Accusantium dolor</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
-                                    <img src="img/service-we-provide/2.png" alt />
-                                </div>
-                            </div>
+                    <div className="row">                        
+                        <div className="service-tab-content clearfix" >
+                            { servicePackages.current[0] }
+                        </div>
+                        <div className="service-tab-content clearfix" >
+                            { servicePackages.current[1] }
                         </div>
                     </div>
                 </div>

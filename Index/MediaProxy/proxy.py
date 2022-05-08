@@ -31,6 +31,7 @@ RESPONSE = {"message": "Completed successful"}, 200
 
 APP = None
 WORKER = None
+THIS = None
 HOST = "127.0.0.1"
 PORT = 8081
 URLS = {}
@@ -81,13 +82,11 @@ def upload_from_directory(directory_path: str, dest_bucket_name: str, dest_blob_
 def upload_from_file(file: object, dest_bucket_name: str, dest_blob_name: str, private: bool):
     global URLS
     bucket = storage.get_bucket(dest_bucket_name)
-
-    print(file)
     
     URLS = {}
     index = 0
     for f in file[0:]:
-        print(f)
+    
         filename = secure_filename(f.filename)
         filepath = dest_blob_name
         if not dest_blob_name.__contains__(filename):
@@ -104,12 +103,13 @@ def upload_from_file(file: object, dest_bucket_name: str, dest_blob_name: str, p
     print(URLS)
 
 
-def save_outro_media(request):
-    name = request.path
-    files = request.files
-    source = [file for _, file in files.items(multi=True)]
-    multiple = len(source) > 1
-    create_media(name, source, "file", multiple, False)
+def save_outro_media(entity, files):
+    name = entity
+    files = files
+
+    print(files)
+    multiple = len(files.getlist('photo')) > 1
+    create_media(name, files.items(multi=True), "file", multiple, False)
     
     # update_members_photos_URLS(URLS)
     
@@ -140,18 +140,8 @@ def save_outro_media(request):
 
 
 #-----------------SERVER OPS--------------------------------------------------------------
-setupproxy = blueprints.Blueprint(__name__, 'setupproxy')
+# setupproxy = blueprints.Blueprint(__name__, 'setupproxy')
 
-@setupproxy.before_app_first_request
-async def launch_server():
-
-    global APP, WORKER
-    
-    app = __import__('app')
-
-    APP, WORKER = await app.worker(PORT)
-
-    await asyncio.sleep(1)
-    pass
+# @setupproxy.before_app_first_request
 
 # requests.post()
