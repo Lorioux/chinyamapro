@@ -543,9 +543,19 @@ export default function OnePage(props){
 
 
 export function Services() {
-    const services = React.useRef()
+    const services = React.useRef([])
     const servicePackages = React.useRef([])
     const defaultData = React.useRef()
+    const [visibleServicePack, setVisiblePack] = React.useState()
+
+    const [visibleService, setVisibility] = React.useState()
+
+    const handleServiceVisibility = (elem) => {
+        let me = elem.target
+        setVisibility(me.id)
+        // const visiblepack = servicePackages.current[me.id]
+        // setVisiblePack(visiblepack)
+    }
 
     const [listOfservices, setService] = React.useState({})
 
@@ -558,10 +568,11 @@ export function Services() {
     </ul>), [])
 
     
-    const ServicePackage = React.useCallback((id, title, _summary, _items, _images ) => {
-        const images = _images || ["img/service-we-provide/1.jpg", "img/service-we-provide/2.png"]
-        const items = _items || packages()
-        const summary = _summary || defaultData.current.summary + " " + title
+    const ServicePackage = React.useCallback((props ) => {
+        const id = props.id
+        const images = props.images || ["img/service-we-provide/1.jpg", "img/service-we-provide/2.png"]
+        const items = props.items || packages()
+        const summary = props.summary || defaultData.current.summary + " " + props.title
         // console.log(_summary)
         return (
             <div id={id} key={id}>
@@ -606,15 +617,17 @@ export function Services() {
         const _services = []
         let index = 0
         let listelem  = <></>
-        let svcPackages = []
+        let svcPackages = {}
 
         for(const svc in listOfservices){
                 if (index === 0 ) {
-                   listelem = <li className="active" data-tab-name={svc} key={svc}>{listOfservices[svc].title}</li>
+                    setVisibility(svc)
+                   listelem = <li id={svc} className="active" data-tab-name={svc} key={svc} onClick={() => handleServiceVisibility } >{listOfservices[svc].title}</li>
                 }
                 else {
-                    listelem = <li data-tab-name={svc} key={svc}>{listOfservices[svc].title}</li>
+                    listelem = <li id={svc} data-tab-name={svc} key={svc} onClick={(svc) => handleServiceVisibility(svc)}>{listOfservices[svc].title}</li>
                 }
+                
                 _services.push(listelem)
                 index += 1
 
@@ -622,16 +635,22 @@ export function Services() {
                 const svc_images = listOfservices[svc].images
                 const svc_summary = listOfservices[svc].summary
                 const svc_items = listOfservices[svc].packages
-                const svc_package = ServicePackage(svc, svc_title, svc_summary, svc_items, svc_images)
-                svcPackages.push(svc_package)
+                const svc_package = < ServicePackage key={svc} id={svc} title={svc_title} summary={svc_summary} items={svc_items} images={svc_images} />
+                svcPackages[svc] = svc_package
 
             }
+
         
         services.current = _services
         servicePackages.current = svcPackages
-        }, [listOfservices, ServicePackage])
+        }, [listOfservices])
 
     
+    React.useEffect(()=>{
+        const visiblepack = servicePackages.current[visibleService]
+        setVisiblePack(visiblepack)
+    }, [visibleService])
+
     return <section id="service-we-provide" className="construct">
         <div className="container">
             <div className="section-title">
@@ -648,10 +667,7 @@ export function Services() {
                 <div className="col-lg-9 col-md-9 wow slideInRight">
                     <div className="row">                        
                         <div className="service-tab-content clearfix" >
-                            { servicePackages.current[0] }
-                        </div>
-                        <div className="service-tab-content clearfix" >
-                            { servicePackages.current[1] }
+                            { visibleServicePack }
                         </div>
                     </div>
                 </div>
