@@ -1,6 +1,9 @@
+from re import template
 import sys 
 import os
 import asyncio
+
+from requests import request
 
 
 __DIR__ = os.path.dirname(__file__)
@@ -19,6 +22,14 @@ def index(path=None):
     data = file.read()
     file.close()
     return data
+
+# @app.route("/Service/Add", methods=["POST"])
+# def add_service():
+#     if request.method == "GET":
+#         template = '''
+#         <form>
+#         </form>       
+#         '''
 
 
 async def worker(port):

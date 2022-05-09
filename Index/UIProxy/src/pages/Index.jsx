@@ -7,8 +7,49 @@ import PagesMenu from "../components/Menu"
 import BreadCrumbInfo from "../components/ContactInfo"
 import WelComePlane from "../components/WelCome"
 import TeamPlane from "../components/Team"
+import Services from "../components/Services"
+import ServicesPortfolio from "../components/ServicesPortfolio"
 
 
+function IndexHeader() {
+    return (
+        <header className="construct header-curvy">
+            { <SearchBox />}
+            {CartInfo()} 
+            {<PagesMenu />}
+        </header>
+    )
+}
+
+
+function CartInfo(props) {
+
+    const [cart, setCart] = React.useState({
+        items: 1,
+        price: "$199"
+    })
+    React.useEffect( () => {
+        const fetchItems = async () => {
+            fetch("/cartItems").then(response => response.json())
+                .then( data => setCart({
+                    items: data.items,
+                    price: data.price
+                }))
+                .catch(reason => {
+                    console.log("No items")
+                })
+        }
+        fetchItems()
+    }, [])
+
+    return <div className="cart-box">
+        <div className="container">
+            <div className="pull-right cart col-lg-6 col-xs-12">
+                <p><i className="icon icon-FullShoppingCart" /> You Have <span>{cart.items} {cart.items > 1? 'Items' : 'Item'}</span> in your Cart. Total: <span>{cart.price}</span></p>
+            </div>
+        </div>
+    </div>
+}
 
 
 
@@ -28,205 +69,10 @@ export default function OnePage(props){
             {<WelComePlane editable={editable} />}
 
             {/* #service-we-provide */}
-            {Services()} 
+            {<Services editable={editable} />} 
             {/* /#service-we-provide */}
 
-            <section id="project-version-one" className="construct home">
-                <div className="container">
-                <div className="section-title">
-                    <h1>our latest projects</h1>
-                </div>
-                </div>
-                <div className="container-fluid">
-                <div className="row">
-                    <div className="col-lg-12">
-                    <ul className="gallery-filter">
-                        <li data-filter="all">
-                        <span>All</span>
-                        </li>
-                        <li data-filter=".kitchen">
-                        <span>Indoor Furniture</span>
-                        </li>
-                        <li data-filter=".bathroom">
-                        <span>Renovaion of house</span>
-                        </li>
-                        <li data-filter=".drain">
-                        <span>hardwood flooring</span>
-                        </li>
-                        <li data-filter=".plumbing">
-                        <span>wood supply</span>
-                        </li>
-                        <li data-filter=".outside">
-                        <span>furniture manufacturing</span>
-                        </li>
-                    </ul>
-                    </div>
-                </div>
-                <div className="row normal-gallery gallery-v4" id="image-gallery-mix">
-                    <div className="single-project-item mix  tank outside">
-                    <div className="img-wrap">
-                        <img src="img/project-v4/1.jpg" alt="" />
-                        <div className="content-wrapper hvr-sweep-to-right">
-                        <div className="content">
-                            <div className="button-box">
-                            <a className="fancybox" data-fancybox-group="home-gallery" title="Building Construction" href="img/project-v4/1.jpg"><i className="fa fa-search-plus" /></a>
-                            </div>
-                            <div className="text-box">
-                            <h4>Building Construction</h4>
-                            <span>Lorem ipsum dolor sit amet, cons ctetur adipisicing.</span>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="single-project-item mix plumbing outside">
-                    <div className="img-wrap">
-                        <img src="img/project-v4/2.jpg" alt="" />
-                        <div className="content-wrapper hvr-sweep-to-right">
-                        <div className="content">
-                            <div className="button-box">
-                            <a className="fancybox" data-fancybox-group="home-gallery" title="Building Renovation" href="img/project-v4/2.jpg"><i className="fa fa-search-plus" /></a>
-                            </div>
-                            <div className="text-box">
-                            <h4>Building Renovation</h4>
-                            <span>Lorem ipsum dolor sit amet, cons ctetur adipisicing.</span>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="single-project-item mix drain plumbing bathroom">
-                    <div className="img-wrap">
-                        <img src="img/project-v4/3.jpg" alt="" />
-                        <div className="content-wrapper hvr-sweep-to-right">
-                        <div className="content">
-                            <div className="button-box">
-                            <a className="fancybox" data-fancybox-group="home-gallery" title="Interior Design package" href="img/project-v4/3.jpg"><i className="fa fa-search-plus" /></a>
-                            </div>
-                            <div className="text-box">
-                            <h4>Interior Design package</h4>
-                            <span>Lorem ipsum dolor sit amet, cons ctetur adipisicing.</span>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="single-project-item mix kitchen outside drain bathroom">
-                    <div className="img-wrap">
-                        <img src="img/project-v4/4.jpg" alt="" />
-                        <div className="content-wrapper hvr-sweep-to-right">
-                        <div className="content">
-                            <div className="button-box">
-                            <a className="fancybox" data-fancybox-group="home-gallery" title="Isolation" href="img/project-v4/4.jpg"><i className="fa fa-search-plus" /></a>
-                            </div>
-                            <div className="text-box">
-                            <h4>Isolation</h4>
-                            <span>Lorem ipsum dolor sit amet, cons ctetur adipisicing.</span>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="single-project-item mix kitchen  bathroom">
-                    <div className="img-wrap">
-                        <img src="img/project-v4/5.jpg" alt="" />
-                        <div className="content-wrapper hvr-sweep-to-right">
-                        <div className="content">
-                            <div className="button-box">
-                            <a className="fancybox" data-fancybox-group="home-gallery" title="Roof Repairing" href="img/project-v4/5.jpg"><i className="fa fa-search-plus" /></a>
-                            </div>
-                            <div className="text-box">
-                            <h4>Roof Repairing</h4>
-                            <span>Lorem ipsum dolor sit amet, cons ctetur adipisicing.</span>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="single-project-item mix kitchen drain ">
-                    <div className="img-wrap">
-                        <img src="img/project-v4/6.jpg" alt="" />
-                        <div className="content-wrapper hvr-sweep-to-right">
-                        <div className="content">
-                            <div className="button-box">
-                            <a className="fancybox" data-fancybox-group="home-gallery" title="Architecture Conslulting" href="img/project-v4/6.jpg"><i className="fa fa-search-plus" /></a>
-                            </div>
-                            <div className="text-box">
-                            <h4>Architecture Conslulting</h4>
-                            <span>Lorem ipsum dolor sit amet, cons ctetur adipisicing.</span>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="single-project-item mix kitchen drain bathroom">
-                    <div className="img-wrap">
-                        <img src="img/project-v4/7.jpg" alt="" />
-                        <div className="content-wrapper hvr-sweep-to-right">
-                        <div className="content">
-                            <div className="button-box">
-                            <a className="fancybox" data-fancybox-group="home-gallery" title="Building Maintanance" href="img/project-v4/7.jpg"><i className="fa fa-search-plus" /></a>
-                            </div>
-                            <div className="text-box">
-                            <h4>Building Maintanance</h4>
-                            <span>Lorem ipsum dolor sit amet, cons ctetur adipisicing.</span>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="single-project-item mix kitchen drain bathroom">
-                    <div className="img-wrap">
-                        <img src="img/project-v4/8.jpg" alt="" />
-                        <div className="content-wrapper hvr-sweep-to-right">
-                        <div className="content">
-                            <div className="button-box">
-                            <a className="fancybox" data-fancybox-group="home-gallery" title="Building Construction" href="img/project-v4/8.jpg"><i className="fa fa-search-plus" /></a>
-                            </div>
-                            <div className="text-box">
-                            <h4>Building Construction</h4>
-                            <span>Lorem ipsum dolor sit amet, cons ctetur adipisicing.</span>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="single-project-item mix kitchen drain bathroom">
-                    <div className="img-wrap">
-                        <img src="img/project-v4/9.jpg" alt="" />
-                        <div className="content-wrapper hvr-sweep-to-right">
-                        <div className="content">
-                            <div className="button-box">
-                            <a className="fancybox" data-fancybox-group="home-gallery" title="Building Renovation" href="img/project-v4/9.jpg"><i className="fa fa-search-plus" /></a>
-                            </div>
-                            <div className="text-box">
-                            <h4>Building Renovation</h4>
-                            <span>Lorem ipsum dolor sit amet, cons ctetur adipisicing.</span>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="single-project-item mix kitchen drain bathroom">
-                    <div className="img-wrap">
-                        <img src="img/project-v4/10.jpg" alt="" />
-                        <div className="content-wrapper hvr-sweep-to-right">
-                        <div className="content">
-                            <div className="button-box">
-                            <a className="fancybox" data-fancybox-group="home-gallery" title="Interior Design package" href="img/project-v4/10.jpg"><i className="fa fa-search-plus" /></a>
-                            </div>
-                            <div className="text-box">
-                            <h4>Interior Design package</h4>
-                            <span>Lorem ipsum dolor sit amet, cons ctetur adipisicing.</span>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <div className="view-all-btn text-center"><a href="project-v1.html" className="view-all hvr-bounce-to-right">view all</a></div>
-                </div>
-            </section>
+            {<ServicesPortfolio editable={editable} />}
 
             <section id="video-section-construction">
                 <div className="container">
@@ -541,178 +387,3 @@ export default function OnePage(props){
     )
 }
 
-
-export function Services() {
-    const services = React.useRef([])
-    const servicePackages = React.useRef([])
-    const defaultData = React.useRef()
-    const [visibleServicePack, setVisiblePack] = React.useState()
-
-    const [visibleService, setVisibility] = React.useState()
-
-    const handleServiceVisibility = (elem) => {
-        let me = elem.target
-        setVisibility(me.id)
-        // const visiblepack = servicePackages.current[me.id]
-        // setVisiblePack(visiblepack)
-    }
-
-    const [listOfservices, setService] = React.useState({})
-
-    const packages = React.useCallback(()=> (<ul>
-        <li><i className="fa fa-arrow-circle-o-right" />Natus erroroluptatem</li>
-        <li><i className="fa fa-arrow-circle-o-right" />Accusantium doloremue</li>
-        <li><i className="fa fa-arrow-circle-o-right" />Laudantium unde </li>
-        <li><i className="fa fa-arrow-circle-o-right" />Natus error sit volupta</li>
-        <li><i className="fa fa-arrow-circle-o-right" />Accusantium dolor</li>
-    </ul>), [])
-
-    
-    const ServicePackage = React.useCallback((props ) => {
-        const id = props.id
-        const images = props.images || ["img/service-we-provide/1.jpg", "img/service-we-provide/2.png"]
-        const items = props.items || packages()
-        const summary = props.summary || defaultData.current.summary + " " + props.title
-        // console.log(_summary)
-        return (
-            <div id={id} key={id}>
-                <div className="col-lg-8 col-md-7 col-sm-8">
-                    <p>{summary}</p>
-                    <div className="row">
-                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <img src={images[0]} alt="" />
-                            {/* "img/service-we-provide/1.jpg" */}
-                        </div>
-                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            {items}
-                        </div>
-                    </div>
-                </div>
-                <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
-                    <img src={images[1]} alt="" /> 
-                    {/* "img/service-we-provide/2.png" */}
-                </div>
-            </div>
-        )
-    }, [packages])
-
-
-    React.useEffect(()=>{
-        const services = fetch("/Service/Packages", {
-            method: "GET"
-        })
-
-        services.then(res => res.json())
-        .then(data=> {
-            defaultData.current = data.default;
-            
-            setService(data.services)
-        })
-        .catch(err => console.log(err))
-        
-    }, [])
-
-
-    React.useEffect(()=>{
-        const _services = []
-        let index = 0
-        let listelem  = <></>
-        let svcPackages = {}
-
-        for(const svc in listOfservices){
-                if (index === 0 ) {
-                    setVisibility(svc)
-                   listelem = <li id={svc} className="active" data-tab-name={svc} key={svc} onClick={() => handleServiceVisibility } >{listOfservices[svc].title}</li>
-                }
-                else {
-                    listelem = <li id={svc} data-tab-name={svc} key={svc} onClick={(svc) => handleServiceVisibility(svc)}>{listOfservices[svc].title}</li>
-                }
-                
-                _services.push(listelem)
-                index += 1
-
-                const svc_title = listOfservices[svc].title
-                const svc_images = listOfservices[svc].images
-                const svc_summary = listOfservices[svc].summary
-                const svc_items = listOfservices[svc].packages
-                const svc_package = < ServicePackage key={svc} id={svc} title={svc_title} summary={svc_summary} items={svc_items} images={svc_images} />
-                svcPackages[svc] = svc_package
-
-            }
-
-        
-        services.current = _services
-        servicePackages.current = svcPackages
-        }, [listOfservices])
-
-    
-    React.useEffect(()=>{
-        const visiblepack = servicePackages.current[visibleService]
-        setVisiblePack(visiblepack)
-    }, [visibleService])
-
-    return <section id="service-we-provide" className="construct">
-        <div className="container">
-            <div className="section-title">
-                <h1>Services that we offers</h1>
-            </div>
-            <div className="row">
-                <div className="col-lg-3 col-md-3 wow slideInLeft">
-                    <div className="service-tab-title">
-                        <ul className="clearfix">
-                            { services.current }
-                        </ul>
-                    </div>
-                </div>
-                <div className="col-lg-9 col-md-9 wow slideInRight">
-                    <div className="row">                        
-                        <div className="service-tab-content clearfix" >
-                            { visibleServicePack }
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-}
-
-function IndexHeader() {
-    return (
-        <header className="construct header-curvy">
-            { <SearchBox />}
-            {CartInfo()} 
-            {<PagesMenu />}
-        </header>
-    )
-}
-
-
-
-function CartInfo(props) {
-
-    const [cart, setCart] = React.useState({
-        items: 1,
-        price: "$199"
-    })
-    React.useEffect( () => {
-        const fetchItems = async () => {
-            fetch("/cartItems").then(response => response.json())
-                .then( data => setCart({
-                    items: data.items,
-                    price: data.price
-                }))
-                .catch(reason => {
-                    console.log("No items")
-                })
-        }
-        fetchItems()
-    }, [])
-
-    return <div className="cart-box">
-        <div className="container">
-            <div className="pull-right cart col-lg-6 col-xs-12">
-                <p><i className="icon icon-FullShoppingCart" /> You Have <span>{cart.items} {cart.items > 1? 'Items' : 'Item'}</span> in your Cart. Total: <span>{cart.price}</span></p>
-            </div>
-        </div>
-    </div>
-}

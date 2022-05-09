@@ -33,22 +33,25 @@ export default function BreadCrumbInfo() {
     const [sociallinks, setLinks] = React.useState([])
 
     React.useEffect(() => {
-        fetch("/SocialMedia/Info").then(
-            response => response.json()
-        ).then( data => {
-            setSocialMedia(data)
-        }).catch( reason => console.log(reason))
+        const media = async () => fetch("/SocialMedia/Info")
+        media()
+            .then(response => response.json())
+            .then( data => {
+                setSocialMedia(data)
+            })
+            .catch( reason => console.log(reason))
     }, [])
 
     React.useEffect(() => {
-        fetch("/Contact/Info").then(
-            response => response.json()
-        ).then( data => {
-            let place = data.road + ", " + data.floorno + ", " + data.doorno + ", " + data.zipcode + ", " + data.city
-            data["place"] = place
-            setContactInfo(data)
-        })
-        .catch(error => console.log(error))
+        const contact = async () => fetch("/Contact/Info")
+        contact()
+            .then(response => response.json())
+            .then( data => {
+                let place = data.road + ", " + data.floorno + ", " + data.doorno + ", " + data.zipcode + ", " + data.city
+                data["place"] = place
+                setContactInfo(data)
+            })
+            .catch(error => console.log(error))
 
     },[])
 

@@ -31,7 +31,7 @@ module.exports = function(app) {
     );
 
     app.use(
-      [ '/Service/Packages', ],
+      [ '/Service/Packages', '/Service/Portfolio' ],
       createProxyMiddleware({
         hostRewrite: 302,
         target: 'http://0.0.0.0:5000',

@@ -8,7 +8,7 @@ from . import contacts_proxy
 from . import banner_proxy
 from . import service_proxy
 
-from .routes_processing import processor
+from .routes_broke import processor
 
 app  = Flask(__name__)
 
