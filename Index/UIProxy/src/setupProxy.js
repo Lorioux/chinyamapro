@@ -2,7 +2,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 module.exports = function(app) {
     app.use(
-        ['/img', '/css', '/js', '/fonts', '/inc'],
+        ['/img', '/css', '/js', '/fonts', '/inc', '/favicon.ico'],
         createProxyMiddleware({
           hostRewrite: 307,
           target: 'http://0.0.0.0:5000/',

@@ -4,21 +4,23 @@ import sys
 import json
 
 from flask import Flask, request 
+from flask_cors import CORS
 
 __DIR__ = os.path.dirname(__file__)
 sys.path.insert(0, __DIR__)
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origin": "*"}})
 
-file = "/data/testimonial.json"
+file = "./data/testimonial.json"
 
-@app.route("/testemonial/info", methods=["GET"])
+@app.route("/testimonial/all", methods=["GET"])
 def read_all_info():
     with open(file, "r") as f:
         data = json.load(f)
         f.close()
 
-    return data, 200
+    return data
 
 
 async def worker(port):
@@ -28,7 +30,7 @@ async def worker(port):
     return app, process
 
 async def main():
-    app.run(host="0.0.0.0", debug=True, port=5005)
+    app.run(host="0.0.0.0", debug=True, port=8080)
 
 if __name__ == "__main__":
     asyncio.run(main())

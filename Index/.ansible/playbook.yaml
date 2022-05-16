@@ -1,0 +1,7 @@
+- name: server 
+  become_method: sudo 
+  hosts: web
+
+  tasks:
+    - task:
+        action: "Start gateway proxy"

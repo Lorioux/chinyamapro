@@ -66,7 +66,7 @@ export default function Services(props) {
 
 
     React.useEffect(()=>{
-        const services = async () => fetch("/Service/Packages")
+        const services = async () => fetch("/service/packages")
 
         services()
             .then(res => res.json())

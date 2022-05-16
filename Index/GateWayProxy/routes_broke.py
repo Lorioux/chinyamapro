@@ -1,7 +1,7 @@
 # import asyncio
 
 def processor(path:str):
-    if  path.startswith((r"/media", r"/img", r"/css", r"/fonts", r"/inc", r"/js")):
+    if  path.startswith((r"/media", r"/img", r"/css", r"/fonts", r"/inc", r"/js", r"/favicon.ico")):
         return "http://localhost:5002" + "/static/pages" + path
 
     if  path.startswith((r"/static/pages/media", r"/static/pages/img", r"/static/pages/css", r"/static/pages/fonts", r"/static/pages/inc", r"/static/pages/js")):
@@ -20,5 +20,5 @@ def processor(path:str):
         return "http://localhost:5004" + path
 
 
-    if path.startswith(r"/testimonial"):
+    if path.startswith((r"/testimonial/all", r"/testimonial/add")):
         return "http://localhost:5005" + path

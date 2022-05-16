@@ -33,7 +33,7 @@ export default function BreadCrumbInfo() {
     const [sociallinks, setLinks] = React.useState([])
 
     React.useEffect(() => {
-        const media = async () => fetch("/SocialMedia/Info")
+        const media = async () => fetch("/socialmedia/info")
         media()
             .then(response => response.json())
             .then( data => {
@@ -43,7 +43,7 @@ export default function BreadCrumbInfo() {
     }, [])
 
     React.useEffect(() => {
-        const contact = async () => fetch("/Contact/Info")
+        const contact = async () => fetch("/contact/info")
         contact()
             .then(response => response.json())
             .then( data => {
