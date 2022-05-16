@@ -8,7 +8,10 @@ import BreadCrumbInfo from "../components/ContactInfo"
 import WelComePlane from "../components/WelCome"
 import TeamPlane from "../components/Team"
 import Services from "../components/Services"
-import ServicesPortfolio from "../components/ServicesPortfolio"
+// import ServicesPortfolio from "../components/ServicesPortfolio"
+import { PressVideo } from "../components/PressVideo"
+import { PressInfo } from "../components/PressInfo"
+import TestimonialInfo from "../components/TestimonialInfo"
 
 
 function IndexHeader() {
@@ -72,151 +75,13 @@ export default function OnePage(props){
             {<Services editable={editable} />} 
             {/* /#service-we-provide */}
 
-            {<ServicesPortfolio editable={editable} />}
+            {/* {<ServicesPortfolio editable={editable} />} */}
 
-            <section id="video-section-construction">
-                <div className="container">
-                <div className="clearfix">
-                    <div className="video-preview">
-                    <a href="http://www.youtube.com/watch?v=hMHAcYsvxHE" className="video-fancybox">
-                        <img src="img/video-construction/1.jpg" alt="" />
-                    </a>
-                    </div>
-                    <div className="video-text">
-                    <h2>Checkout our video for featured work</h2>
-                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conseq uuntur magnirt dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quis quam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit. Neque porro quis quam qui dolorem ipsu quiat dolor sit amet, consectetur, adipisci velit.</p>
-                    <a href="contact.html" className="contact-us hvr-bounce-to-right">Contact Us</a>
-                    </div>
-                </div>
-                </div>
-            </section>
+            {<PressVideo editable={editable} />}
 
-            <section id="welcome-to-construct">
-                <div className="container">
-                <div className="row">
-                    <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                    <div className="img-holder hvr-rectangle-out pull-right">
-                        <img src="img/welcome-to-construct/1.jpg" alt="" />
-                    </div>
-                    </div>
-                    <div className="col-lg-7 col-md-7 col-sm-12 col-xs-12">
-                    <h2>Welcome to construct press</h2>
-                    <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliq uam quae rat voluptatem. Ut enim ad minima veniam, quis nostrum.</p>
-                    <h3>We are available for 24/7 for you requirements</h3>
-                    <div className="list-box clearfix">
-                        <ul>
-                        <li><i className="fa fa-hand-o-right" /> COMPLETE SAFETY ANALYSIS</li>
-                        <li><i className="fa fa-hand-o-right" /> DRIVABILITY PROBLEMS</li>
-                        </ul>
-                        <ul>
-                        <li><i className="fa fa-hand-o-right" /> COMPLETE SAFETY ANALYSIS</li>
-                        <li><i className="fa fa-hand-o-right" /> DRIVABILITY PROBLEMS</li>
-                        </ul>
-                    </div>
-                    </div>				
-                </div>
-                </div>
-            </section>
+            {<PressInfo  editable={editable} />}
 
-            <section id="testimonials-construct-home">
-                <div className="container">
-                <div className="section-title">
-                    <h1>testimonials</h1>
-                </div>
-                <div className="clearfix">
-                    <div className="owl-carousel owl-theme">
-                    <div className="item">
-                        <div className="single-testimonial-construct clearfix">
-                        <div className="img-holder hvr-rectangle-out">
-                            <img src="img/testimonials-construct/1.jpg" alt="" />
-                        </div>
-                        <div className="content">
-                            <h3>John Michale</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim.</p>
-                        </div>
-                        </div>	
-                    </div>
-                    <div className="item">
-                        <div className="single-testimonial-construct clearfix">
-                        <div className="img-holder hvr-rectangle-out">
-                            <img src="img/testimonials-construct/2.jpg" alt="" />
-                        </div>
-                        <div className="content">
-                            <h3>John Michale</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim.</p>
-                        </div>
-                        </div>	
-                    </div>
-                    <div className="item">
-                        <div className="single-testimonial-construct clearfix">
-                        <div className="img-holder hvr-rectangle-out">
-                            <img src="img/testimonials-construct/1.jpg" alt="" />
-                        </div>
-                        <div className="content">
-                            <h3>John Michale</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim.</p>
-                        </div>
-                        </div>	
-                    </div>
-                    <div className="item">
-                        <div className="single-testimonial-construct clearfix">
-                        <div className="img-holder hvr-rectangle-out">
-                            <img src="img/testimonials-construct/2.jpg" alt="" />
-                        </div>
-                        <div className="content">
-                            <h3>John Michale</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim.</p>
-                        </div>
-                        </div>	
-                    </div>
-                    <div className="item">
-                        <div className="single-testimonial-construct clearfix">
-                        <div className="img-holder hvr-rectangle-out">
-                            <img src="img/testimonials-construct/1.jpg" alt="" />
-                        </div>
-                        <div className="content">
-                            <h3>John Michale</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim.</p>
-                        </div>
-                        </div>	
-                    </div>
-                    <div className="item">
-                        <div className="single-testimonial-construct clearfix">
-                        <div className="img-holder hvr-rectangle-out">
-                            <img src="img/testimonials-construct/2.jpg" alt="" />
-                        </div>
-                        <div className="content">
-                            <h3>John Michale</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim.</p>
-                        </div>
-                        </div>	
-                    </div>
-                    <div className="item">
-                        <div className="single-testimonial-construct clearfix">
-                        <div className="img-holder hvr-rectangle-out">
-                            <img src="img/testimonials-construct/1.jpg" alt="" />
-                        </div>
-                        <div className="content">
-                            <h3>John Michale</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim.</p>
-                        </div>
-                        </div>	
-                    </div>
-                    <div className="item">
-                        <div className="single-testimonial-construct clearfix">
-                        <div className="img-holder hvr-rectangle-out">
-                            <img src="img/testimonials-construct/2.jpg" alt="" />
-                        </div>
-                        <div className="content">
-                            <h3>John Michale</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim.</p>
-                        </div>
-                        </div>	
-                    </div>
-                    </div>
-                </div>
-                </div>
-            </section>
+            {<TestimonialInfo editable={editable} />}
 
             {TeamPlane()}
 
@@ -386,4 +251,7 @@ export default function OnePage(props){
         </div>    
     )
 }
+
+
+
 

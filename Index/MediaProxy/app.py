@@ -21,7 +21,7 @@ app = Flask(__name__)
 
 app.config["SECRET"] = "dfghjkiouytgfvbnmjyutgfvbnhjuyt"
 
-CORS(app, resources={r"/static/fonts/*" : {"origin": "*"}})
+CORS(app, resources={r"/*" : {"origin": "*"}})
 
 @app.route("/media", methods=["GET"])
 def index(path=None):

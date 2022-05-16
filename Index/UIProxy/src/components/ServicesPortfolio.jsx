@@ -6,9 +6,8 @@ export default function ServicesPortfolio(props) {
     const {editable} = props
     const [PortfolioProofs, setPortfolioProof] = React.useState([])
     const [PortfolioAreas, setPortfolioAreas] = React.useState([])
-    const evidences = React.useRef([])
 
-    const ServiceProof = React.useCallback((props)=>{
+    const ServiceProof = (props)=>{
 
         const {id, title, summary, image} = props
 
@@ -30,7 +29,7 @@ export default function ServicesPortfolio(props) {
                 </div>
             </div>
         )
-    }, [])
+    }
 
     const PortfolioArea = React.useCallback((props) => {
         const {id, title} = props
@@ -62,9 +61,9 @@ export default function ServicesPortfolio(props) {
                         })
                     }
                     else {
-                        perServicePortfolio.push(<ServiceProof key={svc + "-" + 0 } id={"."+svc} title={proof.title} image={proof.images} summary={proof.summary}/>)
-                    }
-                    
+                        let id = "."+svc, title= proof.title, image=proof.images, summary=proof.summary
+                        perServicePortfolio.push({ id:id, title:title, image:image, summary:summary})
+                    }  
                 }
                 setPortfolioProof(perServicePortfolio)
                 setPortfolioAreas(portfolioAreas)
@@ -92,17 +91,14 @@ export default function ServicesPortfolio(props) {
                 <div className="row">
                     <div className="col-lg-12">
                         <ul className="gallery-filter">
-                            {PortfolioAreas}
+                            { PortfolioAreas.map((e) => <>{e}</>)}
                         </ul>
                     </div>
                 </div>
                 <div className="row normal-gallery gallery-v4" id="image-gallery-mix">
-                    {/* {PortfolioProofs} */}
-                    <ServiceProof key={"svc + "-" + 0" } id={"svc"} title={"proof.title"} image={"proof.images"} summary={"proof.summary"}/>
-                    <ServiceProof key={"svc + "-" + 0" } id={"svc"} title={"proof.title"} image={"proof.images"} summary={"proof.summary"}/>
-                    <ServiceProof key={"svc + "-" + 0" } id={"svc"} title={"proof.title"} image={"proof.images"} summary={"proof.summary"}/>
-                    <ServiceProof key={"svc + "-" + 0" } id={"svc"} title={"proof.title"} image={"proof.images"} summary={"proof.summary"}/>
-                    <ServiceProof key={"svc + "-" + 0" } id={"svc"} title={"proof.title"} image={"proof.images"} summary={"proof.summary"}/>
+                    {PortfolioProofs.map((e, i) => (
+                        <img key={i} src={ "img/project-v4/1.jpg"} alt="" />
+                    ) )}
                 </div>
                 <div className="view-all-btn text-center"><a href="project-v1.html" className="view-all hvr-bounce-to-right">view all</a></div>
             </div>

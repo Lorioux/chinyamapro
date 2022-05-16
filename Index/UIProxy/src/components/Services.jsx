@@ -1,9 +1,12 @@
-import { AddBoxOutlined, DeleteOutline } from "@mui/icons-material"
-import { Box, Button, ButtonGroup, Card, CardContent, CardHeader, FormGroup, Input, TextareaAutosize, TextField } from "@mui/material"
+import { AddBoxOutlined, CloseOutlined, DeleteOutline, Edit } from "@mui/icons-material"
+import { Box, Button, ButtonGroup, Card, CardActions, CardContent, CardHeader, FormGroup, Input, TextareaAutosize, TextField } from "@mui/material"
 import React from "react"
 
 export default function Services(props) {
     const {editable} = props
+    
+    const [showFrom, setShowForm] = React.useState(false)
+
     const [ListOfServices, setListOfServices] = React.useState([])
     const servicePackItems = React.useRef([])
     const defaultData = React.useRef()
@@ -115,34 +118,39 @@ export default function Services(props) {
         setVisiblePack(visiblepack)
     }, [visibleService])
 
-    return <section id="service-we-provide" className="construct">
-        <div className="container">
-            <div className="section-title">
-                <h1>Services that we offers</h1>
-            </div>
-            <div className="row">
-                <div className="col-lg-3 col-md-3 wow slideInLeft">
-                    <div className="service-tab-title">
-                        <ul className="clearfix">
-                            { ListOfServices }
-                        </ul>
-                    </div>
+    return (
+        <section id="service-we-provide" className="construct">
+            <div className="container">
+                <div className="section-title">
+                    <h1>Services that we offers</h1>
                 </div>
-                <div className="col-lg-9 col-md-9 wow slideInRight">
-                    <div className="row">                        
-                        <div className="service-tab-content clearfix" >
-                            { !editable ? visibleServicePack : < ServicePackageForm name={visibleService} /> }
+                <div className="row">
+                    <div className="col-lg-3 col-md-3 wow slideInLeft">
+                        <div className="service-tab-title">
+                            <ul className="clearfix">
+                                { ListOfServices }
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="col-lg-9 col-md-9 wow slideInRight">
+                        <div className="row">                        
+                            <div className="service-tab-content clearfix" >
+                                { !showFrom ? visibleServicePack : < ServicePackageForm name={visibleService} showCallback={setShowForm}/> }
+                            </div>
                         </div>
                     </div>
                 </div>
+                 { editable && !showFrom ? <CardActions sx={{border: "1px dotted grey", width: "100%", marginTop: 2}}  onClick={() => setShowForm(true)}>
+                   <Edit titleAccess="Edit"  fontSize="large" color={"primary"} onClick={() => setShowForm(true)}/>  Edit
+                </CardActions> :  undefined }
             </div>
-        </div>
-    </section>
+        </section>
+    )
 }
 
 
 function ServicePackageForm(props){
-    const {name} = props
+    const {name, showCallback} = props
     
     const [packItems, setPackItem] = React.useState(1)
     const [packItemFields, setPackItemField] = React.useState([])
@@ -181,9 +189,12 @@ function ServicePackageForm(props){
 
     return (
         <Box>
-
             <Card>
-                <CardHeader title={ "Edit " + name + " service" || "Add new service"}></CardHeader>
+                <CardHeader title={ "Edit " + name + " service" || "Add new service"} action={
+                    <CardActions>
+                        <CloseOutlined fontSize="large" color="primary" onClick={() => showCallback(false)} />
+                    </CardActions>
+                }/>
                 <CardContent>
                     <form action="/Service/add" method="post" encType="multipart/form-data">
                         <FormGroup sx={{ rowGap: 2, marginBottom: 4}}>
@@ -191,11 +202,13 @@ function ServicePackageForm(props){
                             <TextareaAutosize name="summary" placeholder="Description"required />
                         </FormGroup>
                         <FormGroup sx={{ rowGap: 4, border:'1px dotted gray', marginBottom: 4, padding: 6 }} >
-                            <label id="smallimage"> Small Image <br/>
-                                <Input type="file" name="smallimage" id="smallimage" required/>
+                            <label id="smallimage"> Small Image (keep the size)<br/>
+                                <img src="img/service-we-provide/1.jpg" alt="Small" />
+                                <Input type="file" name="smallimage" id="smallimage" style={{display: "none"}} required/>
                             </label>
-                            <label id="largeimage" > Large Image <br/>
-                                <Input type="file" name="lardeimage" id="smallimage" required/>
+                            <label id="largeimage" >Large Image (keep the size)<br/>
+                                <img src="img/service-we-provide/2.png" alt="Large" />
+                                <Input type="file" name="lardeimage" id="smallimage" style={{display: "none"}} required/>
                             </label>
                         </FormGroup>
 

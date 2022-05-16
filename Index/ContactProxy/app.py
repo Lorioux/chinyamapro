@@ -26,7 +26,7 @@ socialfile = "./data/SocialMediaInfo.json"
 contactsfile = "./data/ContactInfo.json"
 
 
-@app.route("/Contact/Create", methods=["POST"])
+@app.route("/contact/create", methods=["POST"])
 def create_contact_info():
     
 
@@ -43,7 +43,7 @@ def create_contact_info():
     return redirect("http://localhost:3000")
 
 
-@app.route("/SocialMedia/Create", methods=["POST"])
+@app.route("/socialmedia/create", methods=["POST"])
 def create_socialmedia_info():
 
     form = request.form
@@ -61,13 +61,13 @@ def create_socialmedia_info():
     return redirect("http://localhost:3000")
 
 
-@app.route("/SocialMedia/Info")
+@app.route("/socialmedia/info")
 def get_socialmedia_info():
     
     data = file_async_reader(socialfile)
     return json.dumps(data)
 
-@app.route("/Contact/Info")
+@app.route("/contact/info")
 def get_contact_info():
     
     data = file_async_reader(contactsfile)

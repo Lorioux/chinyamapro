@@ -7,6 +7,7 @@ from . import media_proxy
 from . import contacts_proxy
 from . import banner_proxy
 from . import service_proxy
+from . import testimonial_proxy
 
 from .routes_broke import processor
 
@@ -17,6 +18,7 @@ _contact, _cntproc = asyncio.run(contacts_proxy.worker(5001))
 _media, _mdproc = asyncio.run(media_proxy.worker(5002))
 _banner, _banproc = asyncio.run(banner_proxy.worker(5003))
 _service, _svcproc = asyncio.run(service_proxy.worker(5004))
+_testimonial, _tstproc = asyncio.run(testimonial_proxy.worker(5005))
 
 
 # @app.before_first_request
@@ -30,15 +32,16 @@ _service, _svcproc = asyncio.run(service_proxy.worker(5004))
 
 @app.route("/<path:path>", methods=["GET", "POST"])
 def index(path):
-    
+    # if path.__constains__("index.html"):
+    #     return redirect("/")
     url = processor(request.path)
 
     if request.method == "GET":
         
-        return redirect(url,)
+        return redirect(url)
 
     if request.method == "POST":
-        return redirect(url, method=request.method, data=request.data)
+        return redirect(url, method=request.method, data=request.data, code=307)
 
     # return response
 

@@ -8,7 +8,8 @@ import {
     FormControl, 
     FormGroup, 
     Input, 
-    TextareaAutosize
+    TextareaAutosize,
+    TextField
 } from "@mui/material"
 import * as Icon from "@mui/icons-material"
 import { Box} from "@mui/system"
@@ -21,25 +22,12 @@ export default function WelComePlane(props) {
 
     const {editable} = props
 
+    const [showForm, setShowForm] = React.useState(false)
+
     const [capabilities, setCapability] = React.useState({})
 
-    const [desclaim, setDesclaim] = React.useState({})
+    const [disclaim, setDisclaim] = React.useState({})
 
-    const [editcapability, EnableCoreService] = React.useState(false)
-    const [editdesclaim, EnableCoreDesclaim] = React.useState(false)
-
-
-    const EditEnabler = (EnablerCallback) => {
-
-        return (
-            <CardActions sx={{ border: "1px dotted grey"}} onClick={() => {
-                let status = !editcapability
-                EnablerCallback(status)
-            }}>
-                <Icon.Edit fontSize="large" titleAccess="Edit service" /> Edit
-            </CardActions>
-        )
-    }
     
     const Capability = (props) => { 
 
@@ -56,12 +44,11 @@ export default function WelComePlane(props) {
                 </div>
                 <h2>{title === undefined? mocktitle: title}</h2>
                 <p>{summary === undefined? mocksummary: summary}</p>
-                { editable ? EditEnabler(EnableCoreService) : '' }
             </div>
         )
     }
 
-    const Desclaim = (props) => {
+    const Disclaim = (props) => {
         const {title, summary, offers} = props
         return (
             <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-lg-offset-0 col-md-offset-0 col-sm-offset-3 col-xs-offset-0 single-construction-welcome">
@@ -123,42 +110,54 @@ export default function WelComePlane(props) {
         })
         .finally(() => {
             const _state = { offers: _offers.current.offers, title: title, summary: summary}
-            setDesclaim(_state)
+            setDisclaim(_state)
             
         })
 
     }, [])
 
-    const desclaimVisibility = editdesclaim ?
-        <DesclaimEditable {...desclaim} /> :
-        <Desclaim {...desclaim} />
-
-    const capabilityVisibility = editcapability ?
-        () => {
-            const caps = []
-            for (const cap in capabilities) {
-                caps.push(<CapabilityEditable key={cap} {...capabilities[cap]} />)
-            }
-            return caps
-        } :
-        () => {
+    const MainCapabilitiesInfo = () => {
             const caps = []
             for (const cap in capabilities) {
                 caps.push(<Capability key={cap} {...capabilities[cap]} />)
             }
-            return caps
+            caps.push(<Disclaim key="disc" {...disclaim} />)
+            return <div>{
+                caps
+            }
+            { editable && !showForm ? <CardActions sx={{ border: "1px dotted grey"}} onClick={() => setShowForm(true)}>
+                        <Icon.Edit titleAccess="Edit"  fontSize="large" color={"primary"}/> Edit
+                    </CardActions> : '' }
+            </div>
         }
+
+    const MainInfoEditForms = () => {
+                const caps = [<CardHeader key="header" title="Edit main business disclaim" sx={{fontSize: 24}} action={
+                    <CardActions>
+                        <Icon.CloseOutlined fontSize="large" color="primary" onClick={() => setShowForm(false)} />
+                    </CardActions>
+                }/>]
+                for (const cap in capabilities) {
+                    caps.push(<CapabilityForm key={cap} {...capabilities[cap]} />)
+                }
+                caps.push(<DisclaimForm  key="disc" {...disclaim} />)
+                return <Box  sx={{ marginTop: 2, padding: 2}} >
+                    <Card sx={{ padding: 4}} >
+                        {caps}
+                    </Card>                    
+                </Box>
+            }
+        
     
     return (
         <section id="construction-welcome">
             <div className="container">
                 <div className="row">
                     <div>
-                        {capabilityVisibility()}
+                        { !showForm ? MainCapabilitiesInfo() : MainInfoEditForms()}
+                        {/* { MainDisclaim ()} */}
                     </div>
-                    <div>
-                        { desclaimVisibility }
-                    </div>
+                    
                 </div>
             </div>
         </section>
@@ -166,44 +165,46 @@ export default function WelComePlane(props) {
 }
 
 
-const CapabilityEditable = (props) => {
+const CapabilityForm = (props) => {
     const {title, summary} = props
 
     const sx = { border: "1px dotted grey", marginBottom: 4 }
     return (
-        <Box  sx={{ marginTop: 2, padding: 2}} >
-            <Card sx={{ padding: 4}} >
-                <CardHeader title={"Service area"} />
-                <CardContent>
-                <form style={{ rowGap: 4}} method="POST" action="/Core/Service/Create" encType="multipart/form-data">
-                    <FormGroup sx={sx}>
-                        <FormControl>
-                            <input name={"title"} placeholder="Name" defaultValue={title} type="text" required/>
-                        </FormControl>
-                    </FormGroup>
-                    <FormGroup sx={sx}>
-                        <FormControl>
-                            <TextareaAutosize name={"summary"} placeholder={ summary || "Summary"} type="text" required/>
-                        </FormControl>
-                    </FormGroup>
-                    <FormGroup sx={sx}>
-                        <FormControl  >
-                            <Input type="file" name={"imagelnk"} sx={{
-                                padding: 5
-                            }} required/>
-                        </FormControl>
-                    </FormGroup>
-                    <ButtonGroup>
-                        <Button type="submit">save</Button>
-                    </ButtonGroup>
-                </form>
-                </CardContent>
-            </Card>
-        </Box>
+        
+        <div sx={{ padding: 4}}>
+            {/* <CardHeader title={"Service area"} /> */}
+            <CardContent sx={{ borderTop: "1px solid grey"}}>
+            <form style={{ rowGap: 4}} method="POST" action="/Core/Service/Create" encType="multipart/form-data">
+                <FormGroup sx={sx}>
+                    <FormControl>
+                        <input name={"title"} placeholder="Name" defaultValue={title} type="text" required/>
+                    </FormControl>
+                </FormGroup>
+                <FormGroup sx={sx}>
+                    <FormControl>
+                        <TextareaAutosize name={"summary"} placeholder={ summary || "Summary"} type="text" required/>
+                    </FormControl>
+                </FormGroup>
+                <FormGroup sx={sx}>
+                    <label style={{ padding: 4 }}>Service Image (keep the size) <br/>
+                        <img src={"img/construction-welcome/1.jpg"} alt="" />
+                        <Input type="file" name={"imagelnk"} sx={{
+                            padding: 5,
+                            display: "none"
+                        }} required/>
+                    </label>
+                </FormGroup>
+                <ButtonGroup>
+                    <Button type="submit">save</Button>
+                </ButtonGroup>
+            </form>
+            </CardContent>
+        </div>
+        
     )
 }
 
-const DesclaimEditable = (props) => {
+const DisclaimForm = (props) => {
     const {title, summary, offers} = props
 
     const inStyle = { style : 
@@ -232,24 +233,105 @@ const DesclaimEditable = (props) => {
     const sx={marginTop: 4}
 
     return (
-       <Box sx={{ marginTop: 2, padding: 2}}>
-            <Card sx={{ padding: 4}}>
-                <CardHeader title="HighLight" />
+        <div sx={{ padding: 4}}>
+            {/* <CardHeader title="HighLight" /> */}
+            <CardContent sx={{ borderTop: "1px solid grey"}}>
+                <form style={{ rowGap: 4 }}>
+                    <FormGroup sx={sx}>
+                        <Input type="text" name="title" value={title} {...inStyle} required/>
+                    </FormGroup>
+                    <FormGroup sx={sx}>
+                        <TextareaAutosize name="summary" value={summary} {...inStyle} maxRows={5} required />
+                    </FormGroup>
+                    <>{offerFields()}</>
+                    <ButtonGroup sx={sx}>
+                        <Button type="submit">save</Button>
+                    </ButtonGroup>
+                </form>
+            </CardContent>
+        </div>
+       
+    )
+}
+
+const ServicePackageForm = (props) =>{
+    const {name, showCallback} = props
+    
+    const [packItems, setPackItem] = React.useState(1)
+    const [packItemFields, setPackItemField] = React.useState([])
+
+    const handleAddPackItem = () => {
+        const items = packItems + 1
+        setPackItem(items)
+    }
+
+    const handleDelPackItem = () => {
+        const items = packItems - 1
+        setPackItem(items)
+    }
+
+    React.useEffect(() => {
+        const packFields = []
+        let field = <></>
+        const range = [...Array(packItems).keys()]
+        for (var pck in range){
+            console.log(pck)
+            const notfirst = pck >= 1
+            field = <>
+                <TextField key={pck + "-0"} name="packageitem" variant="outlined" placeholder="Package" label="Package Item" required />
+                <div style={{ display: "grid", gridTemplateRows: "24px 24px" }}>
+                   { notfirst && <Icon.DeleteOutline key={pck + "-2"} fontSize="large" onClick={() => handleDelPackItem()}/> }
+                   { !notfirst && <Icon.AddBoxOutlined key={pck + "-1"} fontSize="large" onClick={() => handleAddPackItem()} />}
+                </div>
+            </>
+            
+            packFields.push(field)
+        }
+
+        setPackItemField(packFields)
+
+    }, [packItems])
+
+    return (
+        <Box>
+            <Card>
+                <CardHeader title={ "Edit " + name + " service" || "Add new service"} action={
+                    <CardActions>
+                        <Icon.CloseOutlined fontSize="large" color="primary" onClick={() => showCallback(false)} />
+                    </CardActions>
+                }/>
                 <CardContent>
-                    <form style={{ rowGap: 4 }}>
-                        <FormGroup sx={sx}>
-                            <Input type="text" name="title" value={title} {...inStyle} required/>
+                    <form action="/Service/add" method="post" encType="multipart/form-data">
+                        <FormGroup sx={{ rowGap: 2, marginBottom: 4}}>
+                            <TextField name="title" placeholder="Build Construction" variant="outlined" label="Long title" required/>
+                            <TextareaAutosize name="summary" placeholder="Description"required />
                         </FormGroup>
-                        <FormGroup sx={sx}>
-                            <TextareaAutosize name="summary" value={summary} {...inStyle} maxRows={5} required />
+                        {/* <FormGroup sx={{ rowGap: 4, border:'1px dotted gray', marginBottom: 4, padding: 6 }} >
+                            <label id="smallimage"> Small Image (keep the size)<br/>
+                                <img src="img/service-we-provide/1.jpg" alt="Small" />
+                                <Input type="file" name="smallimage" id="smallimage" style={{display: "none"}} required/>
+                            </label>
+                            <label id="largeimage" >Large Image (keep the size)<br/>
+                                <img src="img/service-we-provide/2.png" alt="Large" />
+                                <Input type="file" name="lardeimage" id="smallimage" style={{display: "none"}} required/>
+                            </label>
+                        </FormGroup> */}
+
+                        <FormGroup sx={{ 
+                            rowGap: 2, border:'1px dotted gray', 
+                            marginBottom: 4,  padding: 4,
+                            display: "grid",
+                            gridTemplateColumns: '1fr 24px'
+                            }}>
+                            { packItemFields } 
                         </FormGroup>
-                        <>{offerFields()}</>
-                        <ButtonGroup sx={sx}>
-                            <Button type="submit">save</Button>
+                        <ButtonGroup>
+                            <Button type="submit">SAVE</Button>
                         </ButtonGroup>
                     </form>
                 </CardContent>
             </Card>
-       </Box>
+
+        </Box>
     )
 }

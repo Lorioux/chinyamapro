@@ -4,6 +4,7 @@ module.exports = function(app) {
     app.use(
         ['/img', '/css', '/js', '/fonts', '/inc'],
         createProxyMiddleware({
+          hostRewrite: 307,
           target: 'http://0.0.0.0:5000/',
           changeOrigin: true,
         })
@@ -11,7 +12,7 @@ module.exports = function(app) {
 
     // Services
     app.use(
-      ['/ContactInfo', '/SocialMediaInfo', '/SocialMedia/Info', '/Contact/Info', ],
+      ['/contactinfo', '/socialmedia/info', '/contact/info', ],
       createProxyMiddleware({
         target: 'http://0.0.0.0:5000',
         changeOrigin: true,
@@ -20,8 +21,8 @@ module.exports = function(app) {
 
     app.use(
       [
-        '/Core/Service/Create', 
-        '/Core/Desclaim/Create',
+        '/core/capabilities/create', 
+        '/core/desclaim/create',
       ],
       createProxyMiddleware({
         hostRewrite: 302,
@@ -31,11 +32,31 @@ module.exports = function(app) {
     );
 
     app.use(
-      [ '/Service/Packages', '/Service/Portfolio' ],
+      [ '/service/packages', '/service/portfolio' ],
       createProxyMiddleware({
-        hostRewrite: 302,
+        hostRewrite: 307,
         target: 'http://0.0.0.0:5000',
         changeOrigin: true,
       })
     );
+
+    app.use(
+      [ '/testimonial/all' ],
+      createProxyMiddleware({
+        hostRewrite: 307,
+        target: 'http://0.0.0.0:5000',
+        changeOrigin: true,
+      })
+    );
+
+    app.use(
+      [ '/*.html' ],
+      createProxyMiddleware({
+        hostRewrite: 307,
+        target: 'http://0.0.0.0:5000',
+        changeOrigin: true,
+      })
+    );
+
+    
 };
