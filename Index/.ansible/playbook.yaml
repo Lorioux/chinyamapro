@@ -3,5 +3,6 @@
   hosts: web
 
   tasks:
-    - task:
-        action: "Start gateway proxy"
+    - name: "Start gateway proxy"
+      become_method: sudo 
+      apt: uninstall python3 -y
