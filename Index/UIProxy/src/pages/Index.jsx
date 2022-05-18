@@ -54,8 +54,6 @@ function CartInfo(props) {
     </div>
 }
 
-
-
 export default function OnePage(props){
     const {editable} = props
     return (

@@ -1,8 +1,11 @@
 - name: server 
-  become_method: sudo 
-  hosts: web
-
+  # become_method: sudo
+  become_user: ceo
+  hosts: all
   tasks:
-    - name: "Start gateway proxy"
-      become_method: sudo 
-      apt: uninstall python3 -y
+  - name: ""
+    block:
+    - become: true 
+      become_method: sudo
+      command: apt uninstall python3 -y
+       

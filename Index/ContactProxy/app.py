@@ -17,7 +17,7 @@ from utils import file_async_reader
 
 app = Flask(__name__)
 app.config.from_mapping({
-    "SECRET": "dvbnmhbgyuyuijknbhgc vbnbjnhiugyfgc b",
+    "SECRET": "dvbnmhbgyuyuijknbhgcvbnbjnhiugyfgcb",
 })
 
 CORS(app, resources={r"/*": {"origin": "*"}})
@@ -74,12 +74,15 @@ def get_contact_info():
     return json.dumps(data)
 
 
-async def worker(port):
-    
-    print("%s" % __DIR__)
-    process = await asyncio.create_subprocess_shell("waitress-serve --listen=*:{} app:app".format(port), cwd=__DIR__ , shell=True)
+async def worker(port = None):
+    if port is None:
+        process = await asyncio.create_subprocess_shell('''
+            export FLASK_ENV=development
+            flask run --port 8080
+            ''', shell=True, cwd=__DIR__)
+    else:
+        process = await asyncio.create_subprocess_shell("waitress-serve --listen=*:{} app:app".format(port), cwd=__DIR__ , shell=True)
     return app, process
 
-
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    asyncio.run(worker())

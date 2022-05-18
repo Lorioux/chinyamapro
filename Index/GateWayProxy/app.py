@@ -1,40 +1,30 @@
 import asyncio
+import os 
+import sys
 
-from flask import Flask, make_response, redirect, request
-import requests
+from flask import Flask, redirect, request
 
-from . import media_proxy
-from . import contacts_proxy
-from . import banner_proxy
-from . import service_proxy
-from . import testimonial_proxy
 
-from .routes_broke import processor
+BASE_DIR = os.path.dirname(__file__ )
+sys.path.insert( 0, BASE_DIR )
+
+PROXY_APP = None
+
+SERVER_NAME = os.environ.get("SERVER_NAME", None )
+if SERVER_NAME is None:
+    DEST_HOST = "http://{}".format("127.0.0.1")
+else:
+    DEST_HOST = "https://{}".format(SERVER_NAME)
+
+
+rb = __import__("routes_broke")
 
 app  = Flask(__name__)
 
-
-_contact, _cntproc = asyncio.run(contacts_proxy.worker(5001))
-_media, _mdproc = asyncio.run(media_proxy.worker(5002))
-_banner, _banproc = asyncio.run(banner_proxy.worker(5003))
-_service, _svcproc = asyncio.run(service_proxy.worker(5004))
-_testimonial, _tstproc = asyncio.run(testimonial_proxy.worker(5005))
-
-
-# @app.before_first_request
-# def __launch__servers__():
-    # global _contact, _cntproc, _media, _mdproc, _banner, _banproc
-
-    # _contact, _cntproc = asyncio.run(contacts_proxy.worker(5001))
-    # _media, _mdproc = asyncio.run(media_proxy.worker(5002))
-    # _banner, _banproc = asyncio.run(banner_proxy.worker(5003))
-    # _service, _svcproc = asyncio.run(service_proxy.worker(5004))
-
 @app.route("/<path:path>", methods=["GET", "POST"])
 def index(path):
-    # if path.__constains__("index.html"):
-    #     return redirect("/")
-    url = processor(request.path)
+    
+    url = rb.processor(request.path, DEST_HOST)
 
     if request.method == "GET":
         
@@ -43,7 +33,13 @@ def index(path):
     if request.method == "POST":
         return redirect(url, method=request.method, data=request.data, code=307)
 
-    # return response
+
+async def worker():
+    await asyncio.create_subprocess_shell('''
+    export FLASK_ENV=development
+    flask run --port 8080
+    ''', shell=True, cwd=BASE_DIR)
 
 
-# @app.teardown_appcontext
+if __name__ == "__main__":
+    asyncio.run(worker())

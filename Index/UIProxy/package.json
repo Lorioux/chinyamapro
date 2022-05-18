@@ -44,6 +44,8 @@
     ]
   },
   "devDependencies": {
+    "brunch": "^4.0.0",
+    "dotenv": "^16.0.1",
     "terser-brunch": "^4.1.0"
   }
 }

@@ -33,7 +33,7 @@ APP = None
 WORKER = None
 THIS = None
 HOST = "127.0.0.1"
-PORT = 8081
+PORT = 8080
 URLS = {}
 
 # --------------------------STORAGE OPERATIONS----------------------------------------------------------
@@ -135,13 +135,3 @@ def save_outro_media(entity, files):
 #     # print(operation.result())
 #     return "UPDATE"
 #     pass
-
-
-
-
-#-----------------SERVER OPS--------------------------------------------------------------
-# setupproxy = blueprints.Blueprint(__name__, 'setupproxy')
-
-# @setupproxy.before_app_first_request
-
-# requests.post()

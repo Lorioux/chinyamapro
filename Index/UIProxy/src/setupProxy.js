@@ -1,11 +1,14 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
+const { env } = require('process')
+
+var PROXY_HOSTNAME = env.PROXY_HOSTNAME || "http://0.0.0.0:5000"
 
 module.exports = function(app) {
     app.use(
         ['/img', '/css', '/js', '/fonts', '/inc', '/favicon.ico'],
         createProxyMiddleware({
           hostRewrite: 307,
-          target: 'http://0.0.0.0:5000/',
+          target: `${PROXY_HOSTNAME}`,
           changeOrigin: true,
         })
       );
@@ -14,7 +17,8 @@ module.exports = function(app) {
     app.use(
       ['/contactinfo', '/socialmedia/info', '/contact/info', ],
       createProxyMiddleware({
-        target: 'http://0.0.0.0:5000',
+        hostRewrite: 307,
+        target: `${PROXY_HOSTNAME}`,
         changeOrigin: true,
       })
     );
@@ -25,8 +29,8 @@ module.exports = function(app) {
         '/core/desclaim/create',
       ],
       createProxyMiddleware({
-        hostRewrite: 302,
-        target: 'http://0.0.0.0:5000',
+        hostRewrite: 307,
+        target: `${PROXY_HOSTNAME}`,
         changeOrigin: true,
       })
     );
@@ -35,7 +39,7 @@ module.exports = function(app) {
       [ '/service/packages', '/service/portfolio' ],
       createProxyMiddleware({
         hostRewrite: 307,
-        target: 'http://0.0.0.0:5000',
+        target: `${PROXY_HOSTNAME}`,
         changeOrigin: true,
       })
     );
@@ -44,7 +48,7 @@ module.exports = function(app) {
       [ '/testimonial/all' ],
       createProxyMiddleware({
         hostRewrite: 307,
-        target: 'http://0.0.0.0:5000',
+        target: `${PROXY_HOSTNAME}`,
         changeOrigin: true,
       })
     );
@@ -53,10 +57,8 @@ module.exports = function(app) {
       [ '/*.html' ],
       createProxyMiddleware({
         hostRewrite: 307,
-        target: 'http://0.0.0.0:5000',
+        target: `${PROXY_HOSTNAME}`,
         changeOrigin: true,
       })
-    );
-
-    
+    );    
 };

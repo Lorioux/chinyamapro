@@ -18,7 +18,7 @@ _proxy = __import__('proxy')
 create_storage = _proxy.create_storage
 
 app = Flask(__name__)
-
+app.config["APPLICATION_ROOT"] = "/media-proxy"
 app.config["SECRET"] = "dfghjkiouytgfvbnmjyutgfvbnhjuyt"
 
 CORS(app, resources={r"/*" : {"origin": "*"}})
@@ -73,11 +73,16 @@ def projects_media_proxy(path = None):
     _proxy.save_outro_media(entity, files)
     return {"message": "Projects saved!"}, 200
 
-async def worker(port):
-    
-    print("%s" % __DIR__)
-    process = await asyncio.create_subprocess_shell("waitress-serve --listen=*:{} app:app".format(port), cwd=__DIR__ , shell=True)
+async def worker(port=None):
+    if port is None:
+        process = await asyncio.create_subprocess_shell('''
+                    export FLASK_ENV=development
+                    flask run --port 8080
+                    ''', shell=True, cwd=__DIR__)
+    else:
+        process = await asyncio.create_subprocess_shell("waitress-serve --listen=*:{} app:app".format(port), cwd=__DIR__ , shell=True)
     return app, process
+    
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=8080)
+    asyncio.run(worker())

@@ -1,0 +1,9 @@
+UIProxy/
+__pycache__
+
+Pipfile 
+Pipfile.lock
+
+.venv
+
+.ansible

@@ -1,0 +1,17 @@
+UIProxy/
+__pycache__
+
+Pipfile 
+Pipfile.lock
+
+.venv
+.env
+
+.ansible
+
+node_modulels
+__reactpreview__
+
+public/pages/
+
+reactpreview.config.js

@@ -5,20 +5,10 @@ import './App.css';
 import OnePage from './pages/Index'
 
 function App(props) {
-  const enableEdit = props.edit || false
-  const [edit, setEditable] = React.useState(enableEdit)
+  const editable = props.edit || false
 
-  const handleEditable = () => {
-    let status = !edit
-    setEditable(status)
-  }
   return (
-    <>
-      {/* <ButtonGroup onClick={handleEditable}>
-        <Button>Editable</Button>
-      </ButtonGroup> */}
-      <OnePage editable={edit}/>
-    </>
+      <OnePage editable={editable}/>
   );
 }
 
