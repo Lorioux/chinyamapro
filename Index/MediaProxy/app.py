@@ -11,11 +11,11 @@ sys.path.insert(0, __DIR__)
 
 # from . import proxy as _proxy
 
-_proxy = __import__('proxy')
+middleware = __import__('middleware')
 
 
 # credentials = _proxy.credentials
-create_storage = _proxy.create_storage
+create_storage = middleware.create_storage
 
 app = Flask(__name__)
 app.config["APPLICATION_ROOT"] = "/media-proxy"

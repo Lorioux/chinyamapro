@@ -16,7 +16,7 @@ def file_async_reader(file):
 async def read_file(file, encode=False):
     global DATA
     if os.path.exists(file):
-        with open(file, "r+") as f:
+        with open(file, "r") as f:
             info = f.read()
             if info != "":
                 DATA = ast.literal_eval(info)

@@ -1,0 +1,361 @@
+make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.3
+# Built for Windows32
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Thu May 19 14:04:00 2022
+
+# Variables
+
+# environment
+PROVIDE_FULLSTACK_ACTION = true
+# environment
+SYSTEMDRIVE = C:
+# environment
+JAVA_HOME = D:\Program Files\Android\Android Studio\jre
+# environment
+LC_ALL = C
+# environment
+TWILIO_ACCOUNT_SID = AC7f745a58a7be38e65311ca1f62afad34
+# environment
+USERPROFILE = C:\Users\magid
+# environment
+VBOX_MSI_INSTALL_PATH = C:\Oracle\VirtualBox\
+# environment
+UUID = 2ffaaca6-2d7b-4e8a-8891-bd9cc03ff1b9
+# environment
+LOCALAPPDATA = C:\Users\magid\AppData\Local
+# environment
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-63f5d535-535c-4afe-bd19-79b47d0897d1-sock
+# environment
+VSCODE_CWD = D:\Program Files\Microsoft VS Code
+# environment
+CHOCOLATEYINSTALL = C:\ProgramData\chocolatey
+# environment
+SYSTEMROOT = C:\WINDOWS
+# environment
+PROCESSOR_LEVEL = 6
+# environment
+PSMODULEPATH = C:\Program Files (x86)\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules;C:\Google\Cloud SDK\google-cloud-sdk\platform\PowerShell;C:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\platform\PowerShell
+# default
+MAKE_COMMAND := C:/ProgramData/chocolatey/lib/make/tools/install/bin/make.exe
+# environment
+THREE_SCALE_USER_TOKEN = 207c527cfc2a6b8dcf4fa43ad7a976da
+# environment
+GOPATH = C:\Users\magid\go
+# automatic
+@D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
+# environment
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_21392_GKSPNJTULBLDCRPI
+# environment
+ONEDRIVECOMMERCIAL = C:\Users\magid\OneDrive - UAb
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# environment
+TWILIO_AUTH_TOKEN = bad009eb4fd5fdfaf16eb531b7e54ccf
+# automatic
+%D = $(patsubst %/,%,$(patsubst %\,%,$(dir $%)))
+# automatic
+^D = $(patsubst %/,%,$(patsubst %\,%,$(dir $^)))
+# environment
+AWS_DEFAULT_REGION = us-east-1
+# environment
+VAGRANT_CWD = C:\Users\magid\VGT
+# environment
+VSCODE_LOG_STACK = false
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_CODE_CACHE_PATH = C:\Users\magid\AppData\Roaming\Code\CachedData\c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+# environment
+LANG = C
+# default
+.LOADED := 
+# environment
+TMP = C:\Users\magid\AppData\Local\Temp
+# default
+.INCLUDE_DIRS = .
+# environment
+PROCESSOR_ARCHITEW6432 = AMD64
+# makefile
+MAKEFLAGS = pqrR
+# environment
+ONEDRIVE = C:\Users\magid\OneDrive - UAb
+# makefile
+CURDIR := c:/Users/magid/chinyama/Index
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+UTM_SOURCE = vscode
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# automatic
+*D = $(patsubst %/,%,$(patsubst %\,%,$(dir $*)))
+# environment
+PROGRAMFILES = C:\Program Files (x86)
+# environment
+MFLAGS = -pqrR
+# default
+.SHELLFLAGS := -c
+# environment
+COMMONPROGRAMW6432 = C:\Program Files\Common Files
+# automatic
++D = $(patsubst %/,%,$(patsubst %\,%,$(dir $+)))
+# environment
+POSTGRES_PASSWORD = password
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST := Makefile
+# automatic
+@F = $(notdir $@)
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_PID = 21392
+# automatic
+?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
+# environment
+POSTGRES_USERNAME = postgres
+# automatic
+*F = $(notdir $*)
+# environment
+AWS_PROFILE = default
+# automatic
+<D = $(patsubst %/,%,$(patsubst %\,%,$(dir $<)))
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# default
+MAKE_HOST := Windows32
+# environment
+PROGRAMDATA = C:\ProgramData
+# default
+SHELL := C:/Program Files/Git/usr/bin/sh.exe
+# environment
+WILIO_AUTH_TOKEN = bad009eb4fd5fdfaf16eb531b7e54ccf
+# environment
+HOMEPATH = \Users\magid
+# default
+MAKECMDGOALS := all
+# environment
+GITHUB_TOKEN = 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
+# environment
+DRIVERDATA = C:\Windows\System32\Drivers\DriverData
+# environment
+COMSPEC = C:\WINDOWS\system32\cmd.exe
+# environment
+WINDIR = C:\WINDOWS
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+PATH = D:\Python\Python310\Scripts\;D:\Python\Python310\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Program Files\Microsoft VS Code\bin;D:\Program Files\Android\Android Studio\jre\bin;C:\ProgramData\chocolatey\bin;C:\MinGW\bin;C:\Program Files (x86)\dotnet\;D:\Program Files\Android\Sdk\platform-tools\;D:\Program Files\Android\Sdk\;D:\Program Files\Android\Sdk\emulator\;C:\Program Files\Amazon\AWSCLIV2\;C:\Program Files\Amazon\AWSSAMCLI\bin\;C:\Program Files\OpenSSH-Win64;C:\Program Files\Intel\Intel(R) Memory and Storage Tool\;C:\HashiCorp\Vagrant\bin;C:\Users\magid\AppData\Local\Microsoft\WindowsApps;C:\Google\Cloud SDK\google-cloud-sdk\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\bin;C:\Program Files\Solidigm\Solidigm(TM) Storage Tool\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;D:\Go\bin;C:\Users\magid\scoop\apps\gsudo\current;C:\Users\magid\scoop\apps\nodejs\current\bin;C:\Users\magid\scoop\apps\nodejs\current;C:\Users\magid\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Users\magid\AppData\Local\cloud-code\installer\google-cloud-sdk\bin;C:\Python310\Scripts;C:\Python310;C:\Program Files\dotnet;D:\Program Files\NodeJS;D:\Program Files\Android\Sdk;D:\Program Files\Android\Sdk\emulator;C:\Users\magid\go\bin;C:\Users\magid\scoop\shims;C:\Users\magid\.dotnet\tools;C:\MinGW\CMake\bin;C:\Program Files (x86)\GitHub CLI;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;C:\Program Files (x86)\RedHat\Podman\;C:\Users\magid\AppData\Local\Programs\Rancher Desktop\resources\resources\win32\bin;C:\Users\magid\AppData\Local\Programs\Rancher Desktop\resources\resources\linux\bin;C:\Users\magid\go\bin
+# environment
+ZES_ENABLE_SYSMAN = 1
+# environment
+COMPUTERNAME = A
+# default
+MAKEFILES := 
+# environment
+AWS_SECRET_ACCESS_KEY = yHLq311Dcbwp3CS4CyH1rngVYCHYVHMHOLqMqH4z
+# automatic
+^F = $(notdir $^)
+# environment
+GITHUB_USERNAME = lorioux
+# environment
+JENKINS_HOME = D:/JENKINS_HOME
+# environment
+PROMPT = $P$G
+# environment
+CHOCOLATEYLASTPATHUPDATE = 132850838730104921
+# environment
+GOROOT = C:\Users\magid\scoop\apps\go\current
+# environment
+GRADLE_HOME = C:\ProgramData\chocolatey\lib\gradle\tools\gradle-7.3
+# environment
+LOGONSERVER = \\A
+# environment
+VSCODE_LOG_NATIVE = false
+# environment
+USERNAME = magid
+# environment
+ANDROID_SDK_HOME = D:\Program Files\Android\Sdk
+# environment
+RECOMMENDER_API_URL = https://gw.api.openshift.io//api/v2
+# environment
+COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
+# environment
+DOCKER_HOST = 127.0.0.1:2375
+# automatic
+?F = $(notdir $?)
+# environment
+PROGRAMW6432 = C:\Program Files
+# environment
+NO_PROXY = 10.96.0.0/12,192.168.59.0/24,192.168.39.0/24
+# environment
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW
+# environment
+AWS_ACCESS_KEY_ID = AKIA5BQIWFU5466OWLVH
+# automatic
++F = $(notdir $+)
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+USERDOMAIN = A
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+VS140COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\
+# environment
+OS = Windows_NT
+# makefile
+.DEFAULT_GOAL := all
+# default
+MAKE_VERSION := 4.3
+# environment
+PROGRAMFILES(X86) = C:\Program Files (x86)
+# environment
+USERDOMAIN_ROAMINGPROFILE = A
+# environment
+NUMBER_OF_PROCESSORS = 8
+# environment
+PUBLIC = C:\Users\Public
+# environment
+APPDATA = C:\Users\magid\AppData\Roaming
+# environment
+FLASK_ENV = development
+# environment
+HOMEDRIVE = C:
+# environment
+PROCESSOR_ARCHITECTURE = x86
+# environment
+GOLANG_EXECUTABLE = go
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = C:\Users\magid
+# environment
+COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
+# environment
+ANDROID_AVD_HOME = D:\Program Files\Android\Sdk\emulator
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+TEMP = C:\Users\magid\AppData\Local\Temp
+# environment
+VSCODE_IPC_HOOK = \\.\pipe\9f2596a6ef56521988f5353f8ef443e4-1.67.2-main-sock
+# environment
+CNI_PATH = C:\Program Files\containerd\cni\bin\
+# environment
+POSTGRES_HOSTNAME = localhost
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# environment
+ADB_HOME = D:\Program Files\Android\Sdk\platform-tools
+# default
+SUFFIXES := 
+# environment
+ALLUSERSPROFILE = C:\ProgramData
+# environment
+TELEMETRY_ID = e45a9ead-46fb-47e5-915d-c09928682f2d
+# environment
+MSYS_NO_PATHCONV = 1
+# environment
+ANDROID_EMULATOR = D:\Program Files\Android\Sdk\emulator
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync load
+# environment
+PROCESSOR_REVISION = 8c01
+# environment
+CHOCOLATEYTOOLSLOCATION = C:\ProgramData\chocolatey
+# environment
+PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
+# variable set hash-table stats:
+# Load=133/1024=13%, Rehash=0, Collisions=11/162=7%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (key c:/Users/magid/chinyama/Index, mtime 1652962988): 25 files, no impossibilities.
+
+# 25 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-18 19:18:47
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all:
+#  Command line target.
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := all
+# automatic
+# * := 
+# automatic
+# < := 
+# automatic
+# + := 
+# automatic
+# % := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/11=9%
+#  recipe to execute (from 'Makefile', line 5):
+	gcloud functions deploy services-proxy --region us-central1 --allow-unauthenticated --entry-point proxy --runtime python39 --stage-bucket media-chin-00 --source "./" --trigger-http
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=4/1024=0%, Rehash=0, Collisions=0/16=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 28 / storage = 292 B / avg = 10 B
+# current buf: size = 8174 B / used = 292 B / count = 28 / avg = 10 B
+
+# strcache performance: lookups = 35 / hit rate = 20%
+# hash-table stats:
+# Load=28/8192=0%, Rehash=0, Collisions=0/35=0%
+# Finished Make data base on Thu May 19 14:04:00 2022
+
+ 

@@ -3,10 +3,11 @@ import os
 import sys
 
 from flask import Flask, redirect, request
+from flask_cors import CORS
 
 
-BASE_DIR = os.path.dirname(__file__ )
-sys.path.insert( 0, BASE_DIR )
+__DIR__ = os.path.dirname(__file__ )
+sys.path.insert( 0, __DIR__ )
 
 PROXY_APP = None
 
@@ -17,29 +18,37 @@ else:
     DEST_HOST = "https://{}".format(SERVER_NAME)
 
 
-rb = __import__("routes_broke")
+middleware = __import__("proxies_middleware")
+
 
 app  = Flask(__name__)
+app.config["APPLICATION_ROOT"] = "gateways-proxy"
+CORS(app, resources={r"/*": {"origin":"*"}})
 
 @app.route("/<path:path>", methods=["GET", "POST"])
 def index(path):
     
-    url = rb.processor(request.path, DEST_HOST)
+    url = middleware.route(request.path, DEST_HOST)
 
     if request.method == "GET":
-        
-        return redirect(url)
+        return redirect(url, code=307)
 
     if request.method == "POST":
         return redirect(url, method=request.method, data=request.data, code=307)
 
 
-async def worker():
-    await asyncio.create_subprocess_shell('''
-    export FLASK_ENV=development
-    flask run --port 8080
-    ''', shell=True, cwd=BASE_DIR)
-
+async def worker(port=None):
+    
+    if SERVER_NAME is None:
+        await middleware.__launch__()
+    if port is None:
+        await asyncio.create_subprocess_shell('''
+            export FLASK_ENV=development
+            flask run --port 8080 
+            ''', shell=True, cwd=__DIR__)
+    else:
+        await asyncio.create_subprocess_shell("waitress-serve --listen=*:{} app:app".format(port), cwd=__DIR__ , shell=True)
+    
 
 if __name__ == "__main__":
     asyncio.run(worker())

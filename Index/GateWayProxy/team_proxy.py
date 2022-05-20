@@ -1,1 +1,0 @@
-from ..TeamProxy.app import *

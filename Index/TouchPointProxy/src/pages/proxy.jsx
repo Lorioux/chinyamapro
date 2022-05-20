@@ -1,0 +1,1 @@
+export const PROXY_HOSTNAME = process.env.NODE_ENV === "production" ? process.env.REACT_APP_PROXY_HOSTNAME : "http://0.0.0.0:5000"

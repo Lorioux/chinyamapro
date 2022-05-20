@@ -1,1 +1,0 @@
-from ..TestimonialProxy.app import *

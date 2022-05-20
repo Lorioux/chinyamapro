@@ -1,0 +1,5 @@
+make.exe --dry-run --always-make --keep-going --print-directory
+make: Entering directory 'c:/Users/magid/chinyama/Index'
+gcloud functions deploy services-proxy --region us-central1 --allow-unauthenticated --entry-point proxy --runtime python39 --stage-bucket media-chin-00 --source "./" --trigger-http
+make: Leaving directory 'c:/Users/magid/chinyama/Index'
+ 

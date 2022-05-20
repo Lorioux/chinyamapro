@@ -11,7 +11,10 @@ __DIR__ = os.path.dirname(__file__)
 sys.path.insert(0, __DIR__)
 
 
-from utils import file_async_reader
+try:
+    from utils import file_async_reader
+except ImportError:
+    from .utils import file_async_reader
 
 
 
@@ -76,13 +79,12 @@ def get_contact_info():
 
 async def worker(port = None):
     if port is None:
-        process = await asyncio.create_subprocess_shell('''
+        await asyncio.create_subprocess_shell('''
             export FLASK_ENV=development
             flask run --port 8080
             ''', shell=True, cwd=__DIR__)
     else:
-        process = await asyncio.create_subprocess_shell("waitress-serve --listen=*:{} app:app".format(port), cwd=__DIR__ , shell=True)
-    return app, process
+        await asyncio.create_subprocess_shell("waitress-serve --listen=*:{} app:app".format(port), cwd=__DIR__ , shell=True)
 
 if __name__ == "__main__":
     asyncio.run(worker())
