@@ -2,8 +2,11 @@ import {
     AddSharp,
  } from "@mui/icons-material"
 import { 
+    Box,
     Button, 
     ButtonGroup, 
+    Card, 
+    CardContent, 
     FormGroup, 
     Input,
     ListItem,
@@ -60,7 +63,7 @@ const Member = (props) => {
     )
 }
 
-export const MemberEditable = (props) => {
+export const MemberForm = (props) => {
 
     const sx = {
         marginBottom: 4,
@@ -91,29 +94,36 @@ export const MemberEditable = (props) => {
         setLinkField(linkfields)
     }, [linkfields])
 
+    const url = `${PROXY_HOSTNAME}/team/member/add`
     return (
-        <form>
-            <FormGroup sx={sx}>
-                <Input type="text" name="fullname" placeholder="Full name"/>
-            </FormGroup>
-            <FormGroup sx={sx}>
-                <TextareaAutosize name="summary" />
-            </FormGroup>
-            <FormGroup sx={sx}>
-                <Input type="file" name="photo" />
-            </FormGroup>
-            <FormGroup sx={sx}>
-                {sociallinkFields}
-            </FormGroup>
-            
-            <ButtonGroup sx={sx}>
-                <Button type="submit">save</Button>
-                <Button onClick={handleAddField}>
-                    <AddSharp fontSize="small" />
-                    add another link
-                </Button>
-            </ButtonGroup>
-        </form>
+        <Box>
+            <Card>
+                <CardContent>
+                <form method="POST" action={url}>
+                    <FormGroup sx={sx}>
+                        <Input type="text" name="fullname" placeholder="Full name"/>
+                    </FormGroup>
+                    <FormGroup sx={sx}>
+                        <TextareaAutosize name="summary" />
+                    </FormGroup>
+                    <FormGroup sx={sx}>
+                        <Input type="file" name="photo" />
+                    </FormGroup>
+                    <FormGroup sx={sx}>
+                        {sociallinkFields}
+                    </FormGroup>
+                    
+                    <ButtonGroup sx={sx}>
+                        <Button type="submit">save</Button>
+                        <Button onClick={handleAddField}>
+                            <AddSharp fontSize="small" />
+                            add another link
+                        </Button>
+                    </ButtonGroup>
+                </form>
+                </CardContent>
+            </Card>
+        </Box>
     )
 
 }

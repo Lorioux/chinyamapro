@@ -42,6 +42,10 @@ service_name_port_map = {
         "port": 5010,
         "package": "MailProxy",
     },
+    "clients-proxy": {
+        "port": 5011,
+        "package": "ClientProxy",
+    },
 }
 def match_hostname(hostname, port, root_path):
     if hostname.startswith((r"http://localhost", r"http://127")):
@@ -103,6 +107,10 @@ def route(path:str, hostname):
     if path.startswith((r"/blog",)):
         service = service_name_port_map['blogs-proxy']
         return match_hostname(hostname, service['port'], 'blogs-proxy') + path
+
+    if path.startswith((r"/clien",)):
+        service = service_name_port_map['clients-proxy']
+        return match_hostname(hostname, service['port'], 'clients-proxy') + path
 
 if __name__ == "__main__":
     asyncio.run(__launch__())

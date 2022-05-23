@@ -38,7 +38,10 @@ gateways:
 blogs:
 	@$(cmd) create blogs-proxy media-chin-00 BlogProxy
 
-all: banners contacts medias teams testimonials disclaims gateways services blogs
+clients:
+	@$(cmd) create clients-proxy media-chin-00 ClientProxy
+
+all: banners contacts medias teams testimonials disclaims gateways services blogs clients
 
 test:
 	echo $$cmd
