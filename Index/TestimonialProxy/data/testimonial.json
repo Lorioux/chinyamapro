@@ -1,7 +1,17 @@
 {
-  "john_michale" : {
-      "image": "img/testimonials-construct/1.jpg",
-       "fullname": "John Michale",
+  "john_michale": {
+    "image": "img/testimonials-construct/1.jpg",
+    "fullname": "John Michale",
     "message": "Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim."
-    }
+  },
+  "john_doe": {
+    "image": "img/testimonials-construct/1.jpg",
+    "fullname": "John Doe",
+    "message": "Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim."
+  },
+  "john_blake": {
+    "image": "img/testimonials-construct/1.jpg",
+    "fullname": "John Blake",
+    "message": "Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim."
+  }
 }

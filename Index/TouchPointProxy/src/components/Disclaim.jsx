@@ -9,11 +9,12 @@ import {
     FormGroup, 
     Input, 
     TextareaAutosize,
+    TextField,
 } from "@mui/material"
 import * as Icon from "@mui/icons-material"
 import { Box} from "@mui/system"
 import * as React from "react"
-import { PROXY_HOSTNAME } from "../pages/proxy"
+import { PROXY_HOSTNAME } from "../main/proxy"
 
 
 
@@ -166,7 +167,7 @@ export default function Disclaim(props) {
 }
 
 
-const CapabilityForm = (props) => {
+export const CapabilityForm = (props) => {
     const {title, summary} = props
 
     const sx = { border: "1px dotted grey", marginBottom: 4 }
@@ -205,7 +206,62 @@ const CapabilityForm = (props) => {
     )
 }
 
-const DisclaimForm = (props) => {
+export const CompanyBanner = (props) =>{
+    const {title, summary, phone} = props
+    return (
+        <section id="great-construct-team">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-6">
+                        <h2>{title || "Great Construction Company" }</h2>
+                        <p>{summary || "If you have any construction and renovation work  need, simply call our 24 hour emergecny number." }</p>
+                        <p className="has-btn"><b>{phone || "01865 524 8503" }</b> or <a href="#" className="hvr-bounce-to-right">Contact Us</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+
+export const CompanyBannerForm = (props) =>{
+    const {showCallback} = props
+
+    return (
+        <Box sx={{ marginTop: 4,  marginBottom: 4 , padding: 2 }}>
+            <Card>
+                <CardHeader title="Add Testimonial" action={<CardActions>
+                    <Icon.CloseOutlined color="primary" fontSize="large" onClick={() => showCallback(false)} />
+                </CardActions>}></CardHeader>
+                <CardContent>
+                <form method="POST" action={`${PROXY_HOSTNAME}/blog/add`} >
+                    <FormGroup sx={{ rowGap: 1, marginBottom: 4 }}> 
+                        <label style={{ fontSize: 12}}>Click to add image (keep the size) <br/>
+                            <img src="img/testimonials-construct/1.jpg" alt="size 170x185"/>
+                            <Input type="file" name="file" id="file" sx={{ display: "none"}} required/>
+                        </label>
+                    </FormGroup>
+                    <FormGroup sx={{ rowGap: 1, marginBottom: 4 }}>
+                        <TextField name={"author"} variant={"outlined"} label="Full name" required/>
+                    </FormGroup>
+                    <FormGroup sx={{ rowGap: 1, marginBottom: 4 }}>
+                        <TextField type={"date"}  name={"date"} variant={"outlined"} InputLabelProps={{
+                            shrink: true
+                        }} label="Date" required/> 
+                    </FormGroup>
+                    <FormGroup sx={{ rowGap: 1, marginBottom: 4 }}>
+                        <TextareaAutosize name="comment" variant="outlined" label="Description" placeholder="Comment" required/>
+                    </FormGroup>
+                    <ButtonGroup>
+                        <Button type="submit">SAVE</Button>
+                    </ButtonGroup>
+                </form>
+                </CardContent>
+            </Card>
+        </Box>
+    )
+}
+
+export const DisclaimForm = (props) => {
     const {title, summary, offers} = props
 
     const inStyle = { style : 

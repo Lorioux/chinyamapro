@@ -15,7 +15,7 @@ import {
     } from "@mui/material"
 import * as Icon from "@mui/icons-material"
 import * as React from "react"
-import { PROXY_HOSTNAME } from "../pages/proxy"
+import { PROXY_HOSTNAME } from "../main/proxy"
 
 
 export default function BreadCrumbInfo() {

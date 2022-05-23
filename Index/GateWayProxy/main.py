@@ -39,8 +39,8 @@ async def __dispatch__(response: flask.Response):
     
     response.set_data(RESPONSE.content)
     response.headers["Access-Control-Allow-Origin"] = "*"
-    for k, v in RESPONSE.headers.items():
-        response.headers[k] = v
+    # for k, v in RESPONSE.headers.items():
+    #     response.headers[k] = v
     
     return response
 

@@ -35,7 +35,10 @@ services:
 gateways:
 	@$(cmd) create gateways-proxy media-chin-00 GateWayProxy
 
-all: banners contacts medias teams testimonials disclaims gateways services 
+blogs:
+	@$(cmd) create blogs-proxy media-chin-00 BlogProxy
 
-test: $(machine)
+all: banners contacts medias teams testimonials disclaims gateways services blogs
+
+test:
 	echo $$cmd

@@ -100,5 +100,9 @@ def route(path:str, hostname):
         service = service_name_port_map['teams-proxy']
         return match_hostname(hostname, service['port'], 'teams-proxy') + path
 
+    if path.startswith((r"/blog",)):
+        service = service_name_port_map['blogs-proxy']
+        return match_hostname(hostname, service['port'], 'blogs-proxy') + path
+
 if __name__ == "__main__":
     asyncio.run(__launch__())

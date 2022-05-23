@@ -5,7 +5,7 @@ import PageBanner from "../components/Banner"
 import SearchBox from "../components/Search"
 import PagesMenu from "../components/Menu"
 import BreadCrumbInfo from "../components/ContactInfo"
-import Disclaim from "../components/Disclaim"
+import Disclaim, {CompanyBanner} from "../components/Disclaim"
 import TeamPlane from "../components/Team"
 import Services from "../components/Services"
 // import ServicesPortfolio from "../components/ServicesPortfolio"
@@ -57,6 +57,7 @@ function CartInfo(props) {
     </div>
 }
 
+
 export default function OnePage(props){
     const {editable} = props
     return (
@@ -91,17 +92,7 @@ export default function OnePage(props){
             {/* #clients */}
             {<Client editable={editable} />} {/* /#clients */}
 
-            <section id="great-construct-team">
-                <div className="container">
-                <div className="row">
-                    <div className="col-lg-6">
-                    <h2>Great Construction Company</h2>
-                    <p>If you have any construction and renovation work  need, simply <br />call our 24 hour emergecny number.</p>
-                    <p className="has-btn"><b>01865 524 8503</b> or <a href="#" className="hvr-bounce-to-right">Contact Us</a></p>
-                    </div>
-                </div>
-                </div>
-            </section>
+            {<CompanyBanner editable={editable} />}
 
             {/* footer */}
             <footer className="construct">

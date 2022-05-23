@@ -1,6 +1,7 @@
 import asyncio
 import os
 import sys
+import json
 
 from flask import Flask
 from flask_cors import CORS
@@ -13,9 +14,19 @@ app.config['APPLICATION_ROOT'] = 'blogs-proxy'
 CORS(app)
 
 
+data = "./data/blogs.json"
+
 @app.route('/', methods=['GET'])
 def proxy():
     return {'status': 200, 'message': 'Blogs'}
+
+
+@app.route('/blogs', methods=['GET'])
+def read_blogs():
+    with open(data, "r") as f:
+        blogs = json.load(f)
+        f.close()
+    return blogs
 
 
 async def worker(port = None):

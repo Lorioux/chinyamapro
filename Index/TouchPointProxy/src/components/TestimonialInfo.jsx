@@ -1,6 +1,6 @@
 import { CloseOutlined, Edit } from "@mui/icons-material";
 import { Box, Button, ButtonGroup, Card, CardActions, CardContent, CardHeader, FormGroup, Input, TextareaAutosize, TextField } from "@mui/material";
-import { PROXY_HOSTNAME } from "../pages/proxy";
+import { PROXY_HOSTNAME } from "../main/proxy";
 import * as React from "react";
 
 
@@ -27,11 +27,11 @@ export default function TestimonialInfo(props) {
     const [showForm, setShowForm] = React.useState(false)
 
     const [Testimonials, setTestimonial] = React.useState(TestimonialTemplate)
-    const [TestimonialCards, setTestCards] = React.useState([])
+    const [TestimonialCards, setTestimonialCards] = React.useState([])
 
     const TestimonialCard = (id, name, image, message) => {
         return (
-            <div key={id} className="item">
+            <div key={id} className="item" style={{margin: 2}}>
                 <div className="single-testimonial-construct clearfix">
                     <div className="img-holder hvr-rectangle-out">
                         <img src={image} alt="" />
@@ -57,7 +57,7 @@ export default function TestimonialInfo(props) {
             .catch(err => {
                 console.log(err)
             })
-    })
+    },[])
 
     React.useEffect(() => {
         const cards = []
@@ -69,27 +69,24 @@ export default function TestimonialInfo(props) {
             cards.push(TestimonialCard(name,fullname, image, message ) )
         }
 
-        setTestCards(cards)
+        setTestimonialCards(cards)
 
     }, [Testimonials])
 
     
     const TestimonialCardInfo = () => {
-        return (
-            <div className="owl-carousel owl-theme">
-                {TestimonialCards}
-            </div>   
-        )
+        return TestimonialCards
     }
+
     return (
         <section id="testimonials-construct-home">
             <div className="container">
                 <div className="section-title">
-                    <h1>testimonials</h1>
+                    <h1>Testimonials</h1>
                 </div>
                 <div className="clearfix">
                     {
-                        !showForm ? < TestimonialCardInfo /> : <TestimonialInfoForm showCallback={setShowForm} />
+                        !showForm ? TestimonialCardInfo() : <TestimonialInfoForm showCallback={setShowForm} />
                     }
                     { editable && !showForm ? <CardActions sx={{border: "1px dotted grey", width: "100%", marginTop: 2, backgroundColor: "whitesmoke"}} onClick={() => setShowForm(true)} >
                         <Edit titleAccess="Edit"  fontSize="large" color={"primary"} onClick={() => setShowForm(true)}/>  Edit
@@ -101,9 +98,7 @@ export default function TestimonialInfo(props) {
     );
 }
 
-
-
-function TestimonialInfoForm (props) {
+const TestimonialInfoForm = (props) => {
     const {showCallback} = props
     return (
         <Box sx={{ marginTop: 4,  marginBottom: 4 , padding: 2 }}>
@@ -113,16 +108,17 @@ function TestimonialInfoForm (props) {
                 </CardActions>}></CardHeader>
                 <CardContent>
                 <form method="POST" action={`${PROXY_HOSTNAME}/Press/Info`} >
-                    <FormGroup sx={{ rowGap: 1, marginBottom: 4 }}>
-                        <TextField name="fullname" variant="outlined" label="Full name" required/>
-                        <TextareaAutosize name="Message" variant="outlined" label="Description" placeholder="Message" required/>
-                    </FormGroup>
-                    <FormGroup sx={{ rowGap: 2 }}> 
-                        
+                    <FormGroup sx={{ rowGap: 1, marginBottom: 4 }}> 
                         <label style={{ fontSize: 12}}>Click to add image (keep the size) <br/>
                             <img src="img/testimonials-construct/1.jpg" alt="size 170x185"/>
                             <Input type="file" name="file" id="file" sx={{ display: "none"}} required/>
                         </label>
+                    </FormGroup>
+                    <FormGroup sx={{ rowGap: 1, marginBottom: 4 }}>
+                        <TextField name="fullname" variant="outlined" label="Full name" required/>
+                    </FormGroup>
+                    <FormGroup sx={{ rowGap: 1, marginBottom: 4 }}>
+                        <TextareaAutosize name="Message" variant="outlined" label="Description" placeholder="Message" required/>
                     </FormGroup>
                     <ButtonGroup>
                         <Button type="submit">SAVE</Button>
