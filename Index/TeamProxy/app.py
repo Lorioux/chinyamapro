@@ -5,12 +5,13 @@ import asyncio
 __DIR__ = os.path.dirname(__file__)
 sys.path.insert(0, __DIR__)
 
-from flask import Flask, jsonify, redirect, request 
+from flask import Flask, jsonify, request
+from flask_cors import CORS
 from utils import file_async_reader
 
 
 app = Flask(__name__)
-
+CORS(app)
 
 member = [
     {

@@ -23,12 +23,13 @@ middleware = __import__("proxies_middleware")
 
 app  = Flask(__name__)
 app.config["APPLICATION_ROOT"] = "gateways-proxy"
-CORS(app, resources={r"/*": {"origin":"*"}})
+CORS(app)
 
 @app.route("/<path:path>", methods=["GET", "POST"])
 def index(path):
     
     url = middleware.route(request.path, DEST_HOST)
+    print(url)
 
     if request.method == "GET":
         return redirect(url, code=307)

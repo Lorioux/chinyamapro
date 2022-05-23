@@ -3,14 +3,14 @@ import os
 import sys
 import json
 
-from flask import Flask, request 
+from flask import Flask
 from flask_cors import CORS
 
 __DIR__ = os.path.dirname(__file__)
 sys.path.insert(0, __DIR__)
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origin": "*"}})
+CORS(app)
 
 file = "./data/testimonial.json"
 

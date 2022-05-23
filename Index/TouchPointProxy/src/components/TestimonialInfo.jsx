@@ -4,33 +4,30 @@ import { PROXY_HOSTNAME } from "../pages/proxy";
 import * as React from "react";
 
 
+const TestimonialTemplate = {
+    "john_michale": {
+        "image": "img/testimonials-construct/1.jpg",
+        "fullname": "John Michale",
+        "message": "Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim."
+    },
+    "john_doe": {
+        "image": "img/testimonials-construct/1.jpg",
+        "fullname": "John Doe",
+        "message": "Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim."
+    },
+    "john_blake": {
+        "image": "img/testimonials-construct/1.jpg",
+        "fullname": "John Blake",
+        "message": "Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim."
+    }
+};
 export default function TestimonialInfo(props) {
     const {editable} = props
     
     const [showForm, setShowForm] = React.useState(false)
 
-    const [Testimonials, setTestimonial] = React.useState({})
+    const [Testimonials, setTestimonial] = React.useState(TestimonialTemplate)
     const [TestimonialCards, setTestCards] = React.useState([])
-
-    const testimonialinfo = React.useCallback(() => {
-        return {
-            "john_michale" : {
-                "image": "img/testimonials-construct/1.jpg",
-                "fullname": "John Michale",
-                "message": "Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim."
-            },
-            "john_doe" : {
-                "image": "img/testimonials-construct/1.jpg",
-                "fullname": "John Doe",
-                "message": "Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim."
-            },
-            "john_blake" : {
-                "image": "img/testimonials-construct/1.jpg",
-                "fullname": "John Blake",
-                "message": "Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim."
-            }
-        }
-    }, [])
 
     const TestimonialCard = (id, name, image, message) => {
         return (
@@ -55,14 +52,12 @@ export default function TestimonialInfo(props) {
         testimonial()
             .then( res => res.json())
             .then(data => {
-                console.log(data)
                 setTestimonial(data)
             })
             .catch(err => {
-                setTestimonial(testimonialinfo())
                 console.log(err)
             })
-    }, [testimonialinfo])
+    })
 
     React.useEffect(() => {
         const cards = []
