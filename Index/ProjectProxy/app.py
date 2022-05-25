@@ -1,4 +1,5 @@
 import asyncio
+import json
 import os
 import sys
 
@@ -12,11 +13,21 @@ app = Flask(__name__)
 app.config['APPLICATION_ROOT'] = 'projects-proxy'
 CORS(app)
 
+file = "./data/projects.json"
 
 @app.route('/', methods=['GET'])
 def proxy():
     return {'status': 200, 'message': 'Projects'}
 
+
+@app.route("/projects/all", methods=["GET"])
+def read_all_projects():
+    with open(file, "r") as f:
+        data = json.loads(f.read())
+        f.close()
+    return data
+
+@app.route("/projects", methods=["POST","PUT","PATCH"])
 
 async def worker(port = None):
     if port is None:

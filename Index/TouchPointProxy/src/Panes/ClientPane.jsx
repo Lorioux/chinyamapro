@@ -1,14 +1,5 @@
 import * as React from "react";
-import { PROXY_HOSTNAME } from "../main/proxy";
-import OwlCarousel from "react-owl-carousel"
-
-
-const options = {
-    items: 1,
-    nav: true,
-    rewind: true,
-    autoplay: true
-};
+import { PROXY_HOSTNAME } from "../Main/Constant";
  
 
 export const Client = (props) => {
@@ -57,11 +48,12 @@ export const Client = (props) => {
                 </div>
                 <div className="row">
                     <div className="col-lg-12 col-md-12">
-                        <div className="owl-carousel owl-theme" options={options}>
+                        <div className="owl-carousel owl-theme">
                             {clientCards}
                         </div>
+                    </div>
+                    {/* 
                             
-                            {/* 
                             <div className="owl-carousel owl-theme">
                             
                             <div className="item">
@@ -84,9 +76,9 @@ export const Client = (props) => {
                             </div>
                             <div className="item">
                                 <img src="img/clients/5.png" alt="" />
-                            </div> */}
-                        {/* </div> */}
-                    </div>
+                            </div> 
+                        </div> 
+                    </div>*/}
                 </div>
             </div>
         </section>

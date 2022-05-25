@@ -41,7 +41,10 @@ blogs:
 clients:
 	@$(cmd) create clients-proxy media-chin-00 ClientProxy
 
-all: banners contacts medias teams testimonials disclaims gateways services blogs clients
+projects:
+	@$(cmd) create projects-proxy media-chin-00 ProjectProxy
+
+all: banners contacts medias teams testimonials disclaims gateways services blogs clients projects
 
 test:
 	echo $$cmd

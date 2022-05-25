@@ -6,7 +6,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu May 19 14:04:00 2022
+# Make data base, printed on Tue May 24 11:05:53 2022
 
 # Variables
 
@@ -29,7 +29,7 @@ UUID = 2ffaaca6-2d7b-4e8a-8891-bd9cc03ff1b9
 # environment
 LOCALAPPDATA = C:\Users\magid\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-63f5d535-535c-4afe-bd19-79b47d0897d1-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-8328ee09-1507-4736-a318-16687c921fee-sock
 # environment
 VSCODE_CWD = D:\Program Files\Microsoft VS Code
 # environment
@@ -49,7 +49,7 @@ GOPATH = C:\Users\magid\go
 # automatic
 @D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_21392_GKSPNJTULBLDCRPI
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_23348_RFGIEBFBPILWIJOC
 # environment
 ONEDRIVECOMMERCIAL = C:\Users\magid\OneDrive - UAb
 # environment
@@ -84,6 +84,8 @@ TMP = C:\Users\magid\AppData\Local\Temp
 PROCESSOR_ARCHITEW6432 = AMD64
 # makefile
 MAKEFLAGS = pqrR
+# makefile (from 'Makefile', line 9)
+cmd := deploy.cmd
 # environment
 ONEDRIVE = C:\Users\magid\OneDrive - UAb
 # makefile
@@ -115,7 +117,7 @@ MAKEFILE_LIST := Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 21392
+VSCODE_PID = 23348
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # environment
@@ -153,7 +155,7 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = D:\Python\Python310\Scripts\;D:\Python\Python310\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Program Files\Microsoft VS Code\bin;D:\Program Files\Android\Android Studio\jre\bin;C:\ProgramData\chocolatey\bin;C:\MinGW\bin;C:\Program Files (x86)\dotnet\;D:\Program Files\Android\Sdk\platform-tools\;D:\Program Files\Android\Sdk\;D:\Program Files\Android\Sdk\emulator\;C:\Program Files\Amazon\AWSCLIV2\;C:\Program Files\Amazon\AWSSAMCLI\bin\;C:\Program Files\OpenSSH-Win64;C:\Program Files\Intel\Intel(R) Memory and Storage Tool\;C:\HashiCorp\Vagrant\bin;C:\Users\magid\AppData\Local\Microsoft\WindowsApps;C:\Google\Cloud SDK\google-cloud-sdk\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\bin;C:\Program Files\Solidigm\Solidigm(TM) Storage Tool\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;D:\Go\bin;C:\Users\magid\scoop\apps\gsudo\current;C:\Users\magid\scoop\apps\nodejs\current\bin;C:\Users\magid\scoop\apps\nodejs\current;C:\Users\magid\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Users\magid\AppData\Local\cloud-code\installer\google-cloud-sdk\bin;C:\Python310\Scripts;C:\Python310;C:\Program Files\dotnet;D:\Program Files\NodeJS;D:\Program Files\Android\Sdk;D:\Program Files\Android\Sdk\emulator;C:\Users\magid\go\bin;C:\Users\magid\scoop\shims;C:\Users\magid\.dotnet\tools;C:\MinGW\CMake\bin;C:\Program Files (x86)\GitHub CLI;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;C:\Program Files (x86)\RedHat\Podman\;C:\Users\magid\AppData\Local\Programs\Rancher Desktop\resources\resources\win32\bin;C:\Users\magid\AppData\Local\Programs\Rancher Desktop\resources\resources\linux\bin;C:\Users\magid\go\bin
+PATH = D:\Python\Python310\Scripts\;D:\Python\Python310\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Program Files\Microsoft VS Code\bin;D:\Program Files\Android\Android Studio\jre\bin;C:\ProgramData\chocolatey\bin;C:\MinGW\bin;C:\Program Files (x86)\dotnet\;D:\Program Files\Android\Sdk\platform-tools\;%ANDROID_SDK_HOME%\;%ANDROID_AVD_HOME%\;C:\Program Files\Amazon\AWSCLIV2\;C:\Program Files\Amazon\AWSSAMCLI\bin\;C:\Program Files\OpenSSH-Win64;C:\Program Files\Intel\Intel(R) Memory and Storage Tool\;C:\HashiCorp\Vagrant\bin;C:\Users\magid\AppData\Local\Microsoft\WindowsApps;C:\Google\Cloud SDK\google-cloud-sdk\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\bin;C:\Program Files\Solidigm\Solidigm(TM) Storage Tool\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;D:\Go\bin;C:\Users\magid\scoop\apps\gsudo\current;C:\Users\magid\scoop\apps\nodejs\current\bin;C:\Users\magid\scoop\apps\nodejs\current;C:\Users\magid\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Users\magid\AppData\Local\cloud-code\installer\google-cloud-sdk\bin;C:\Python310\Scripts;C:\Python310;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;D:\Program Files\Microsoft VS Code\bin;D:\Program Files\Android\Android Studio\jre\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet;C:\Program Files\Git\cmd;D:\Program Files\NodeJS;C:\MinGW\bin;C:\Program Files (x86)\dotnet;D:\Program Files\Android\Sdk\platform-tools;D:\Program Files\Android\Sdk;D:\Program Files\Android\Sdk\emulator;C:\Program Files\Amazon\AWSCLIV2;C:\Program Files\Amazon\AWSSAMCLI\bin;C:\Program Files\OpenSSH-Win64;C:\Program Files\Intel\Intel(R) Memory and Storage Tool;C:\HashiCorp\Vagrant\bin;C:\Users\magid\go\bin;C:\Users\magid\scoop\shims;C:\Users\magid\.dotnet\tools;C:\MinGW\CMake\bin;C:\Program Files (x86)\GitHub CLI;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;C:\Program Files (x86)\RedHat\Podman\;C:\Users\magid\AppData\Local\Microsoft\WindowsApps;C:\Users\magid\AppData\Local\Programs\Rancher Desktop\resources\resources\win32\bin;C:\Users\magid\AppData\Local\Programs\Rancher Desktop\resources\resources\linux\bin;C:\Users\magid\go\bin
 # environment
 ZES_ENABLE_SYSMAN = 1
 # environment
@@ -213,11 +215,17 @@ VS140COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Too
 # environment
 OS = Windows_NT
 # makefile
-.DEFAULT_GOAL := all
+.DEFAULT_GOAL := banners
 # default
 MAKE_VERSION := 4.3
+# 'override' directive
+.SHELLSTATUS := 0
 # environment
 PROGRAMFILES(X86) = C:\Program Files (x86)
+# makefile (from 'Makefile', line 2)
+script = $(1)
+# makefile (from 'Makefile', line 1)
+machine := MSYS_NT-10.0-22000
 # environment
 USERDOMAIN_ROAMINGPROFILE = A
 # environment
@@ -263,6 +271,8 @@ SUFFIXES :=
 # environment
 ALLUSERSPROFILE = C:\ProgramData
 # environment
+SESSIONNAME = Console
+# environment
 TELEMETRY_ID = e45a9ead-46fb-47e5-915d-c09928682f2d
 # environment
 MSYS_NO_PATHCONV = 1
@@ -277,7 +287,7 @@ CHOCOLATEYTOOLSLOCATION = C:\ProgramData\chocolatey
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
 # variable set hash-table stats:
-# Load=133/1024=13%, Rehash=0, Collisions=11/162=7%
+# Load=138/1024=13%, Rehash=0, Collisions=21/177=12%
 
 # Pattern-specific Variable Values
 
@@ -285,9 +295,9 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
 
 # Directories
 
-# . (key c:/Users/magid/chinyama/Index, mtime 1652962988): 25 files, no impossibilities.
+# . (key c:/Users/magid/chinyama/Index, mtime 1653382711): 31 files, no impossibilities.
 
-# 25 files, no impossibilities in 1 directories.
+# 31 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -295,12 +305,47 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
 
 # Files
 
+contacts:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 18):
+	@$(cmd) create contacts-proxy media-chin-00 ContactProxy
+
+blogs:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 39):
+	@$(cmd) create blogs-proxy media-chin-00 BlogProxy
+
+disclaims:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 21):
+	@$(cmd) create disclaims-proxy media-chin-00 DisclaimProxy
+
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-18 19:18:47
+#  Last modified 2022-05-23 15:41:43
 #  File has been updated.
 #  Successfully updated.
+
+medias:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 24):
+	@$(cmd) create media-proxy media-chin-00 MediaProxy
+
+services:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 33):
+	@$(cmd) create services-proxy media-chin-00 ServiceProxy
 
 # Not a target:
 .DEFAULT:
@@ -308,15 +353,23 @@ Makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
-all:
+all: banners contacts medias teams testimonials disclaims gateways services blogs clients
 #  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
+
+banners:
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: ''
 #  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
-# @ := all
+# @ := banners
 # automatic
 # * := 
 # automatic
@@ -332,9 +385,30 @@ all:
 # automatic
 # | := 
 # variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from 'Makefile', line 5):
-	gcloud functions deploy services-proxy --region us-central1 --allow-unauthenticated --entry-point proxy --runtime python39 --stage-bucket media-chin-00 --source "./" --trigger-http
+# Load=8/32=25%, Rehash=0, Collisions=1/12=8%
+#  recipe to execute (from 'Makefile', line 15):
+	@$(cmd) create banners-proxy media-chin-00 BannerProxy
+
+test:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 47):
+	echo $$cmd
+
+gateways:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 36):
+	@$(cmd) create gateways-proxy media-chin-00 GateWayProxy
+
+teams:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 27):
+	@$(cmd) create teams-proxy media-chin-00 TeamProxy
 
 # Not a target:
 .SUFFIXES:
@@ -342,20 +416,34 @@ all:
 #  Modification time never checked.
 #  File has not been updated.
 
+clients:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 42):
+	@$(cmd) create clients-proxy media-chin-00 ClientProxy
+
+testimonials:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 30):
+	@$(cmd) create testimonials-proxy media-chin-00 TestimonialProxy
+
 # files hash-table stats:
-# Load=4/1024=0%, Rehash=0, Collisions=0/16=0%
+# Load=15/1024=1%, Rehash=0, Collisions=0/37=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 28 / storage = 292 B / avg = 10 B
-# current buf: size = 8174 B / used = 292 B / count = 28 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 45 / storage = 450 B / avg = 10 B
+# current buf: size = 8174 B / used = 450 B / count = 45 / avg = 10 B
 
-# strcache performance: lookups = 35 / hit rate = 20%
+# strcache performance: lookups = 73 / hit rate = 38%
 # hash-table stats:
-# Load=28/8192=0%, Rehash=0, Collisions=0/35=0%
-# Finished Make data base on Thu May 19 14:04:00 2022
+# Load=45/8192=1%, Rehash=0, Collisions=0/73=0%
+# Finished Make data base on Tue May 24 11:05:53 2022
 
  

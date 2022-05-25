@@ -1,6 +1,7 @@
 import { Box, Button, ButtonGroup, Card, CardContent, FormGroup, MenuItem, Select, TextareaAutosize, TextField } from "@mui/material";
 import React from "react";
-import { PROXY_HOSTNAME } from "../pages/proxy";
+import { PROXY_HOSTNAME } from "../Main/Constant";
+import { ProjectPanel } from "../Pages/Projects/TemplateOne";
 
 
 export default function ServicesPortfolio(props) {
@@ -15,11 +16,11 @@ export default function ServicesPortfolio(props) {
         return (
             <div key={id} className="single-project-item mix  tank outside">
                 <div className="img-wrap">
-                    <img src={ "img/project-v4/1.jpg"} alt="" /> 
+                    <img src={ "/img/project-v4/1.jpg"} alt="" /> 
                     <div className="content-wrapper hvr-sweep-to-right">
                         <div className="content">
                             <div className="button-box">
-                                <a className="fancybox" data-fancybox-group="home-gallery" title={title} href={ "img/project-v4/1.jpg"} ><i className="fa fa-search-plus" /></a>
+                                <a className="fancybox" data-fancybox-group="home-gallery" title={title} href={ "/img/project-v4/1.jpg"} ><i className="fa fa-search-plus" /></a>
                             </div>
                             <div className="text-box">
                                 <h4>{title}</h4>
@@ -99,14 +100,14 @@ export default function ServicesPortfolio(props) {
                 </div>
                 <div className="row normal-gallery gallery-v4" id="image-gallery-mix">
                     {PortfolioProofs.map((e, i) => (
-                        <img key={i} src={ "img/project-v4/1.jpg"} alt="" />
+                        <img key={i} src={ "/img/project-v4/1.jpg"} alt="" />
                     ) )}
                 </div>
                 <div className="view-all-btn text-center"><a href="project-v1.html" className="view-all hvr-bounce-to-right">view all</a></div>
             </div>
         </section>
     );
-    return <>{ !editable? Section : < ServicePortfolioForm />}</>
+    return <>{ !editable? <ProjectPanel /> : < ServicePortfolioForm />}</>
 }
 
 

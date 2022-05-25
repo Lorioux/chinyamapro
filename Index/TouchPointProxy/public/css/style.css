@@ -4904,6 +4904,11 @@ header.header-v4 .mainmenu-container ul li.top-icons a:before {
     margin-top: 30px;
 }
 
+.column {
+    display: flex;
+    flex-direction: row;
+}
+
 /**
 * Shop Page Styles.
 **/

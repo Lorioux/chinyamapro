@@ -1,5 +1,5 @@
 import * as React from "react";
-import {PROXY_HOSTNAME} from "../main/proxy";
+import {PROXY_HOSTNAME} from "../Main/Constant";
 import {
     Box, Button, ButtonGroup, Card, CardActions, CardContent, CardHeader, FormGroup, Input, TextareaAutosize, TextField
 } from "@mui/material"
@@ -43,8 +43,6 @@ export function Blog(props) {
         blogs()
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-
                 setBlog(data)
             })
             .catch(err => {

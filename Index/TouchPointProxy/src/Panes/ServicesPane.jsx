@@ -1,6 +1,6 @@
 import { AddBoxOutlined, CloseOutlined, DeleteOutline, Edit } from "@mui/icons-material"
 import { Box, Button, ButtonGroup, Card, CardActions, CardContent, CardHeader, FormGroup, Input, TextareaAutosize, TextField } from "@mui/material"
-import { PROXY_HOSTNAME } from "../main/proxy"
+import { PROXY_HOSTNAME } from "../Main/Constant"
 import React from "react"
 
 export default function Services(props) {

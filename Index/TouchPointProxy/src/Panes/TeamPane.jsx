@@ -13,7 +13,7 @@ import {
     TextareaAutosize,
     Typography 
 } from "@mui/material"
-import { PROXY_HOSTNAME } from "../main/proxy"
+import { PROXY_HOSTNAME } from "../Main/Constant"
 import * as React from "react"
 
 

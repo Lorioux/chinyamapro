@@ -1,0 +1,74 @@
+{
+    "construction" : [
+        {
+            "id": "04",
+            "workType": "Flyover Work",
+            "start": "/05/01/2003",
+            "end": "/05/06/2003",
+            "owner": "John Doe",
+            "summary": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
+            "image": "/img/project-v5/1.jpg",
+            "details": [
+                {   
+                    "headline": "Headline",
+                    "subtitle": "Subtitle",
+                    "images": ["/img/project-v5/1.jpg","/img/project-v1/1.jpg","/img/project-v1/1.jpg","/img/project-v1/1.jpg"],
+                    "summary" : "bhhujkmljihjvnb m,kljihguyvjh m,jnknibkhjv gcftfyguibkj hvcfh ngmhjnihugiyuvcg hmhjnihuibyvktgh fcjtf6g7hunkmjiohguyftcg mnhjnihugyfcjg mh,jbulgyftcrhf gnmhjbyvtcgf "
+                }
+            ]
+        },
+        {
+            "id": "01",
+            "workType": "Flyover Work",
+            "start": "/05/01/2001",
+            "end": "/05/06/2002",
+            "owner": "John Mello",
+            "summary": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
+            "image": "/img/project-v5/1.jpg",
+            "details": [
+                {   
+                    "headline": "Headline",
+                    "subtitle": "Subtitle",
+                    "images": ["/img/project-v5/1.jpg","/img/project-v1/1.jpg","/img/project-v1/1.jpg","/img/project-v1/1.jpg"],
+                    "summary" : "bhhujkmljihjvnb m,kljihguyvjh m,jnknibkhjv gcftfyguibkj hvcfh ngmhjnihugiyuvcg hmhjnihuibyvktgh fcjtf6g7hunkmjiohguyftcg mnhjnihugyfcjg mh,jbulgyftcrhf gnmhjbyvtcgf "
+                }
+            ]
+        }
+    ],
+    "renovation" : [
+        {
+            "id": "02",
+            "workType": "Renovation Work",
+            "start": "/05/01/2003",
+            "end": "/05/06/2003",
+            "owner": "John Doe",
+            "summary": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
+            "image": "/img/project-v5/1.jpg",
+            "details": [
+                {   
+                    "headline": "Headline",
+                    "subtitle": "Subtitle",
+                    "images": ["/img/project-v5/1.jpg","/img/project-v1/1.jpg","/img/project-v1/1.jpg","/img/project-v1/1.jpg"],
+                    "summary" : "bhhujkmljihjvnb m,kljihguyvjh m,jnknibkhjv gcftfyguibkj hvcfh ngmhjnihugiyuvcg hmhjnihuibyvktgh fcjtf6g7hunkmjiohguyftcg mnhjnihugyfcjg mh,jbulgyftcrhf gnmhjbyvtcgf "
+                }
+            ]
+        },
+        {
+            "id": "05",
+            "workType": "Renovation Work",
+            "start": "/05/01/2001",
+            "end": "/05/06/2002",
+            "owner": "John Mello",
+            "summary": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
+            "image": "/img/project-v5/1.jpg",
+            "details": [
+                {   
+                    "headline": "Headline",
+                    "subtitle": "Subtitle",
+                    "images": ["/img/project-v5/1.jpg","/img/project-v1/1.jpg","/img/project-v1/1.jpg","/img/project-v1/1.jpg"],
+                    "summary" : "bhhujkmljihjvnb m,kljihguyvjh m,jnknibkhjv gcftfyguibkj hvcfh ngmhjnihugiyuvcg hmhjnihuibyvktgh fcjtf6g7hunkmjiohguyftcg mnhjnihugyfcjg mh,jbulgyftcrhf gnmhjbyvtcgf "
+                }
+            ]
+        }
+    ]
+}

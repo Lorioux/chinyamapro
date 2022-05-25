@@ -1,10 +1,12 @@
 
-export default function PagesMenu() {
+export default function PagesMenu(props) {
+    const {current} = props
+
     return <div className="container">
         <div className="clearfix">
             <div className="pull-left logo">
-                <a href="index.html">
-                    <img src="img/resources/logo-2.png" alt="Plumberx" />
+                <a href="/#">
+                    <img src="/img/resources/logo-2.png" alt="Plumberx" />
                 </a>
             </div>
             <nav className="pull-right mainmenu-container clearfix">
@@ -16,29 +18,32 @@ export default function PagesMenu() {
                     <i className="fa fa-bars" />
                 </button>
                 <ul className="mainmenu pull-right">
-                    {HomeMenuItem()}
-                    {PagesMenuItem()}
-                    {ServiceMenuItem()}
-                    {ProjectMenuItem()}
-                    {ShopMenuItem()}
-                    {BlogMenuItem()}
+                    {HomeMenuItem(current)}
+                    {/* {PagesMenuItem(current)} */}
+                    {ServiceMenuItem(current)}
+                    {ProjectMenuItem(current)}
+                    {/* {ShopMenuItem(current)} */}
+                    {/* {BlogMenuItem(current)} */}
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
     </div>
 
-    function HomeMenuItem() {
-        return <li className="dropdown current">
-            <a href="index.html">Home</a>
-            {/* <ul className="submenu">
-            <li><a href="index-2.html">One Page Version</a></li>
-        </ul> */}
+    function HomeMenuItem(curr) {
+        const current = curr === 'home' || curr === undefined ? 'current' : ''
+        return <li className={`dropdown ${current}`}>
+            <a href="/#">Home</a>
+            <ul className="submenu">
+                {/* <li><a href="index-2.html">One Page Version</a></li> */}
+                {<PagesMenuItem />}
+            </ul>
         </li>
     }
 
-    function PagesMenuItem() {
-        return <li className="dropdown">
+    function PagesMenuItem(curr) {
+        const current = curr === 'pages'? 'current' : ''
+        return <li className={`dropdown ${current}`}>
             <a href="#">Pages</a>
             <ul className="submenu">
                 <li className="dropdown">
@@ -54,37 +59,36 @@ export default function PagesMenu() {
                         <li><a href="testimonials-v2.html">Testimonial V2</a></li>
                     </ul>
                 </li>
-                <li><a href="search-result.html">Search Results</a></li>
+                {/* <li><a href="search-result.html">Search Results</a></li>
                 <li><a href="no-search-results.html">No serarch result</a></li>
-                <li><a href="404.html">404 Page</a></li>
+                <li><a href="404.html">404 Page</a></li> */}
             </ul>
         </li>
     }
 
-    function ServiceMenuItem() {
-        return <li className="dropdown"><a href="services.html">Services</a>
+    function ServiceMenuItem(curr) {
+        const current = curr === 'services'? 'current' : ''
+        return <li className={`dropdown ${current}`}><a href="services.html">Services</a>
             <ul className="submenu">
-                <li><a href="services-2.html">Services Two</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="services-2.html">Our Offer</a></li>
+                {/* <li><a href="pricing.html">Pricing</a></li> */}
             </ul>
         </li>
     }
 
-    function ProjectMenuItem() {
-        return <li className="dropdown">
-            <a href="project-v1.html">Projects</a>
+    function ProjectMenuItem(curr) {
+        const current = curr === 'portfolio'? 'current' : ''
+        return <li className={`dropdown ${current}`}>
+            <a href="/portfolio/projects">Portfolio</a>
             <ul className="submenu">
-                <li><a href="project-v1.html">Projects V1</a></li>
-                <li><a href="project-v2.html">Projects V2</a></li>
-                <li><a href="project-v3.html">Projects V3</a></li>
-                <li><a href="project-v4.html">Projects V4</a></li>
-                <li><a href="project-v5.html">Projects V5</a></li>
+                <li><a href="/portfolio/projects">Projects</a></li>
             </ul>
         </li>
     }
 
-    function ShopMenuItem() {
-        return <li className="dropdown">
+    function ShopMenuItem(curr) {
+        const current = curr === 'shop'? 'current' : ''
+        return <li className={`dropdown ${current}`}>
             <a href="shop.html">Shop</a>
             <ul className="submenu">
                 <li><a href="product-details.html">Product Details</a></li>
@@ -94,9 +98,10 @@ export default function PagesMenu() {
         </li>
     }
 
-    function BlogMenuItem() {
+    function BlogMenuItem(curr) {
+        const current = curr === 'blog'? 'current' : ''
         return (
-            <li className="dropdown">
+            <li className={`dropdown ${current}`}>
                 <a href="blog.html">Blog</a>
                 <ul className="submenu">
                     <li><a href="blog-v2.html">Blog Style Two</a></li>

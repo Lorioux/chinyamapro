@@ -14,7 +14,7 @@ import {
 import * as Icon from "@mui/icons-material"
 import { Box} from "@mui/system"
 import * as React from "react"
-import { PROXY_HOSTNAME } from "../main/proxy"
+import { PROXY_HOSTNAME } from "../Main/Constant"
 
 
 
@@ -35,11 +35,11 @@ export default function Disclaim(props) {
        
         const mocktitle = "Construction"
         const mocksummary = "Lorem ipsum dolor sit amet, cons ectetur elit. Ves tibulum nec odios Suspe ndisse cursus mal suada faci lisis. Lorem ipsum dolor."
-        const mockimg = "img/construction-welcome/1.jpg" //|| "img/construction-welcome/2.jpg"
+        const mockimg = "/img/construction-welcome/1.jpg" //|| "/img/construction-welcome/2.jpg"
 
         return(
             <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 single-construction-welcome">
-                <div className="img-holder hvr-rectangle-out">
+                <div className="/img-holder hvr-rectangle-out">
                     <img src={imagelnk === undefined? mockimg : imagelnk} alt="" />
                 </div>
                 <h2>{title === undefined? mocktitle: title}</h2>
@@ -189,7 +189,7 @@ export const CapabilityForm = (props) => {
                 </FormGroup>
                 <FormGroup sx={sx}>
                     <label style={{ padding: 4 }}>Service Image (keep the size) <br/>
-                        <img src={"img/construction-welcome/1.jpg"} alt="" />
+                        <img src={"/img/construction-welcome/1.jpg"} alt="" />
                         <Input type="file" name={"imagelnk"} sx={{
                             padding: 5,
                             display: "none"
@@ -236,7 +236,7 @@ export const CompanyBannerForm = (props) =>{
                 <form method="POST" action={`${PROXY_HOSTNAME}/blog/add`} >
                     <FormGroup sx={{ rowGap: 1, marginBottom: 4 }}> 
                         <label style={{ fontSize: 12}}>Click to add image (keep the size) <br/>
-                            <img src="img/testimonials-construct/1.jpg" alt="size 170x185"/>
+                            <img src="/img/testimonials-construct/1.jpg" alt="size 170x185"/>
                             <Input type="file" name="file" id="file" sx={{ display: "none"}} required/>
                         </label>
                     </FormGroup>

@@ -1,6 +1,6 @@
 import { CloseOutlined, Edit } from "@mui/icons-material";
 import { Box, Button, ButtonGroup, Card, CardActions, CardContent, CardHeader, FormGroup, Input, TextareaAutosize, TextField } from "@mui/material";
-import { PROXY_HOSTNAME } from "../main/proxy";
+import { PROXY_HOSTNAME } from "../Main/Constant";
 import * as React from "react";
 
 
