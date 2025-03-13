@@ -2,8 +2,8 @@
 from this import d
 from flask import Flask, redirect, request
 
-from WelCome.utils import file_async_reader
-from WelCome.utils import upload_image 
+from Welcome.utils import file_async_reader
+from Welcome.utils import upload_image 
 
 
 app = Flask(__name__)  
